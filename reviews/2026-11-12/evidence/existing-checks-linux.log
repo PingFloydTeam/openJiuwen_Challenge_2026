@@ -1,0 +1,95 @@
+test_contract_probe_prevents_false_positive_and_keeps_tests (bench.contract_checks.ContractChecks.test_contract_probe_prevents_false_positive_and_keeps_tests) ... ok
+test_empty_json_content_stops_with_usage_counted_once (bench.contract_checks.ContractChecks.test_empty_json_content_stops_with_usage_counted_once) ... /usr/local/lib/python3.13/site-packages/openjiuwen/core/common/clients/connector_pool.py:17: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+  class ConnectorPoolConfig(BaseModel):
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/common/clients/http_client.py:21: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+  class SessionConfig(BaseModel):
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:13: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:24: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:30: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+Executing <Task pending name='Task-6' coro=<ContractChecks.test_empty_json_content_stops_with_usage_counted_once() running at /app/bench/contract_checks.py:71> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.13/asyncio/base_events.py:459> cb=[_run_until_complete_cb() at /usr/local/lib/python3.13/asyncio/base_events.py:181] created at /usr/local/lib/python3.13/asyncio/runners.py:100> took 1.212 seconds
+ok
+test_final_fact_uniqueness_and_exact_entity_spelling (bench.contract_checks.ContractChecks.test_final_fact_uniqueness_and_exact_entity_spelling) ... ok
+test_impossible_universal_contract_never_reaches_model (bench.contract_checks.ContractChecks.test_impossible_universal_contract_never_reaches_model) ... ok
+test_initial_green_tests_need_contract_review (bench.contract_checks.ContractChecks.test_initial_green_tests_need_contract_review) ... ok
+test_latest_revisions_compare_numeric_amounts (bench.contract_checks.ContractChecks.test_latest_revisions_compare_numeric_amounts) ... ok
+test_named_inputs_are_required_but_output_files_are_not (bench.contract_checks.ContractChecks.test_named_inputs_are_required_but_output_files_are_not) ... ok
+test_output_failure_stops_and_snapshot_recovers_on_resume (bench.contract_checks.ContractChecks.test_output_failure_stops_and_snapshot_recovers_on_resume) ... ok
+test_sql_null_and_unknown_csv_distinct (bench.contract_checks.ContractChecks.test_sql_null_and_unknown_csv_distinct) ... ok
+test_universal_contracts_reject_only_concrete_contradictions (bench.contract_checks.ContractChecks.test_universal_contracts_reject_only_concrete_contradictions) ... ok
+test_unwritable_output_fails_before_any_task (bench.contract_checks.ContractChecks.test_unwritable_output_fails_before_any_task) ... ok
+test_discovery_recovers_a_tool_hidden_by_wording (bench.diversity_checks.DiscoveryChecks.test_discovery_recovers_a_tool_hidden_by_wording) ... ok
+test_inverse_cannot_be_confirmed_by_reversing_rounded_arithmetic (bench.diversity_checks.DiscoveryChecks.test_inverse_cannot_be_confirmed_by_reversing_rounded_arithmetic) ... ok
+test_ratio_cannot_be_confirmed_by_inexact_sql (bench.diversity_checks.DiscoveryChecks.test_ratio_cannot_be_confirmed_by_inexact_sql) ... ok
+test_structured_tools_work_through_real_openjiuwen (bench.diversity_checks.DiscoveryChecks.test_structured_tools_work_through_real_openjiuwen) ... ok
+test_finite_counts_have_closed_form (bench.diversity_checks.DiversityChecks.test_finite_counts_have_closed_form) ... ok
+test_finite_rejects_undefined_and_excessive_work_without_execution (bench.diversity_checks.DiversityChecks.test_finite_rejects_undefined_and_excessive_work_without_execution) ... ok
+test_invariants_follow_unfamiliar_function_names_and_public_literals (bench.diversity_checks.DiversityChecks.test_invariants_follow_unfamiliar_function_names_and_public_literals) ... ok
+test_json_duplicate_keys_unknowns_and_huge_numbers_are_not_guessed (bench.diversity_checks.DiversityChecks.test_json_duplicate_keys_unknowns_and_huge_numbers_are_not_guessed) ... ok
+test_json_nested_paths_type_identity_and_tied_ranks (bench.diversity_checks.DiversityChecks.test_json_nested_paths_type_identity_and_tied_ranks) ... ok
+test_protocol_metadata_is_recovered_without_changing_tool_arguments (bench.diversity_checks.DiversityChecks.test_protocol_metadata_is_recovered_without_changing_tool_arguments) ... ok
+test_sql_cannot_hide_unknown_inputs_or_break_text_ties (bench.diversity_checks.DiversityChecks.test_sql_cannot_hide_unknown_inputs_or_break_text_ties) ... ok
+test_ample_budget_does_not_truncate_expensive_structured_arguments (bench.exact_checks.ExactChecks.test_ample_budget_does_not_truncate_expensive_structured_arguments) ... ok
+test_as_of_date_ignores_issued_and_rejects_tied_conflicts (bench.exact_checks.ExactChecks.test_as_of_date_ignores_issued_and_rejects_tied_conflicts) ... ok
+test_integer_inverse_against_forward_enumeration (bench.exact_checks.ExactChecks.test_integer_inverse_against_forward_enumeration) ... ok
+test_interval_sweep_against_independent_cell_count (bench.exact_checks.ExactChecks.test_interval_sweep_against_independent_cell_count) ... ok
+test_linked_csv_checks_all_alternatives_and_preserves_quoted_keys (bench.exact_checks.ExactChecks.test_linked_csv_checks_all_alternatives_and_preserves_quoted_keys) ... ok
+test_probability_against_enumeration_of_labelled_objects (bench.exact_checks.ExactChecks.test_probability_against_enumeration_of_labelled_objects) ... ok
+test_ratio_of_sums_and_indivisible_people (bench.exact_checks.ExactChecks.test_ratio_of_sums_and_indivisible_people) ... ok
+test_time_offsets_leap_day_and_exact_subseconds (bench.exact_checks.ExactChecks.test_time_offsets_leap_day_and_exact_subseconds) ... ok
+test_dedicated_math_tools_through_real_openjiuwen (bench.exact_checks.ExactWorkflowChecks.test_dedicated_math_tools_through_real_openjiuwen) ... ok
+test_effective_selection_cannot_submit_arbitrary_matching_code (bench.exact_checks.ExactWorkflowChecks.test_effective_selection_cannot_submit_arbitrary_matching_code) ... ok
+test_linked_selection_cannot_submit_first_document_without_index_check (bench.exact_checks.ExactWorkflowChecks.test_linked_selection_cannot_submit_first_document_without_index_check) ... ok
+test_elimination_matches_independent_enumeration (bench.frontier_checks.AlgebraChecks.test_elimination_matches_independent_enumeration) ... ok
+test_large_cartesian_space_is_reduced_without_guessing_bounds (bench.frontier_checks.AlgebraChecks.test_large_cartesian_space_is_reduced_without_guessing_bounds) ... ok
+test_uniqueness_is_of_objective_not_assignment (bench.frontier_checks.AlgebraChecks.test_uniqueness_is_of_objective_not_assignment) ... ok
+test_failed_repair_refreshes_model_source_context (bench.frontier_checks.ContextChecks.test_failed_repair_refreshes_model_source_context) ... Executing <Task finished name='Task-486' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff5d7785f0>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.774 seconds
+ok
+test_literal_assertions_do_not_execute_text (bench.frontier_checks.ContractChecks.test_literal_assertions_do_not_execute_text) ... ok
+test_probes_and_contract_examples_guard_green_public_tests (bench.frontier_checks.ContractChecks.test_probes_and_contract_examples_guard_green_public_tests) ... ok
+test_all_tied_projections_must_agree (bench.frontier_checks.PlanChecks.test_all_tied_projections_must_agree) ... ok
+test_antijoin_keeps_leading_zero_identifiers (bench.frontier_checks.PlanChecks.test_antijoin_keeps_leading_zero_identifiers) ... ok
+test_filter_precedes_missing_check_and_decimal_arithmetic_is_exact (bench.frontier_checks.PlanChecks.test_filter_precedes_missing_check_and_decimal_arithmetic_is_exact) ... ok
+test_latest_order_changes_result (bench.frontier_checks.PlanChecks.test_latest_order_changes_result) ... ok
+test_numeric_csv_revisions_and_group_ties (bench.frontier_checks.PlanChecks.test_numeric_csv_revisions_and_group_ties) ... ok
+test_plan_rejects_unknown_stages_and_outside_files (bench.frontier_checks.PlanChecks.test_plan_rejects_unknown_stages_and_outside_files) ... ok
+test_unknown_filter_does_not_poison_definite_nonmatch (bench.frontier_checks.PlanChecks.test_unknown_filter_does_not_poison_definite_nonmatch) ... ok
+test_terminal_step_has_unambiguous_canonical_form (bench.frontier_checks.ProtocolChecks.test_terminal_step_has_unambiguous_canonical_form) ... ok
+test_all_relational_cases (bench.hard_checks.HardChecks.test_all_relational_cases) ... ok
+test_exact_constraints (bench.hard_checks.HardChecks.test_exact_constraints) ... ok
+test_failed_code_edit_limit_keeps_original_sources (bench.hard_checks.HardChecks.test_failed_code_edit_limit_keeps_original_sources) ... Executing <Task finished name='Task-521' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff5ec6bd70>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.249 seconds
+ok
+test_group_ties_require_an_explicit_rule (bench.hard_checks.HardChecks.test_group_ties_require_an_explicit_rule) ... ok
+test_hard_math_and_search_fast_path (bench.hard_checks.HardChecks.test_hard_math_and_search_fast_path) ... ok
+test_latest_notice_checks_scope_approval_and_conflicting_ties (bench.hard_checks.HardChecks.test_latest_notice_checks_scope_approval_and_conflicting_ties) ... ok
+test_ledger_filters_before_revision_and_preserves_text_keys (bench.hard_checks.HardChecks.test_ledger_filters_before_revision_and_preserves_text_keys) ... ok
+test_openjiuwen_sql_and_two_file_patch (bench.hard_checks.HardChecks.test_openjiuwen_sql_and_two_file_patch) ... Executing <Task finished name='Task-583' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff5d7c3050>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.246 seconds
+Executing <Task finished name='Task-548' coro=<HardChecks.test_openjiuwen_sql_and_two_file_patch() done, defined at /app/bench/hard_checks.py:200> result=None created at /usr/local/lib/python3.13/asyncio/runners.py:100> took 0.247 seconds
+ok
+test_question_conversion_preserves_constraints_and_literals (bench.hard_checks.HardChecks.test_question_conversion_preserves_constraints_and_literals) ... ok
+test_sql_joins_csv_and_tsv_with_integer_and_null_columns (bench.hard_checks.HardChecks.test_sql_joins_csv_and_tsv_with_integer_and_null_columns) ... ok
+test_transfer_algorithms_and_independent_oracles (bench.hard_checks.HardChecks.test_transfer_algorithms_and_independent_oracles) ... ok
+test_replace_body_is_scoped_and_runs_original_tests (bench.policy_checks.ExactToolChecks.test_replace_body_is_scoped_and_runs_original_tests) ... ok
+test_sqlite_view_returns_values_but_cannot_allocate_unbounded_cell (bench.policy_checks.ExactToolChecks.test_sqlite_view_returns_values_but_cannot_allocate_unbounded_cell) ... ok
+test_table_arithmetic_does_not_round (bench.policy_checks.ExactToolChecks.test_table_arithmetic_does_not_round) ... ok
+test_concurrent_calls_share_reservations (bench.policy_checks.OfflinePolicyChecks.test_concurrent_calls_share_reservations) ... ok
+test_http_429_stops_new_calls_and_preserves_answers_for_resume (bench.policy_checks.OfflinePolicyChecks.test_http_429_stops_new_calls_and_preserves_answers_for_resume) ... ok
+test_inventory_fallback_must_use_the_stated_closing_total (bench.policy_checks.OfflinePolicyChecks.test_inventory_fallback_must_use_the_stated_closing_total) ... ok
+test_local_first_rewards_and_abstention (bench.policy_checks.OfflinePolicyChecks.test_local_first_rewards_and_abstention) ... ok
+test_malformed_named_table_is_not_sent_to_model (bench.policy_checks.OfflinePolicyChecks.test_malformed_named_table_is_not_sent_to_model) ... ok
+test_missing_usage_reserves_tokens_and_silent_proxy_stops (bench.policy_checks.OfflinePolicyChecks.test_missing_usage_reserves_tokens_and_silent_proxy_stops) ... ok
+test_read_final_cannot_submit_entire_excerpt (bench.policy_checks.OfflinePolicyChecks.test_read_final_cannot_submit_entire_excerpt) ... ok
+test_search_does_not_submit_intermediate_office_as_city (bench.policy_checks.OfflinePolicyChecks.test_search_does_not_submit_intermediate_office_as_city) ... ok
+test_search_uses_named_subject_and_rejects_distractor (bench.policy_checks.OfflinePolicyChecks.test_search_uses_named_subject_and_rejects_distractor) ... ok
+test_second_model_runs_after_first_pass_with_its_own_cap (bench.policy_checks.OfflinePolicyChecks.test_second_model_runs_after_first_pass_with_its_own_cap) ... ok
+test_shortlist_expands_to_compact_menu_after_invalid_action (bench.policy_checks.OfflinePolicyChecks.test_shortlist_expands_to_compact_menu_after_invalid_action) ... ok
+test_sigterm_preserves_saved_answers_and_reserves_inflight_usage (bench.policy_checks.OfflinePolicyChecks.test_sigterm_preserves_saved_answers_and_reserves_inflight_usage) ... ok
+test_small_budget_still_saves_local_answer (bench.policy_checks.OfflinePolicyChecks.test_small_budget_still_saves_local_answer) ... ok
+test_temporary_reservation_does_not_reduce_the_next_task_cap (bench.policy_checks.OfflinePolicyChecks.test_temporary_reservation_does_not_reduce_the_next_task_cap) ... ok
+
+----------------------------------------------------------------------
+Ran 75 tests in 11.688s
+
+OK

@@ -1,0 +1,47 @@
+{"event":"run_start","tasks":8,"model":"qwen3.8-27b-noreason","budget_tenths":1000000,"agent_only":true,"offline":false,"workers":1,"tool_profile":"full","queue":"value","fixed_estimates":false,"calibrated":false,"repair_limit":3,"retry_share":10}
+{"event":"local_end","submitted":0,"deferred":8}
+{"event":"fallback_start","task":"math_0000","estimated_tenths":3846,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"math_0000","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":8054,"input_tokens":856,"output_tokens":29,"reasoning_tokens":11,"cost_tenths":1146,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":998854,"in_flight_tenths":0}
+{"event":"tool","task":"math_0000","step":1,"tool":"calc","args_preview":"{\"expr\":\"((1752//2*2)//3*2)//3\"}"}
+{"event":"task","task":"math_0000","kind":"math","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1146,"elapsed_s":0.008}
+{"event":"fallback_start","task":"data_analysis_0002","estimated_tenths":4690,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"data_analysis_0002","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":9057,"input_tokens":1107,"output_tokens":55,"reasoning_tokens":11,"cost_tenths":1657,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":997197,"in_flight_tenths":0}
+{"event":"tool","task":"data_analysis_0002","step":1,"tool":"query","args_preview":"{\"file\":\"sales.csv\",\"table\":\"\",\"op\":\"sum\",\"column\":\"units\",\"filters\":[[\"product\",\"=\",\"widget\"],[\"month\",\">=\",7],[\"month\",\"<=\",8]],\"limit\":5,\"factor\":\"\",\"group\":\"\",\"tie_break\":\"\"}"}
+{"event":"task","task":"data_analysis_0002","kind":"data_analysis","reward":3,"saved":true,"route":"agent","phase":"model","cost_tenths":1657,"elapsed_s":0.006}
+{"event":"fallback_start","task":"data_analysis_0006","estimated_tenths":4122,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"data_analysis_0006","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":9058,"input_tokens":1107,"output_tokens":55,"reasoning_tokens":11,"cost_tenths":1657,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":995540,"in_flight_tenths":0}
+{"event":"tool","task":"data_analysis_0006","step":1,"tool":"query","args_preview":"{\"file\":\"sales.csv\",\"table\":\"\",\"op\":\"sum\",\"column\":\"units\",\"filters\":[[\"product\",\"=\",\"widget\"],[\"month\",\">=\",5],[\"month\",\"<=\",6]],\"limit\":5,\"factor\":\"\",\"group\":\"\",\"tie_break\":\"\"}"}
+{"event":"task","task":"data_analysis_0006","kind":"data_analysis","reward":3,"saved":true,"route":"agent","phase":"model","cost_tenths":1657,"elapsed_s":0.005}
+{"event":"fallback_start","task":"math_0004","estimated_tenths":3224,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"math_0004","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":7744,"input_tokens":779,"output_tokens":27,"reasoning_tokens":11,"cost_tenths":1049,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":994491,"in_flight_tenths":0}
+{"event":"tool","task":"math_0004","step":1,"tool":"calc","args_preview":"{\"expr\":\"1669-36*3+2*87\"}"}
+{"event":"task","task":"math_0004","kind":"math","reward":2,"saved":true,"route":"agent","phase":"model","cost_tenths":1049,"elapsed_s":0.004}
+{"event":"fallback_start","task":"search_0005","estimated_tenths":5184,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"search_0005","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":10522,"input_tokens":1473,"output_tokens":29,"reasoning_tokens":11,"cost_tenths":1763,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":992728,"in_flight_tenths":0}
+{"event":"tool","task":"search_0005","step":1,"tool":"kb_facts","args_preview":"{\"entity\":\"Sergei Garcia\"}"}
+{"event":"llm","task":"search_0005","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":10749,"input_tokens":1530,"output_tokens":28,"reasoning_tokens":11,"cost_tenths":1810,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":990918,"in_flight_tenths":0}
+{"event":"tool","task":"search_0005","step":2,"tool":"kb_facts","args_preview":"{\"entity\":\"Fjord Data\"}"}
+{"event":"llm","task":"search_0005","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":10874,"input_tokens":1561,"output_tokens":15,"reasoning_tokens":11,"cost_tenths":1711,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":989207,"in_flight_tenths":0}
+{"event":"task","task":"search_0005","kind":"search","reward":2,"saved":true,"route":"agent","phase":"model","cost_tenths":5284,"elapsed_s":0.022}
+{"event":"fallback_start","task":"coding_0003","estimated_tenths":9660,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"coding_0003","model":"qwen3.8-27b-noreason","max_output":1100,"reserved_tenths":14656,"input_tokens":882,"output_tokens":46,"reasoning_tokens":11,"cost_tenths":1342,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":987865,"in_flight_tenths":0}
+{"event":"tool","task":"coding_0003","step":1,"tool":"patch","args_preview":"{\"checks\":null,\"file\":\"mylib.py\",\"edits\":[[\"sorted(s.split())\",\"reversed(s.split())\"],[\"s -= x\",\"s += x\"]]}"}
+{"event":"task","task":"coding_0003","kind":"coding","reward":2,"saved":true,"route":"public_tests","phase":"model","cost_tenths":1342,"elapsed_s":0.486}
+{"event":"fallback_start","task":"coding_0007","estimated_tenths":8393,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"coding_0007","model":"qwen3.8-27b-noreason","max_output":1100,"reserved_tenths":14505,"input_tokens":844,"output_tokens":45,"reasoning_tokens":11,"cost_tenths":1294,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":986571,"in_flight_tenths":0}
+{"event":"tool","task":"coding_0007","step":1,"tool":"patch","args_preview":"{\"checks\":null,\"file\":\"mylib.py\",\"edits\":[[\"if x < best\",\"if x > best\"],[\"x % 2 == 1\",\"x % 2 == 0\"]]}"}
+{"event":"task","task":"coding_0007","kind":"coding","reward":2,"saved":true,"route":"public_tests","phase":"model","cost_tenths":1294,"elapsed_s":0.483}
+{"event":"fallback_start","task":"search_0001","estimated_tenths":5227,"cap_tenths":32000,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"search_0001","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":10495,"input_tokens":1466,"output_tokens":33,"reasoning_tokens":11,"cost_tenths":1796,"finish_reason":"stop","elapsed_s":0.001,"remaining_tenths":984775,"in_flight_tenths":0}
+{"event":"tool","task":"search_0001","step":1,"tool":"lookup","args_preview":"{\"entity\":\"Irina Smith\",\"fields\":[\"Born\"]}"}
+{"event":"task","task":"search_0001","kind":"search","reward":1,"saved":true,"route":"agent","phase":"model","cost_tenths":1796,"elapsed_s":0.018}
+{"event":"run_end","submitted":8,"submitted_reward":20,"spent_tenths":15225,"unknown_reserved_tenths":0,"remaining_tenths":984775,"model_attempted":8,"deferred_unattempted":0,"model_retried":0,"unvisited":0,"cancelled":0,"stop_reason":null,"out_complete":true}
+{"grade": "coding_0003", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"grade": "coding_0007", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"grade": "data_analysis_0002", "ok": true, "solvable": true, "reward": 3, "outcome": "correct_answers"}
+{"grade": "data_analysis_0006", "ok": true, "solvable": true, "reward": 3, "outcome": "correct_answers"}
+{"grade": "math_0000", "ok": true, "solvable": true, "reward": 5, "outcome": "correct_answers"}
+{"grade": "math_0004", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"grade": "search_0001", "ok": true, "solvable": true, "reward": 1, "outcome": "correct_answers"}
+{"grade": "search_0005", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"score": 20, "max_score": 20, "checks_passed": 8, "checks_total": 8, "correct_answers": 8, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0, "by_type": {"coding": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}, "data_analysis": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}, "math": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}, "search": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}}, "by_split": {}}

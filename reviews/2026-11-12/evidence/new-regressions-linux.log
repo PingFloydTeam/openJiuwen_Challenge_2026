@@ -1,0 +1,308 @@
+test_accepted_fast_repair_respects_explicit_empty_input_contract (test_review_tools.IndependentToolContracts.test_accepted_fast_repair_respects_explicit_empty_input_contract) ... FAIL
+test_birth_date_must_not_be_submitted_as_birth_year (test_review_tools.IndependentToolContracts.test_birth_date_must_not_be_submitted_as_birth_year) ... FAIL
+test_birth_field_alias_is_not_proof_of_missing_information (test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information) ... FAIL
+test_coding_can_read_its_own_read_only_fixture (test_review_tools.IndependentToolContracts.test_coding_can_read_its_own_read_only_fixture) ... FAIL
+test_control_exact_arithmetic_and_decimal_aggregation (test_review_tools.IndependentToolContracts.test_control_exact_arithmetic_and_decimal_aggregation) ... ok
+test_direct_shortest_route_does_not_need_an_unrelated_missing_record (test_review_tools.IndependentToolContracts.test_direct_shortest_route_does_not_need_an_unrelated_missing_record) ... FAIL
+test_regular_stdlib_import_is_usable_in_coding_tests (test_review_tools.IndependentToolContracts.test_regular_stdlib_import_is_usable_in_coding_tests) ... FAIL
+test_runtime_fixture_is_not_a_missing_task_input (test_review_tools.IndependentToolContracts.test_runtime_fixture_is_not_a_missing_task_input) ... FAIL
+test_stateful_counter_examples_are_not_a_logical_contradiction (test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction) ... FAIL
+test_zero_quantity_makes_unknown_finite_price_irrelevant (test_review_tools.IndependentToolContracts.test_zero_quantity_makes_unknown_finite_price_irrelevant) ... FAIL
+test_control_reasoning_accounted_once_in_both_usage_shapes (test_review_workflow.IndependentTransportContracts.test_control_reasoning_accounted_once_in_both_usage_shapes) ... ok
+test_unexplained_total_tokens_are_not_silently_underbilled (test_review_workflow.IndependentTransportContracts.test_unexplained_total_tokens_are_not_silently_underbilled) ... FAIL
+test_complete_bounded_proof_is_not_rejected_by_parity_gate (test_review_workflow.IndependentWorkflowContracts.test_complete_bounded_proof_is_not_rejected_by_parity_gate) ... /usr/local/lib/python3.13/site-packages/openjiuwen/core/common/clients/connector_pool.py:17: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+  class ConnectorPoolConfig(BaseModel):
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/common/clients/http_client.py:21: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+  class SessionConfig(BaseModel):
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:13: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:24: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:30: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+Executing <Task pending name='Task-10' coro=<IndependentWorkflowContracts.test_complete_bounded_proof_is_not_rejected_by_parity_gate() running at /review-tests/test_review_workflow.py:130> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.13/asyncio/base_events.py:459> cb=[_run_until_complete_cb() at /usr/local/lib/python3.13/asyncio/base_events.py:181] created at /usr/local/lib/python3.13/asyncio/runners.py:100> took 1.149 seconds
+FAIL
+test_control_real_workflow_writes_answer_and_reconciles_usage (test_review_workflow.IndependentWorkflowContracts.test_control_real_workflow_writes_answer_and_reconciles_usage) ... ok
+test_field_alias_reaches_model_fallback (test_review_workflow.IndependentWorkflowContracts.test_field_alias_reaches_model_fallback) ... FAIL
+test_narrative_birth_year_is_valid_read_evidence (test_review_workflow.IndependentWorkflowContracts.test_narrative_birth_year_is_valid_read_evidence) ... FAIL
+test_retry_after_rate_limit_does_not_disable_the_entire_run (test_review_workflow.IndependentWorkflowContracts.test_retry_after_rate_limit_does_not_disable_the_entire_run) ... FAIL
+test_search_target_can_follow_more_than_two_links (test_review_workflow.IndependentWorkflowContracts.test_search_target_can_follow_more_than_two_links) ... FAIL
+test_truncation_gets_a_bounded_retry_when_budget_is_available (test_review_workflow.IndependentWorkflowContracts.test_truncation_gets_a_bounded_retry_when_budget_is_available) ... FAIL
+
+======================================================================
+FAIL: test_accepted_fast_repair_respects_explicit_empty_input_contract (test_review_tools.IndependentToolContracts.test_accepted_fast_repair_respects_explicit_empty_input_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 147, in test_accepted_fast_repair_respects_explicit_empty_input_contract
+    actual = namespace["average"]([])
+  File "mylib.py", line 2, in average
+ZeroDivisionError: division by zero
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 149, in test_accepted_fast_repair_respects_explicit_empty_input_contract
+    self.fail(f"Accepted repair violates explicit average([]) == 0: {type(error).__name__}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Accepted repair violates explicit average([]) == 0: ZeroDivisionError
+
+======================================================================
+FAIL: test_birth_date_must_not_be_submitted_as_birth_year (test_review_tools.IndependentToolContracts.test_birth_date_must_not_be_submitted_as_birth_year)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 81, in test_birth_date_must_not_be_submitted_as_birth_year
+    self.assertIn(solve_fast(task), (None, "1983"), "Extract the year or defer to the model")
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '1983-04-17' not found in (None, '1983') : Extract the year or defer to the model
+
+======================================================================
+FAIL: test_birth_field_alias_is_not_proof_of_missing_information (test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 71, in test_birth_field_alias_is_not_proof_of_missing_information
+    result = solve_fast(task)
+  File "/app/ping_floyd/fast.py", line 452, in solve_fast
+    value = solve_question(task, question)
+  File "/app/ping_floyd/fast.py", line 443, in solve_question
+    return fast_search(task.workspace, question)
+  File "/app/ping_floyd/fast.py", line 409, in fast_search
+    return kb_lookup(kb, match[1], fields, strict=True)
+  File "/app/ping_floyd/tools.py", line 360, in kb_lookup
+    raise NoUniqueAnswer("missing_information", f"no {label} for {current}")
+ping_floyd.domain.NoUniqueAnswer: no Born for Ada Reed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 73, in test_birth_field_alias_is_not_proof_of_missing_information
+    self.fail(f"A known birth year must be solved or deferred, not proven impossible: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: A known birth year must be solved or deferred, not proven impossible: no Born for Ada Reed
+
+======================================================================
+FAIL: test_coding_can_read_its_own_read_only_fixture (test_review_tools.IndependentToolContracts.test_coding_can_read_its_own_read_only_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 123, in test_coding_can_read_its_own_read_only_fixture
+    self.assertTrue(actual["passed"], actual["output"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : E
+======================================================================
+ERROR: test_result (__main__.Public.test_result)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_mylib.py", line 5, in test_result
+    self.assertEqual(mylib.total_file('numbers.txt'), 5)
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "mylib.py", line 2, in total_file
+    with open(path) as stream:
+         ~~~~^^^^^^
+PermissionError: [Errno 1] Operation not permitted: 'numbers.txt'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+======================================================================
+FAIL: test_direct_shortest_route_does_not_need_an_unrelated_missing_record (test_review_tools.IndependentToolContracts.test_direct_shortest_route_does_not_need_an_unrelated_missing_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 60, in test_direct_shortest_route_does_not_need_an_unrelated_missing_record
+    distance = kb_route(root, "A", "B", ["Next", "Backup"], "distance", strict=True)
+  File "/app/ping_floyd/knowledge.py", line 76, in kb_route
+    raise NoUniqueAnswer("missing_information", "a reachable link has no record")
+ping_floyd.domain.NoUniqueAnswer: a reachable link has no record
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 62, in test_direct_shortest_route_does_not_need_an_unrelated_missing_record
+    self.fail(f"The present A -> B edge proves the shortest distance is one: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The present A -> B edge proves the shortest distance is one: a reachable link has no record
+
+======================================================================
+FAIL: test_regular_stdlib_import_is_usable_in_coding_tests (test_review_tools.IndependentToolContracts.test_regular_stdlib_import_is_usable_in_coding_tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 113, in test_regular_stdlib_import_is_usable_in_coding_tests
+    self.assertTrue(actual["passed"], actual["output"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : Traceback (most recent call last):
+  File "/app/ping_floyd/test_worker.py", line 142, in <module>
+  File "/app/ping_floyd/test_worker.py", line 130, in main
+  File "test_mylib.py", line 2, in <module>
+    import mylib
+  File "/app/ping_floyd/test_worker.py", line 50, in exec_module
+  File "mylib.py", line 1, in <module>
+    import tomllib
+ModuleNotFoundError: No module named 'tomllib'
+
+======================================================================
+FAIL: test_runtime_fixture_is_not_a_missing_task_input (test_review_tools.IndependentToolContracts.test_runtime_fixture_is_not_a_missing_task_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 89, in test_runtime_fixture_is_not_a_missing_task_input
+    required_inputs(Path(folder), instruction)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/ping_floyd/contracts.py", line 87, in required_inputs
+    raise NoUniqueAnswer("missing_information", f"required input {match[1]} is unavailable") from None
+ping_floyd.domain.NoUniqueAnswer: required input numbers.txt is unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 91, in test_runtime_fixture_is_not_a_missing_task_input
+    self.fail(f"A runtime fixture is part of the function contract, not unavailable evidence: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: A runtime fixture is part of the function contract, not unavailable evidence: required input numbers.txt is unavailable
+
+======================================================================
+FAIL: test_stateful_counter_examples_are_not_a_logical_contradiction (test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 98, in test_stateful_counter_examples_are_not_a_logical_contradiction
+    universal_contract_conflicts(instruction)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/app/ping_floyd/contracts.py", line 39, in universal_contract_conflicts
+    raise NoUniqueAnswer("logical_error", "explicit assertions require different results for the same call")
+ping_floyd.domain.NoUniqueAnswer: explicit assertions require different results for the same call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 100, in test_stateful_counter_examples_are_not_a_logical_contradiction
+    self.fail(f"Sequential calls to an explicitly stateful counter may differ: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Sequential calls to an explicitly stateful counter may differ: explicit assertions require different results for the same call
+
+======================================================================
+FAIL: test_zero_quantity_makes_unknown_finite_price_irrelevant (test_review_tools.IndependentToolContracts.test_zero_quantity_makes_unknown_finite_price_irrelevant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 48, in test_zero_quantity_makes_unknown_finite_price_irrelevant
+    value = db_query(root, "sales.csv", "sum_product", "units",
+                     [["region", "=", "North"]], factor="price")
+  File "/app/ping_floyd/tools.py", line 285, in db_query
+    return run(columns, rows, delimited=True)
+  File "/app/ping_floyd/tools.py", line 245, in run
+    left, right = number(row, column), number(row, factor)
+                                       ~~~~~~^^^^^^^^^^^^^
+  File "/app/ping_floyd/tools.py", line 203, in number
+    raise NoUniqueAnswer("missing_information", f"matching row has no {field} value")
+ping_floyd.domain.NoUniqueAnswer: matching row has no price value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 51, in test_zero_quantity_makes_unknown_finite_price_irrelevant
+    self.fail(f"Zero times any unknown finite price contributes exactly zero: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Zero times any unknown finite price contributes exactly zero: matching row has no price value
+
+======================================================================
+FAIL: test_unexplained_total_tokens_are_not_silently_underbilled (test_review_workflow.IndependentTransportContracts.test_unexplained_total_tokens_are_not_silently_underbilled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_workflow.py", line 160, in test_unexplained_total_tokens_are_not_silently_underbilled
+    self.assertGreaterEqual(prompt + 10 * completion, 1300,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            "100 additional tokens must be accounted for or the usage rejected")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 300 not greater than or equal to 1300 : 100 additional tokens must be accounted for or the usage rejected
+
+======================================================================
+FAIL: test_complete_bounded_proof_is_not_rejected_by_parity_gate (test_review_workflow.IndependentWorkflowContracts.test_complete_bounded_proof_is_not_rejected_by_parity_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/review-tests/test_review_workflow.py", line 131, in test_complete_bounded_proof_is_not_rejected_by_parity_gate
+    self.assertTrue((directory / "answer.txt").exists(), str(events))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [{'event': 'run_start', 'tasks': 1, 'model': 'qwen3.8-27b-noreason', 'budget_tenths': 100000, 'agent_only': False, 'offline': False, 'workers': 1, 'tool_profile': 'compact', 'queue': 'value', 'fixed_estimates': False, 'calibrated': False, 'repair_limit': 3, 'retry_share': 10}, {'event': 'deferred', 'task': 'math', 'kind': 'math'}, {'event': 'local_end', 'submitted': 0, 'deferred': 1}, {'event': 'fallback_start', 'task': 'math', 'estimated_tenths': 3564, 'cap_tenths': 32000, 'model': 'qwen3.8-27b-noreason'}, {'event': 'llm', 'task': 'math', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6456, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 99500, 'in_flight_tenths': 0}, {'event': 'tool', 'task': 'math', 'step': 1, 'tool': 'finite_search', 'args_preview': '{"domains":{"x":[0,10]},"constraints":["x%2=1","(x+1)//3=0"],"target":"x","mode":"unique"}'}, {'event': 'llm', 'task': 'math', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6675, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 99000, 'in_flight_tenths': 0}, {'event': 'tool_error', 'task': 'math', 'step': 2, 'kind': 'ValueError', 'detail': 'answer must match observed evidence or a computed tool result'}, {'event': 'llm', 'task': 'math', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6756, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 98500, 'in_flight_tenths': 0}, {'event': 'skip', 'task': 'math', 'reason': 'scripted responses exhausted'}, {'event': 'task', 'task': 'math', 'kind': 'math', 'reward': 5, 'saved': False, 'route': 'underdetermined', 'phase': 'model', 'cost_tenths': 1500, 'elapsed_s': 0.008}, {'event': 'run_end', 'submitted': 0, 'submitted_reward': 0, 'spent_tenths': 1500, 'unknown_reserved_tenths': 0, 'remaining_tenths': 98500, 'model_attempted': 1, 'deferred_unattempted': 0, 'model_retried': 0, 'unvisited': 0, 'cancelled': 0, 'stop_reason': None, 'out_complete': True}]
+
+======================================================================
+FAIL: test_field_alias_reaches_model_fallback (test_review_workflow.IndependentWorkflowContracts.test_field_alias_reaches_model_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/review-tests/test_review_workflow.py", line 82, in test_field_alias_reaches_model_fallback
+    self.assertTrue((directory / "answer.txt").exists(), str(events))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [{'event': 'run_start', 'tasks': 1, 'model': 'qwen3.8-27b-noreason', 'budget_tenths': 100000, 'agent_only': False, 'offline': False, 'workers': 1, 'tool_profile': 'compact', 'queue': 'value', 'fixed_estimates': False, 'calibrated': False, 'repair_limit': 3, 'retry_share': 10}, {'event': 'skip', 'task': 'search', 'category': 'missing_information', 'reason': 'no Born for Ada Reed'}, {'event': 'task', 'task': 'search', 'kind': 'search', 'reward': 5, 'saved': False, 'route': 'proven_skip', 'phase': 'local', 'cost_tenths': 0, 'elapsed_s': 0.006}, {'event': 'local_end', 'submitted': 0, 'deferred': 0}, {'event': 'run_end', 'submitted': 0, 'submitted_reward': 0, 'spent_tenths': 0, 'unknown_reserved_tenths': 0, 'remaining_tenths': 100000, 'model_attempted': 0, 'deferred_unattempted': 0, 'model_retried': 0, 'unvisited': 0, 'cancelled': 0, 'stop_reason': None, 'out_complete': True}]
+
+======================================================================
+FAIL: test_narrative_birth_year_is_valid_read_evidence (test_review_workflow.IndependentWorkflowContracts.test_narrative_birth_year_is_valid_read_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/review-tests/test_review_workflow.py", line 119, in test_narrative_birth_year_is_valid_read_evidence
+    self.assertTrue((directory / "answer.txt").exists(), str(events))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [{'event': 'run_start', 'tasks': 1, 'model': 'qwen3.8-27b-noreason', 'budget_tenths': 100000, 'agent_only': False, 'offline': False, 'workers': 1, 'tool_profile': 'compact', 'queue': 'value', 'fixed_estimates': False, 'calibrated': False, 'repair_limit': 3, 'retry_share': 10}, {'event': 'deferred', 'task': 'search', 'kind': 'search'}, {'event': 'local_end', 'submitted': 0, 'deferred': 1}, {'event': 'fallback_start', 'task': 'search', 'estimated_tenths': 5026, 'cap_tenths': 32000, 'model': 'qwen3.8-27b-noreason'}, {'event': 'llm', 'task': 'search', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6184, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 99500, 'in_flight_tenths': 0}, {'event': 'tool', 'task': 'search', 'step': 1, 'tool': 'read', 'args_preview': '{"file":"biography.txt","start":1,"lines":50}'}, {'event': 'llm', 'task': 'search', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6354, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 99000, 'in_flight_tenths': 0}, {'event': 'tool_error', 'task': 'search', 'step': 2, 'kind': 'ValueError', 'detail': 'answer must match observed evidence or a computed tool result'}, {'event': 'llm', 'task': 'search', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6435, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 98500, 'in_flight_tenths': 0}, {'event': 'skip', 'task': 'search', 'reason': 'scripted responses exhausted'}, {'event': 'task', 'task': 'search', 'kind': 'search', 'reward': 5, 'saved': False, 'route': 'underdetermined', 'phase': 'model', 'cost_tenths': 1500, 'elapsed_s': 0.008}, {'event': 'run_end', 'submitted': 0, 'submitted_reward': 0, 'spent_tenths': 1500, 'unknown_reserved_tenths': 0, 'remaining_tenths': 98500, 'model_attempted': 1, 'deferred_unattempted': 0, 'model_retried': 0, 'unvisited': 0, 'cancelled': 0, 'stop_reason': None, 'out_complete': True}]
+
+======================================================================
+FAIL: test_retry_after_rate_limit_does_not_disable_the_entire_run (test_review_workflow.IndependentWorkflowContracts.test_retry_after_rate_limit_does_not_disable_the_entire_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/review-tests/test_review_workflow.py", line 106, in test_retry_after_rate_limit_does_not_disable_the_entire_run
+    self.assertTrue((directory / "answer.txt").exists(), str(events))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [{'event': 'run_start', 'tasks': 1, 'model': 'qwen3.8-27b-noreason', 'budget_tenths': 100000, 'agent_only': False, 'offline': False, 'workers': 1, 'tool_profile': 'compact', 'queue': 'value', 'fixed_estimates': False, 'calibrated': False, 'repair_limit': 3, 'retry_share': 10}, {'event': 'deferred', 'task': 'math', 'kind': 'math'}, {'event': 'local_end', 'submitted': 0, 'deferred': 1}, {'event': 'fallback_start', 'task': 'math', 'estimated_tenths': 3518, 'cap_tenths': 32000, 'model': 'qwen3.8-27b-noreason'}, {'event': 'llm', 'task': 'math', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 5588, 'status': 429, 'error': 'ProxyError', 'unknown_reserved_tenths': 5588, 'elapsed_s': 0.0, 'remaining_tenths': 94412, 'in_flight_tenths': 0}, {'event': 'proxy_stop', 'task': 'math', 'reason': 'proxy HTTP 429'}, {'event': 'task', 'task': 'math', 'kind': 'math', 'reward': 5, 'saved': False, 'route': 'proxy_error', 'phase': 'model', 'cost_tenths': 0, 'elapsed_s': 0.006}, {'event': 'run_end', 'submitted': 0, 'submitted_reward': 0, 'spent_tenths': 0, 'unknown_reserved_tenths': 5588, 'remaining_tenths': 94412, 'model_attempted': 1, 'deferred_unattempted': 0, 'model_retried': 0, 'unvisited': 0, 'cancelled': 0, 'stop_reason': None, 'out_complete': True}]
+
+======================================================================
+FAIL: test_search_target_can_follow_more_than_two_links (test_review_workflow.IndependentWorkflowContracts.test_search_target_can_follow_more_than_two_links)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/review-tests/test_review_workflow.py", line 149, in test_search_target_can_follow_more_than_two_links
+    self.assertTrue((directory / "answer.txt").exists(), str(events))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [{'event': 'run_start', 'tasks': 1, 'model': 'qwen3.8-27b-noreason', 'budget_tenths': 100000, 'agent_only': False, 'offline': False, 'workers': 1, 'tool_profile': 'compact', 'queue': 'value', 'fixed_estimates': False, 'calibrated': False, 'repair_limit': 3, 'retry_share': 10}, {'event': 'deferred', 'task': 'search', 'kind': 'search'}, {'event': 'local_end', 'submitted': 0, 'deferred': 1}, {'event': 'fallback_start', 'task': 'search', 'estimated_tenths': 5064, 'cap_tenths': 32000, 'model': 'qwen3.8-27b-noreason'}, {'event': 'llm', 'task': 'search', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6102, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 99500, 'in_flight_tenths': 0}, {'event': 'tool', 'task': 'search', 'step': 1, 'tool': 'lookup', 'args_preview': '{"entity":"Ada Reed","fields":["Mentor","Mentor","Mentor"]}'}, {'event': 'llm', 'task': 'search', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6265, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 99000, 'in_flight_tenths': 0}, {'event': 'tool_error', 'task': 'search', 'step': 2, 'kind': 'ValueError', 'detail': 'use an entity named in the question or linked in the supplied records', 'action_preview': '{"tool":"lookup","args":{"entity":"Dan Reed","fields":["Employer"]},"final":true}'}, {'event': 'llm', 'task': 'search', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 6354, 'input_tokens': 100, 'output_tokens': 40, 'reasoning_tokens': None, 'cost_tenths': 500, 'finish_reason': 'stop', 'elapsed_s': 0.0, 'remaining_tenths': 98500, 'in_flight_tenths': 0}, {'event': 'skip', 'task': 'search', 'reason': 'scripted responses exhausted'}, {'event': 'task', 'task': 'search', 'kind': 'search', 'reward': 5, 'saved': False, 'route': 'underdetermined', 'phase': 'model', 'cost_tenths': 1500, 'elapsed_s': 0.007}, {'event': 'run_end', 'submitted': 0, 'submitted_reward': 0, 'spent_tenths': 1500, 'unknown_reserved_tenths': 0, 'remaining_tenths': 98500, 'model_attempted': 1, 'deferred_unattempted': 0, 'model_retried': 0, 'unvisited': 0, 'cancelled': 0, 'stop_reason': None, 'out_complete': True}]
+
+======================================================================
+FAIL: test_truncation_gets_a_bounded_retry_when_budget_is_available (test_review_workflow.IndependentWorkflowContracts.test_truncation_gets_a_bounded_retry_when_budget_is_available)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/local/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/review-tests/test_review_workflow.py", line 95, in test_truncation_gets_a_bounded_retry_when_budget_is_available
+    self.assertTrue((directory / "answer.txt").exists(), str(events))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : [{'event': 'run_start', 'tasks': 1, 'model': 'qwen3.8-27b-noreason', 'budget_tenths': 100000, 'agent_only': False, 'offline': False, 'workers': 1, 'tool_profile': 'compact', 'queue': 'value', 'fixed_estimates': False, 'calibrated': False, 'repair_limit': 3, 'retry_share': 10}, {'event': 'deferred', 'task': 'math', 'kind': 'math'}, {'event': 'local_end', 'submitted': 0, 'deferred': 1}, {'event': 'fallback_start', 'task': 'math', 'estimated_tenths': 3518, 'cap_tenths': 32000, 'model': 'qwen3.8-27b-noreason'}, {'event': 'llm', 'task': 'math', 'model': 'qwen3.8-27b-noreason', 'max_output': 450, 'reserved_tenths': 5588, 'input_tokens': 100, 'output_tokens': 450, 'reasoning_tokens': None, 'cost_tenths': 4600, 'finish_reason': 'length', 'elapsed_s': 0.0, 'remaining_tenths': 95400, 'in_flight_tenths': 0}, {'event': 'proxy_stop', 'task': 'math', 'reason': 'response truncated'}, {'event': 'task', 'task': 'math', 'kind': 'math', 'reward': 5, 'saved': False, 'route': 'proxy_error', 'phase': 'model', 'cost_tenths': 4600, 'elapsed_s': 0.006}, {'event': 'run_end', 'submitted': 0, 'submitted_reward': 0, 'spent_tenths': 4600, 'unknown_reserved_tenths': 0, 'remaining_tenths': 95400, 'model_attempted': 1, 'deferred_unattempted': 0, 'model_retried': 0, 'unvisited': 0, 'cancelled': 0, 'stop_reason': None, 'out_complete': True}]
+
+----------------------------------------------------------------------
+Ran 19 tests in 2.506s
+
+FAILED (failures=16)

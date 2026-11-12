@@ -1,0 +1,81 @@
+{
+  "baseline-100000": {
+    "calls": 205,
+    "weighted_tokens": 21964.7,
+    "unknown_reserved_tokens": 0.0,
+    "ledger_matches": true,
+    "remaining_weighted_tokens": 78035.3,
+    "outcomes": {
+      "correct_answers": 21,
+      "correct_abstentions": 21,
+      "solvable_skipped": 36,
+      "wrong_answers": 19,
+      "false_accepts": 3
+    },
+    "unresolved_routes": {
+      "proven_skip": 3,
+      "underdetermined": 3,
+      "no_progress": 47,
+      "proxy_error": 1,
+      "step_limit": 3
+    }
+  },
+  "baseline-5000": {
+    "calls": 47,
+    "weighted_tokens": 4811.4,
+    "unknown_reserved_tokens": 0.0,
+    "ledger_matches": true,
+    "remaining_weighted_tokens": 188.6,
+    "outcomes": {
+      "solvable_skipped": 65,
+      "correct_abstentions": 23,
+      "wrong_answers": 11,
+      "false_accepts": 1
+    },
+    "unresolved_routes": {
+      "proven_skip": 3,
+      "underdetermined": 2,
+      "no_progress": 12,
+      "budget_or_proxy": 71
+    }
+  },
+  "final-100000": {
+    "calls": 122,
+    "weighted_tokens": 16618.1,
+    "unknown_reserved_tokens": 0.0,
+    "ledger_matches": true,
+    "remaining_weighted_tokens": 83381.9,
+    "outcomes": {
+      "correct_answers": 69,
+      "correct_abstentions": 23,
+      "solvable_skipped": 7,
+      "false_accepts": 1
+    },
+    "unresolved_routes": {
+      "proven_skip": 6,
+      "underdetermined": 5,
+      "no_progress": 18,
+      "workflow_error:ValidationError": 1
+    }
+  },
+  "final-5000": {
+    "calls": 43,
+    "weighted_tokens": 4878.2,
+    "unknown_reserved_tokens": 0.0,
+    "ledger_matches": true,
+    "remaining_weighted_tokens": 121.8,
+    "outcomes": {
+      "solvable_skipped": 53,
+      "correct_abstentions": 24,
+      "correct_answers": 22,
+      "wrong_answers": 1
+    },
+    "unresolved_routes": {
+      "proven_skip": 6,
+      "underdetermined": 4,
+      "no_progress": 1,
+      "budget_or_proxy": 65,
+      "proxy_error": 1
+    }
+  }
+}
