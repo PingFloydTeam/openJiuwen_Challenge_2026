@@ -1,0 +1,128 @@
+test_accepted_fast_repair_respects_explicit_empty_input_contract (test_review_tools.IndependentToolContracts.test_accepted_fast_repair_respects_explicit_empty_input_contract) ... skipped 'requires the actual Linux seccomp worker'
+test_birth_date_must_not_be_submitted_as_birth_year (test_review_tools.IndependentToolContracts.test_birth_date_must_not_be_submitted_as_birth_year) ... FAIL
+test_birth_field_alias_is_not_proof_of_missing_information (test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information) ... FAIL
+test_coding_can_read_its_own_read_only_fixture (test_review_tools.IndependentToolContracts.test_coding_can_read_its_own_read_only_fixture) ... skipped 'requires the actual Linux seccomp worker'
+test_control_exact_arithmetic_and_decimal_aggregation (test_review_tools.IndependentToolContracts.test_control_exact_arithmetic_and_decimal_aggregation) ... ok
+test_direct_shortest_route_does_not_need_an_unrelated_missing_record (test_review_tools.IndependentToolContracts.test_direct_shortest_route_does_not_need_an_unrelated_missing_record) ... FAIL
+test_regular_stdlib_import_is_usable_in_coding_tests (test_review_tools.IndependentToolContracts.test_regular_stdlib_import_is_usable_in_coding_tests) ... skipped 'requires the actual Linux seccomp worker'
+test_runtime_fixture_is_not_a_missing_task_input (test_review_tools.IndependentToolContracts.test_runtime_fixture_is_not_a_missing_task_input) ... FAIL
+test_stateful_counter_examples_are_not_a_logical_contradiction (test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction) ... FAIL
+test_zero_quantity_makes_unknown_finite_price_irrelevant (test_review_tools.IndependentToolContracts.test_zero_quantity_makes_unknown_finite_price_irrelevant) ... FAIL
+
+======================================================================
+FAIL: test_birth_date_must_not_be_submitted_as_birth_year (test_review_tools.IndependentToolContracts.test_birth_date_must_not_be_submitted_as_birth_year)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 81, in test_birth_date_must_not_be_submitted_as_birth_year
+    self.assertIn(solve_fast(task), (None, "1983"), "Extract the year or defer to the model")
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '1983-04-17' not found in (None, '1983') : Extract the year or defer to the model
+
+======================================================================
+FAIL: test_birth_field_alias_is_not_proof_of_missing_information (test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 71, in test_birth_field_alias_is_not_proof_of_missing_information
+    result = solve_fast(task)
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/fast.py", line 452, in solve_fast
+    value = solve_question(task, question)
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/fast.py", line 443, in solve_question
+    return fast_search(task.workspace, question)
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/fast.py", line 409, in fast_search
+    return kb_lookup(kb, match[1], fields, strict=True)
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/tools.py", line 360, in kb_lookup
+    raise NoUniqueAnswer("missing_information", f"no {label} for {current}")
+ping_floyd.domain.NoUniqueAnswer: no Born for Ada Reed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 73, in test_birth_field_alias_is_not_proof_of_missing_information
+    self.fail(f"A known birth year must be solved or deferred, not proven impossible: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: A known birth year must be solved or deferred, not proven impossible: no Born for Ada Reed
+
+======================================================================
+FAIL: test_direct_shortest_route_does_not_need_an_unrelated_missing_record (test_review_tools.IndependentToolContracts.test_direct_shortest_route_does_not_need_an_unrelated_missing_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 60, in test_direct_shortest_route_does_not_need_an_unrelated_missing_record
+    distance = kb_route(root, "A", "B", ["Next", "Backup"], "distance", strict=True)
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/knowledge.py", line 76, in kb_route
+    raise NoUniqueAnswer("missing_information", "a reachable link has no record")
+ping_floyd.domain.NoUniqueAnswer: a reachable link has no record
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 62, in test_direct_shortest_route_does_not_need_an_unrelated_missing_record
+    self.fail(f"The present A -> B edge proves the shortest distance is one: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: The present A -> B edge proves the shortest distance is one: a reachable link has no record
+
+======================================================================
+FAIL: test_runtime_fixture_is_not_a_missing_task_input (test_review_tools.IndependentToolContracts.test_runtime_fixture_is_not_a_missing_task_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 89, in test_runtime_fixture_is_not_a_missing_task_input
+    required_inputs(Path(folder), instruction)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/contracts.py", line 87, in required_inputs
+    raise NoUniqueAnswer("missing_information", f"required input {match[1]} is unavailable") from None
+ping_floyd.domain.NoUniqueAnswer: required input numbers.txt is unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 91, in test_runtime_fixture_is_not_a_missing_task_input
+    self.fail(f"A runtime fixture is part of the function contract, not unavailable evidence: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: A runtime fixture is part of the function contract, not unavailable evidence: required input numbers.txt is unavailable
+
+======================================================================
+FAIL: test_stateful_counter_examples_are_not_a_logical_contradiction (test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 98, in test_stateful_counter_examples_are_not_a_logical_contradiction
+    universal_contract_conflicts(instruction)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/contracts.py", line 39, in universal_contract_conflicts
+    raise NoUniqueAnswer("logical_error", "explicit assertions require different results for the same call")
+ping_floyd.domain.NoUniqueAnswer: explicit assertions require different results for the same call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 100, in test_stateful_counter_examples_are_not_a_logical_contradiction
+    self.fail(f"Sequential calls to an explicitly stateful counter may differ: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Sequential calls to an explicitly stateful counter may differ: explicit assertions require different results for the same call
+
+======================================================================
+FAIL: test_zero_quantity_makes_unknown_finite_price_irrelevant (test_review_tools.IndependentToolContracts.test_zero_quantity_makes_unknown_finite_price_irrelevant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 48, in test_zero_quantity_makes_unknown_finite_price_irrelevant
+    value = db_query(root, "sales.csv", "sum_product", "units",
+                     [["region", "=", "North"]], factor="price")
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/tools.py", line 285, in db_query
+    return run(columns, rows, delimited=True)
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/tools.py", line 245, in run
+    left, right = number(row, column), number(row, factor)
+                                       ~~~~~~^^^^^^^^^^^^^
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/ping_floyd/tools.py", line 203, in number
+    raise NoUniqueAnswer("missing_information", f"matching row has no {field} value")
+ping_floyd.domain.NoUniqueAnswer: matching row has no price value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/egorbulanov/Documents/GitHub/Huawei_hack/openJiuwen_Challenge_2026/tests/test_review_tools.py", line 51, in test_zero_quantity_makes_unknown_finite_price_irrelevant
+    self.fail(f"Zero times any unknown finite price contributes exactly zero: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Zero times any unknown finite price contributes exactly zero: matching row has no price value
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.006s
+
+FAILED (failures=6, skipped=3)

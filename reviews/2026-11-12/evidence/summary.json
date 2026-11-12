@@ -1,0 +1,170 @@
+{
+  "commit": "121f6c14fed39a00ad455d809577f484024b09ab",
+  "runtime": "Linux arm64 / Python 3.13.7 / openJiuwen 0.1.19",
+  "existing_tests": {
+    "total": 75,
+    "passed": 75,
+    "exit_code": 0,
+    "duration_s": 11.688
+  },
+  "new_tests": {
+    "total": 19,
+    "passed": 3,
+    "failed": 16,
+    "exit_code": 1,
+    "duration_s": 2.506,
+    "cases": [
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_accepted_fast_repair_respects_explicit_empty_input_contract",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 126
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_birth_date_must_not_be_submitted_as_birth_year",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 76
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 65
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_coding_can_read_its_own_read_only_fixture",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 116
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_control_exact_arithmetic_and_decimal_aggregation",
+        "outcome": "passed",
+        "file": "tests/test_review_tools.py",
+        "line": 35
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_direct_shortest_route_does_not_need_an_unrelated_missing_record",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 54
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_regular_stdlib_import_is_usable_in_coding_tests",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 103
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_runtime_fixture_is_not_a_missing_task_input",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 83
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 93
+      },
+      {
+        "test": "test_review_tools.IndependentToolContracts.test_zero_quantity_makes_unknown_finite_price_irrelevant",
+        "outcome": "failed",
+        "file": "tests/test_review_tools.py",
+        "line": 43
+      },
+      {
+        "test": "test_review_workflow.IndependentTransportContracts.test_control_reasoning_accounted_once_in_both_usage_shapes",
+        "outcome": "passed",
+        "file": "tests/test_review_workflow.py",
+        "line": 163
+      },
+      {
+        "test": "test_review_workflow.IndependentTransportContracts.test_unexplained_total_tokens_are_not_silently_underbilled",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 154
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_complete_bounded_proof_is_not_rejected_by_parity_gate",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 122
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_control_real_workflow_writes_answer_and_reconciles_usage",
+        "outcome": "passed",
+        "file": "tests/test_review_workflow.py",
+        "line": 67
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_field_alias_reaches_model_fallback",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 75
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_narrative_birth_year_is_valid_read_evidence",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 112
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_retry_after_rate_limit_does_not_disable_the_entire_run",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 99
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_search_target_can_follow_more_than_two_links",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 134
+      },
+      {
+        "test": "test_review_workflow.IndependentWorkflowContracts.test_truncation_gets_a_bounded_retry_when_budget_is_available",
+        "outcome": "failed",
+        "file": "tests/test_review_workflow.py",
+        "line": 85
+      }
+    ]
+  },
+  "scripted_http": {
+    "model": "scripted fixture, NOT NeuralDeep",
+    "tasks": 8,
+    "correct": 8,
+    "score": 20,
+    "max_score": 20,
+    "calls": 10,
+    "input_tokens": 11605,
+    "output_tokens": 362,
+    "reasoning_tokens_included_in_output": 110,
+    "weighted_tokens": 1522.5,
+    "ledger_matches": true,
+    "unknown_reserved_tokens": 0.0
+  },
+  "cold_build": {
+    "target": "bench",
+    "platform": "linux/arm64",
+    "dependency_step_seconds": 1017.3,
+    "image_export_seconds": 16.7,
+    "contest_build_limit_seconds": 1000,
+    "exceeds_limit_in_this_environment": true,
+    "notes": "Dependency download dominated duration. This is an observed local network/build risk, not proof of the jury build duration. Contest target shares exactly this dependency step."
+  },
+  "api_connectivity": {
+    "endpoint": "https://api.neuraldeep.ru/v1/models",
+    "host_default": "20s connection timeout",
+    "host_ipv4": "15s connection timeout",
+    "docker": "12s TLS handshake timeout",
+    "credentials_sent": false,
+    "live_llm_calls_made": 0,
+    "key_validity": "not tested"
+  },
+  "limitations": [
+    "Native Linux arm64 only; linux/amd64 not built/tested.",
+    "Hidden jury cases unavailable.",
+    "New tests are targeted failure cases, not a random accuracy sample."
+  ]
+}

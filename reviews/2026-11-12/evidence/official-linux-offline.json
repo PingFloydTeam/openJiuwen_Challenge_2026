@@ -1,0 +1,101 @@
+{
+  "image_id": "sha256:b29f9b31a4bae844259ce7ef3db8cd2d75bbab7efd65db683d7e90f8c5fb36dd",
+  "image_inspect_size_bytes": 294622850,
+  "contest_image_size_display": "1.39GB",
+  "architecture": "arm64",
+  "live": false,
+  "agent_only": false,
+  "exit_code": 0,
+  "elapsed_s": 2.82,
+  "budget": 5000,
+  "correct": 8,
+  "tasks": 8,
+  "score": 20,
+  "max_score": 20,
+  "llm_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "weighted_tokens": 0.0,
+  "unknown_reserved_tokens": 0.0,
+  "ledger_matches": true,
+  "within_budget": true,
+  "out_matches": true,
+  "protected_changes": [],
+  "modified_files": [
+    "coding_0003/workspace/mylib.py",
+    "coding_0007/workspace/mylib.py"
+  ],
+  "run_end": {
+    "event": "run_end",
+    "submitted": 8,
+    "submitted_reward": 20,
+    "spent_tenths": 0,
+    "unknown_reserved_tenths": 0,
+    "remaining_tenths": 50000,
+    "model_attempted": 0,
+    "deferred_unattempted": 0,
+    "model_retried": 0,
+    "unvisited": 0,
+    "cancelled": 0,
+    "stop_reason": null,
+    "out_complete": true
+  },
+  "grade": [
+    {
+      "task": "coding_0003",
+      "correct": true,
+      "actual": "DONE",
+      "expected": "tests_pass",
+      "reward": 2
+    },
+    {
+      "task": "coding_0007",
+      "correct": true,
+      "actual": "DONE",
+      "expected": "tests_pass",
+      "reward": 2
+    },
+    {
+      "task": "data_analysis_0002",
+      "correct": true,
+      "actual": "158",
+      "expected": "158",
+      "reward": 3
+    },
+    {
+      "task": "data_analysis_0006",
+      "correct": true,
+      "actual": "284",
+      "expected": "284",
+      "reward": 3
+    },
+    {
+      "task": "math_0000",
+      "correct": true,
+      "actual": "389",
+      "expected": "389",
+      "reward": 5
+    },
+    {
+      "task": "math_0004",
+      "correct": true,
+      "actual": "1735",
+      "expected": "1735",
+      "reward": 2
+    },
+    {
+      "task": "search_0001",
+      "correct": true,
+      "actual": "1983",
+      "expected": "1983",
+      "reward": 1
+    },
+    {
+      "task": "search_0005",
+      "correct": true,
+      "actual": "Osaka",
+      "expected": "Osaka",
+      "reward": 2
+    }
+  ]
+}

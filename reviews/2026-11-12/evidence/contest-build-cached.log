@@ -1,0 +1,47 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 623B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.13.7-slim-bookworm@sha256:adafcc17694d715c905b4c7bebd96907a1fd5cf183395f0ebc4d3428bd22d92d
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 137B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 196.55kB done
+#4 DONE 0.0s
+
+#5 [runtime 1/6] FROM docker.io/library/python:3.13.7-slim-bookworm@sha256:adafcc17694d715c905b4c7bebd96907a1fd5cf183395f0ebc4d3428bd22d92d
+#5 resolve docker.io/library/python:3.13.7-slim-bookworm@sha256:adafcc17694d715c905b4c7bebd96907a1fd5cf183395f0ebc4d3428bd22d92d done
+#5 DONE 0.0s
+
+#6 [runtime 2/6] WORKDIR /app
+#6 CACHED
+
+#7 [runtime 3/6] COPY requirements.txt .
+#7 CACHED
+
+#8 [runtime 4/6] RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt     && python -c "import ctypes; ctypes.CDLL('libseccomp.so.2')"
+#8 CACHED
+
+#9 [runtime 5/6] COPY run_agent.py .
+#9 CACHED
+
+#10 [runtime 6/6] COPY ping_floyd/ ping_floyd/
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers 0.0s done
+#11 exporting manifest sha256:2cbabd335cd666e242ea2dc43059f3f3a8f4fd4c23484d8fb407c6633546fdab done
+#11 exporting config sha256:6664072e98553c9abb0d40d863b31c2c624e4541493fbe1c299abaf6fd1b4186 done
+#11 exporting attestation manifest sha256:30b812e06abf96b1d592783bcd85145df9c4283d7d66a5834e42aa579337d41f done
+#11 exporting manifest list sha256:b29f9b31a4bae844259ce7ef3db8cd2d75bbab7efd65db683d7e90f8c5fb36dd done
+#11 naming to docker.io/library/ping-floyd:review-contest done
+#11 unpacking to docker.io/library/ping-floyd:review-contest 0.0s done
+#11 DONE 0.1s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/mhdiaxem3bv2pcpbmd9g0dcne
