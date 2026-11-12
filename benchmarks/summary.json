@@ -1,0 +1,240 @@
+{
+  "seed": 871293,
+  "environment": "macOS sandbox adapter",
+  "tasks": 100,
+  "unsolvable": 24,
+  "runs": {
+    "baseline-100000": {
+      "budget": 100000,
+      "model": "qwen3.8-27b-noreason",
+      "workers": 1,
+      "weighted_tokens": 21964.7,
+      "unknown_reserved_tokens": 0.0,
+      "llm_calls": 205,
+      "grade": {
+        "score": 62,
+        "max_score": 233,
+        "checks_passed": 42,
+        "checks_total": 100,
+        "correct_answers": 21,
+        "solvable_skipped": 36,
+        "wrong_answers": 19,
+        "correct_abstentions": 21,
+        "false_accepts": 3,
+        "by_type": {
+          "coding": {
+            "correct_answers": 19,
+            "solvable_skipped": 0,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "data_analysis": {
+            "correct_answers": 2,
+            "solvable_skipped": 14,
+            "wrong_answers": 3,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "math": {
+            "correct_answers": 0,
+            "solvable_skipped": 10,
+            "wrong_answers": 9,
+            "correct_abstentions": 3,
+            "false_accepts": 3
+          },
+          "search": {
+            "correct_answers": 0,
+            "solvable_skipped": 12,
+            "wrong_answers": 7,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          }
+        },
+        "by_split": {
+          "hard": {
+            "correct_answers": 21,
+            "solvable_skipped": 36,
+            "wrong_answers": 19,
+            "correct_abstentions": 21,
+            "false_accepts": 3
+          }
+        }
+      }
+    },
+    "final-100000": {
+      "budget": 100000,
+      "model": "qwen3.8-27b-noreason",
+      "workers": 1,
+      "weighted_tokens": 16618.1,
+      "unknown_reserved_tokens": 0.0,
+      "llm_calls": 122,
+      "grade": {
+        "score": 219,
+        "max_score": 233,
+        "checks_passed": 92,
+        "checks_total": 100,
+        "correct_answers": 69,
+        "solvable_skipped": 7,
+        "wrong_answers": 0,
+        "correct_abstentions": 23,
+        "false_accepts": 1,
+        "by_type": {
+          "coding": {
+            "correct_answers": 19,
+            "solvable_skipped": 0,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "data_analysis": {
+            "correct_answers": 15,
+            "solvable_skipped": 4,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "math": {
+            "correct_answers": 18,
+            "solvable_skipped": 1,
+            "wrong_answers": 0,
+            "correct_abstentions": 5,
+            "false_accepts": 1
+          },
+          "search": {
+            "correct_answers": 17,
+            "solvable_skipped": 2,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          }
+        },
+        "by_split": {
+          "hard": {
+            "correct_answers": 69,
+            "solvable_skipped": 7,
+            "wrong_answers": 0,
+            "correct_abstentions": 23,
+            "false_accepts": 1
+          }
+        }
+      }
+    },
+    "baseline-5000": {
+      "budget": 5000,
+      "model": "qwen3.8-27b-noreason",
+      "workers": 1,
+      "weighted_tokens": 4811.4,
+      "unknown_reserved_tokens": 0.0,
+      "llm_calls": 47,
+      "grade": {
+        "score": 0,
+        "max_score": 233,
+        "checks_passed": 23,
+        "checks_total": 100,
+        "correct_answers": 0,
+        "solvable_skipped": 65,
+        "wrong_answers": 11,
+        "correct_abstentions": 23,
+        "false_accepts": 1,
+        "by_type": {
+          "coding": {
+            "correct_answers": 0,
+            "solvable_skipped": 19,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "data_analysis": {
+            "correct_answers": 0,
+            "solvable_skipped": 16,
+            "wrong_answers": 3,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "math": {
+            "correct_answers": 0,
+            "solvable_skipped": 11,
+            "wrong_answers": 8,
+            "correct_abstentions": 5,
+            "false_accepts": 1
+          },
+          "search": {
+            "correct_answers": 0,
+            "solvable_skipped": 19,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          }
+        },
+        "by_split": {
+          "hard": {
+            "correct_answers": 0,
+            "solvable_skipped": 65,
+            "wrong_answers": 11,
+            "correct_abstentions": 23,
+            "false_accepts": 1
+          }
+        }
+      }
+    },
+    "final-5000": {
+      "budget": 5000,
+      "model": "qwen3.8-27b-noreason",
+      "workers": 1,
+      "weighted_tokens": 4878.2,
+      "unknown_reserved_tokens": 0.0,
+      "llm_calls": 43,
+      "grade": {
+        "score": 90,
+        "max_score": 233,
+        "checks_passed": 46,
+        "checks_total": 100,
+        "correct_answers": 22,
+        "solvable_skipped": 53,
+        "wrong_answers": 1,
+        "correct_abstentions": 24,
+        "false_accepts": 0,
+        "by_type": {
+          "coding": {
+            "correct_answers": 0,
+            "solvable_skipped": 19,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "data_analysis": {
+            "correct_answers": 9,
+            "solvable_skipped": 10,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "math": {
+            "correct_answers": 13,
+            "solvable_skipped": 5,
+            "wrong_answers": 1,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          },
+          "search": {
+            "correct_answers": 0,
+            "solvable_skipped": 19,
+            "wrong_answers": 0,
+            "correct_abstentions": 6,
+            "false_accepts": 0
+          }
+        },
+        "by_split": {
+          "hard": {
+            "correct_answers": 22,
+            "solvable_skipped": 53,
+            "wrong_answers": 1,
+            "correct_abstentions": 24,
+            "false_accepts": 0
+          }
+        }
+      }
+    }
+  }
+}
