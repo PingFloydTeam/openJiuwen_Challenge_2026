@@ -1,0 +1,21 @@
+{
+  "run_url": "https://github.com/PingFloydTeam/openJiuwen_Challenge_2026/actions/runs/43463298827",
+  "commit": "5a7e9296bdfd73f527b92e8ce0fde1677c12d0d8",
+  "conclusion": "success",
+  "architecture": "amd64",
+  "runner": "ubuntu-24.04",
+  "cpu_limit": 2,
+  "build_elapsed_seconds": 74,
+  "tests_passed": 121,
+  "tests_elapsed_seconds": 22.005,
+  "image_docker_display": "911MB",
+  "image_below_4000000000_bytes": true,
+  "smoke_budgets": [
+    0,
+    137,
+    17500,
+    250000
+  ],
+  "api_calls": 0,
+  "contest_image_id": "sha256:208859566ab33e1b442feacd5f2a28cf80ecd8f72c7b5b91713cc4d77b105017"
+}
