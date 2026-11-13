@@ -18,6 +18,7 @@ docker build -t ping-floyd:contest .
 : "${TASKS:?Set the absolute task directory}"
 : "${BUDGET:?Pass the budget supplied for this run}"
 mkdir -p "$PWD/out"
+chmod 777 "$PWD/out"
 
 docker run --rm --network hack-net \
   -e LLM_BASE_URL -e LLM_API_KEY -e BUDGET \
@@ -29,7 +30,7 @@ docker run --rm --network hack-net \
   ping-floyd:contest
 ```
 
-Совместим и вариант из регламента с `--workdir /app --entrypoint python`, после имени образа: `/app/run_agent.py --tasks-dir /data/tasks`. В этом варианте также нужно передать `-e BUDGET` и, для общего файла, `-e OUT` с writable mount. `HOME=/tmp` уже установлен в образе.
+Совместим и вариант из регламента с `--workdir /app --entrypoint python`, после имени образа: `/app/run_agent.py --tasks-dir /data/tasks`. В этом варианте также нужно передать `-e BUDGET` и, для общего файла, `-e OUT` с writable mount. `HOME=/tmp` уже установлен в образе. Каталоги задач должны быть доступны контейнеру на запись (владелец root либо подходящие права), как обещано организаторами: при `--cap-drop ALL` root не обходит чужие права доступа.
 
 | Переменная / параметр | Значение |
 |---|---|

@@ -14,8 +14,11 @@ def smoke(image, output, cpus=4):
     for budget,override in [(0,False),(137,True),(17500,False),(250000,True)]:
         root=output/str(budget);tasks=root/'tasks collection';out=root/'output directory'
         tasks.mkdir(parents=True);out.mkdir()
+        # Match the organizer promise: mounts writable even with cap-drop ALL.
+        tasks.chmod(0o777);out.chmod(0o777)
         for name,instruction,reward in [('a','Calculate 2+3.',1),('b','Calculate 6*7.',2)]:
             (tasks/name).mkdir()
+            (tasks/name).chmod(0o777)
             (tasks/name/'task.json').write_text(json.dumps({'task_id':name,'task_type':'math',
                 'instruction':instruction,'reward':reward,'check':'exact_int'}))
         protected={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in tasks.glob('*/task.json')}
@@ -30,10 +33,10 @@ def smoke(image, output, cpus=4):
         if budget==137:cmd+=['--budget','100000']
         done=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=60)
         (root/'run.log').write_text(done.stdout)
+        assert done.returncode==0,(budget,done.returncode,done.stdout[-6000:])
         events=[json.loads(l) for l in done.stdout.splitlines() if l.startswith('{')]
         start=next(e for e in events if e.get('event')=='run_start')
         end=next(e for e in events if e.get('event')=='run_end')
-        assert done.returncode==0,(budget,done.returncode)
         assert start['budget_tenths']==budget*10,(budget,start)
         assert end['spent_tenths']==end['unknown_reserved_tenths']==0
         assert end['remaining_tenths']==budget*10 and end['submitted']==2 and end['out_complete']

@@ -63,7 +63,7 @@
   "bench/review_checks.py": "ec9b35907d431462d8931d4855070c028087440583ec6675ab3d3e2dc98a208c",
   "bench/robustness.py": "87942266a3f3c9fb326cc5c8c668531f5564cf5ceb69c8559ee7e9a5ae362270",
   "bench/submission_checks.py": "e1a9cb2f81467d5c53ae4e9817e954e7e168c1f64a472b3a26608f01215557dd",
-  "bench/submission_smoke.py": "262bb5ea8773d61ff7dbb0b2311e0339abf3ad7aa743c21bb32daaf64c2ecdbb",
+  "bench/submission_smoke.py": "8c4f21b5130ac969ee08d65d771148f039fcb3c73ae8eb2ba7221e5c247dab45",
   "bench/suite.py": "9323faad17b812b9825fedca3e587f143f53c275e2caaa57ea2a85aa0245da4c",
   "bench/tool_routing.py": "66ffc7a683ca4f89fbde67070e1f93bc3b4b1efc4ebcc005a4c9dd6ab731e5c6",
   "bench/transfer.py": "6a0923fc2c7be7162937d16eaff6592c3f435630abfe7728e534417257d9c9f5",
