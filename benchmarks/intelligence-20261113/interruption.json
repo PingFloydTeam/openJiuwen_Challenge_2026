@@ -1,0 +1,8 @@
+{
+  "status": "incomplete_docker_unavailable_cause_unknown",
+  "known_weighted_tokens": 580.4,
+  "run_end_present": false,
+  "pending_request_usage_unknown": true,
+  "next_run": "confirmation-100000-rerun/candidate",
+  "note": "Original attempt preserved; rerun starts from pristine tasks and a fresh full budget, reported separately."
+}

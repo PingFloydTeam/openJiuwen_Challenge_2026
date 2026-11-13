@@ -23,9 +23,12 @@ from .contracts import required_inputs, universal_contract_conflicts
 from .domain import InvalidInput, NoUniqueAnswer, atomic_write, files, local_directory
 from .exact_tasks import elapsed_time, integer_inverse, interval_coverage, urn_probability
 from .finite import finite_search
+from .intent import symbolic_goal, explicit_equations, check_goal, bounded_inverse_evidence
+from .memory import TaskMemory
 from .records import records_catalog, records_query
 from .pipeline import record_plan
 from .fast import solve_fast
+from .facts import project_fact
 from .knowledge import kb_route, kb_select
 from .proxy import BudgetStop, ProxyError
 from .repair import coding_blocker, try_repair
@@ -88,7 +91,7 @@ TOOL_ARGS = {
     "linked_fact": 'file (CSV/TSV index), filters {column:exact_value}, path_column, field (answer field in TXT documents). Follow ALL matching rows; return the unique final fact or reject conflicts.',
     "finite_search": 'domains {variable:[inclusive_low,inclusive_high]}, constraints ["x+y=8","x%2==0",...], target (expression), mode (unique/count/min/max/sum). Affine equalities are eliminated first, then exact enumeration of <=100000 FREE assignments; huge original Cartesian domains are OK. Bounds MUST come from the task; never invent bounds for unbounded problems. Comparisons, and/or/not, + - * / // % ** are supported.',
     "records": 'file (JSON/JSONL), path (pointer to records; default root), filters {pointer:exact_value}, op (describe/unique/count/count_distinct/sum/argmin/argmax), field (pointer to RETURNED value), order_by (pointer to RANKING value for argmin/argmax). Nested fields: /person/id; escape ~ as ~0 and / as ~1. unique checks agreement of ALL matching values; argmin/argmax check all tied winners.',
-    "record_plan": 'source {file,path (JSON record pointer),numbers:[numeric fields]}, steps IN ORDER: {op:"where",filters:[[field,"=|!=|<|<=|>|>=",value]]}, {op:"latest",by:[group fields],order_by:field} (keeps ALL ties), {op:"join",source:{file,path,numbers},left:field,right:field,prefix:"j",how:"inner|anti"}. Field names or JSON pointers; joined fields /j/name. Terminal op unique/count/count_distinct/sum/sum_product/ratio_sums/argmax_sum/argmin_sum; field, factor for product/ratio, group for grouped extrema. Exact rational arithmetic, unknown selected values rejected. Filter BEFORE aggregate; choose latest/filter order from task. No arbitrary tie-breaking.',
+    "record_plan": 'source {file,path (JSON pointer),types:{field:integer|decimal|date|datetime|identifier}}; numbers:[fields] also accepted. datetime requires UTC offsets, IDs stay strings. steps IN ORDER: {op:"where",filters:[[field,"=|!=|<|<=|>|>=",value]]}, {op:"latest",by:[keys],order_by:field} (keeps ALL ties), {op:"join",source:{file,path,types},left:field,right:field,prefix:"j",how:"inner|anti"}, {op:"group",by:[keys],aggregates:{total:{op:"sum",field:"amount"},n:{op:"count"}}} (sum/count/min/max). Joined fields /j/name. Terminal op unique/count/count_distinct/sum/sum_product/ratio_sums/argmax_sum/argmin_sum/argmax/argmin; field=answer, factor=product/ratio, group=grouped sum winner, order_by=rank for argmax/argmin. Exact fractions, no arbitrary tie-break. Preserve task operation order.',
     "discover": 'names [tool,...]: get argument descriptions',
     "inspect_code": 'file, optional function (qualified name). List Python symbols with lines and signatures, or read one complete named symbol.',
 }
@@ -287,6 +290,21 @@ class Records(ToolInput):
     order_by: str = ""
     limit: int = 3
 
+    @model_validator(mode='before')
+    @classmethod
+    def canonical_fields(cls, data):
+        if not isinstance(data,dict):
+            return data
+        data=dict(data)
+        # Bare identifiers have exactly one meaning: a literal top-level key.
+        # Keep nested/escaped JSON Pointers untouched; never infer nesting.
+        literal=lambda s: '/'+s if isinstance(s,str) and re.fullmatch(r'[A-Za-z_]\w*',s) else s
+        if isinstance(data.get('filters'),dict):
+            data['filters']={literal(k):v for k,v in data['filters'].items()}
+        for key in ('field','order_by'):
+            if key in data:data[key]=literal(data[key])
+        return data
+
 
 class RecordPlan(ToolInput):
     source: dict
@@ -295,6 +313,7 @@ class RecordPlan(ToolInput):
     field: str = ""
     factor: str = ""
     group: str = ""
+    order_by: str = ""
 
     @model_validator(mode="before")
     @classmethod
@@ -304,16 +323,18 @@ class RecordPlan(ToolInput):
             return data
         data = dict(data)
         steps = data.get('steps')
-        terminals = {'unique', 'count', 'count_distinct', 'sum', 'sum_product', 'ratio_sums', 'argmax_sum', 'argmin_sum'}
+        terminals = {'unique', 'count', 'count_distinct', 'sum', 'sum_product', 'ratio_sums', 'argmax_sum', 'argmin_sum', 'argmax', 'argmin'}
         if isinstance(steps, list) and steps and isinstance(steps[-1], dict) and steps[-1].get('op') in terminals:
             last = steps[-1]
-            if set(last) - {'op', 'field', 'factor', 'group'}:
-                raise ValueError('terminal step accepts op,field,factor,group only')
-            for key, value in last.items():
-                if key in data and data[key] != value:
-                    raise ValueError('conflicting terminal operation arguments')
-                data[key] = value
-            data['steps'] = steps[:-1]
+            ranking_stage = last['op'] in {'argmax','argmin'} and ('by' in last or data.get('op',last['op']) != last['op'])
+            if not ranking_stage:
+                if set(last) - {'op', 'field', 'factor', 'group', 'order_by'}:
+                    raise ValueError('terminal step accepts op,field,factor,group,order_by only')
+                for key, value in last.items():
+                    if key in data and data[key] != value:
+                        raise ValueError('conflicting terminal operation arguments')
+                    data[key] = value
+                data['steps'] = steps[:-1]
         source = data.get('source')
         if isinstance(source, dict) and source.get('path') == '$':
             data['source'] = {**source, 'path': ''}
@@ -497,10 +518,10 @@ def matches_fact(field, requested):
         return field == "code" or field.endswith(" code")
     if requested == "city":
         return field in {"city", "headquarters", "headquarters city", "hq city"}
-    return field in {"born", "birth year", "year of birth"}
+    return field in {"born", "birth year", "year of birth", "birth date", "date of birth"}
 
 
-def fact_evidence(name, value, args, subject_files, requested):
+def _fact_evidence(name, value, args, subject_files, requested, question=''):
     if name in {"records", "record_plan"} and args["op"] in {"unique", "argmin", "argmax"}:
         return list(evidence_items(value)) if matches_fact(args["field"].rsplit("/", 1)[-1], requested) else []
     if name == "lookup":
@@ -525,12 +546,23 @@ def fact_evidence(name, value, args, subject_files, requested):
                     results.append(fact[2].strip())
                 elif requested == "code":
                     results.extend(re.findall(r"\b(?:service|permit|contact) code (?:is|was) ([\w-]+)\b", line, re.I))
+                elif requested == 'birth_year':
+                    # Accept only an explicit, affirmative sentence about a named
+                    # entity in this question, never an unrelated number nearby.
+                    for match in re.finditer(r'\b([A-Z][\w-]*(?: [A-Z][\w-]*){0,4}) was born in (\d{4})\b',line):
+                        if re.search(r'(?<!\w)'+re.escape(match[1])+r'(?!\w)',question,re.I):
+                            results.append(match[2])
         return results
     if name == "sql" and args["mode"] == "rows":
         return [str(item).strip() for row in value["rows"]
                 for field, item in zip(value["columns"], row, strict=True)
                 if item is not None and matches_fact(field, requested)]
     return []
+
+
+def fact_evidence(name,value,args,subject_files,requested,question=''):
+    return [projected for raw in _fact_evidence(name,value,args,subject_files,requested,question)
+            if (projected:=project_fact(raw,requested)) is not None]
 
 
 def reject_constant(value):
@@ -596,15 +628,13 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
                    '"integers":{"t":["amount"]},"statement":"SELECT SUM(amount) FROM t"},"final":true}. '
                    'Declare numeric columns for numeric ordering; keep identifiers as text.')
     if "record_plan" in tools:
-        example = ('Use record_plan for exact JSON/CSV selection and aggregates. '
+        example = ('Use record_plan for exact JSON/CSV operations. '
                    'Example: {"tool":"record_plan","args":{"source":{"file":"data.csv","numbers":["revision"]},'
                    '"steps":[{"op":"where","filters":[["region","=","east"]]},'
                    '{"op":"latest","by":["id"],"order_by":"revision"}],"op":"sum_product","field":"price","factor":"units"},"final":true}. '
-                   'For one global maximum use latest with by:[], NOT argmax_sum. '
-                   'To follow a link append {"op":"join","source":{"file":"sites.json"},"left":"site","right":"site","prefix":"j"}; '
-                   'then op:"unique",field:"/j/label" returns the agreed final label. '
-                   'Keep the task\'s operation order; IDs stay text. Exact decimals and fractions are supported; SQL integers are NOT decimals. '
-                   'Terminal aggregate is top-level op/field/factor/group or the LAST steps item.')
+                   'Use types for dates/timezones, never numbers. Ranking stages latest/argmax/argmin retain all tied rows; by:[] means global. '
+                   'Group aggregates create named columns for later filters/joins/ranks. Preserve task operation order and string IDs. '
+                   'Terminal operation is top-level or the LAST step; final:true submits its scalar result.')
     if coding and profile == "body":
         example = ('Example: {"tool":"replace_body","args":{"file":"module.py","function":"inc",'
                    '"body":"return x + 1"}}. Passing tests submit DONE.')
@@ -614,7 +644,13 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
     if coding:
         example += ("\nCheck the complete written contract, including edge cases, required files and contradictions. "
                     "A green public test is only partial evidence. If the existing implementation meets ALL requirements, "
-                    'return {"answer":"DONE","review":"explain why the full contract is satisfied"}. '
+                    'return {"answer":"DONE","review":"explain why the full contract is satisfied",'
+                    '"checks":[{"file":"module.py","function":"f","args":[-1],"expected":0},'
+                    '{"file":"module.py","function":"f","args":[0],"expected":1}]}. '
+                    'An unchanged implementation needs two distinct independently derived checks (one for a zero-argument function). '
+                    'Choose checks from the contract to challenge the source: negative/large integers, duplicates, empty inputs. '
+                    'Do not copy the current implementation or public expected values to derive checks. '
+                    'Edits also accept checks in their args. '
                     "Skip if essential information is absent or requirements conflict.")
     menu = shortlist(task.kind, tools) if profile == "shortlist" else list(tools)
     if profile != 'full' and 'record_plan' in tools:
@@ -623,6 +659,8 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
     system_prefix = (BASE if profile == "full" else COMPACT_BASE) + "\n" + example + "\nTools:\n"
     task_id = task.root.name
     description = task.instruction
+    goal = symbolic_goal(description) if task.kind == 'math' else None
+    required_equations = explicit_equations(description) if goal else ()
     requested = requested_fact(description) if task.kind == "search" else None
     closing = (re.search(r"(?:closing total was|final combined count was|count after trading reported)\s+(\d+)",
                          description, re.I) if "balance" in available else None)
@@ -636,12 +674,14 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
         prompt = system_prefix + "\n".join(f"{name}: {TOOL_ARGS[name]}" for name in names)
         if task.kind == "math":
             prompt += "\nUse exact tools. Include ALL constraints: parity, integer counts, UTC offsets. Never round counts unless asked."
+            if goal:
+                prompt += f'\nVerified requested objective: {goal[1]} of {goal[0]}. Use finite_search or linear with this objective.'
         if task.kind == "data_analysis":
             prompt += "\nCompute aggregates with query/sql/records; file previews cannot confirm totals. For a unique winner retain all ties, never select an arbitrary first row. SQL ignores NULL: unknown input amounts are not zero."
         if closing:
             prompt += "\nThe closing total is an independent constraint. Only a balance result using it can support the final answer."
         if parity:
-            prompt += "\nAn inverse problem with parity requires integer_inverse, including the stated parity. Reversing rounded arithmetic with calc does not prove the original value."
+            prompt += "\nAn inverse needs integer_inverse with parity, or finite_search with the stated original bounds and parity. calc does not prove uniqueness."
         if requested:
             prompt += "\nFinish only with the requested field. Intermediate names or IDs are evidence, not answers."
             if "sql" in names:
@@ -741,7 +781,7 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
         description = coding_context(initial, first=True)
 
     starting = proxy.budget.task_total(task_id)
-    feedback: list[str] = []
+    memory = TaskMemory()
     evidence = set()
     prior_results = {}
     repairs = 0
@@ -749,7 +789,7 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
     for step in range(steps):
         messages = [{"role": "system", "content": system},
                     {"role": "user", "content": description + (
-                        "\nRecent tool results:\n" + "\n".join(feedback[-2:]) if feedback else "")}]
+                        "\nVerified tool state and latest error:\n" + memory.render() if memory.render() else "")}]
         try:
             cap_left = task_cap - (proxy.budget.task_total(task_id) - starting)
             thinking = not proxy.model.endswith("-noreason")
@@ -772,6 +812,16 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
                     review = action.get("review")
                     if (action["answer"] == "DONE" and coding.passed
                             and isinstance(review, str) and len(review.strip()) >= 20):
+                        if not coding.changed:
+                            checks = action.get('checks')
+                            required = 1 if isinstance(checks,list) and checks and all(isinstance(c,dict) and not c.get('args') and not c.get('kwargs') for c in checks) else 2
+                            if not isinstance(checks,list) or len({json.dumps(c,sort_keys=True) for c in checks}) < required:
+                                raise ValueError('unchanged code needs at least two distinct contract-derived checks in the DONE action')
+                            coding.probes.extend(coding.validate_checks(checks))
+                            report = await asyncio.to_thread(coding.test)
+                            if not report['passed']:
+                                description = coding_context(report)
+                                raise ValueError('contract-derived checks failed; repair the implementation')
                         return "DONE", "reviewed_tests"
                     raise ValueError("coding needs passing tests and a review of the full written contract")
                 answer = clean_answer(action["answer"], task.check)
@@ -791,6 +841,7 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
                 system = system_prompt(menu)
                 trace({"event": "tool_menu_expanded", "task": task_id, "reason": "unlisted_tool"})
             args = TOOL_INPUTS[name].model_validate(args).model_dump()
+            check_goal(goal, name, args, required_equations, task.instruction)
             if parity and name == "integer_inverse":
                 residue = int(parity[1].casefold() == "odd")
                 if args["modulus"] == 1:
@@ -825,13 +876,20 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
                 return "DONE", "public_tests"
             if coding and name in {'patch', 'patch_files', 'replace_body'}:
                 description = coding_context(value)
-            observed = (fact_evidence(name, value, args, subject_files, requested) if requested
+            if name == 'lookup' and isinstance(value,str) and args['entity'].strip().casefold() in subject_names:
+                linked=kb_facts(root,value)
+                if linked:
+                    subject_names.add(value.strip().casefold())
+                    subject_files.update(record['file'] for record in linked)
+            observed = (fact_evidence(name, value, args, subject_files, requested, task.instruction) if requested
                         else tool_evidence(name, value, args, subject_files)) if not coding else ()
+            parity_evidence = not parity or name=='integer_inverse' or (name=='finite_search' and
+                bounded_inverse_evidence(task.instruction,args,value,int(parity[1].casefold()=='odd')))
             if task.kind == "data_analysis" and name in {"read", "grep", "schema", "discover"}:
                 observed = ()
             if closing and name != "balance":
                 observed = ()
-            if parity and name != "integer_inverse":
+            if not parity_evidence:
                 observed = ()
             exact_ratio = name in {"query", "record_plan"} and args.get("op") == "ratio_sums"
             if ratio_request and not exact_ratio:
@@ -843,12 +901,17 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
             if json_selection and (name not in {"records", "record_plan"} or args["op"] == "describe"):
                 observed = ()
             can_finish = ((not closing or name == "balance") and (not requested or bool(observed))
-                          and (not parity or name == "integer_inverse")
+                          and parity_evidence
                           and (not ratio_request or exact_ratio)
                           and (not effective_selection or name == "dated_fact")
                           and (not linked_selection or name == "linked_fact")
                           and (not json_selection or name in {"records", "record_plan"} and args["op"] != "describe"))
             if not coding and name in SCALAR_TOOLS and action.get("final") is True and can_finish:
+                if requested:
+                    values=set(observed)
+                    if len(values)!=1:
+                        raise ValueError('requested fact must have one supported projected value')
+                    value=values.pop()
                 return clean_answer(value, task.check), "agent"
             if not coding:
                 evidence.update(observed)
@@ -870,14 +933,17 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
                     message += "\nIntermediate result. Continue to the requested field."
             elif type(value) in (str, int, float):
                 message += '\nIf this is the requested result, submit {"answer":"value"}.'
-            feedback.append(message)
+            memory.success(signature, message)
             stagnant_steps = stagnant_steps + 1 if repeated else 0
         except TOOL_ERRORS as error:
             if len(menu) < len(tools):
                 menu = list(tools)
                 system = system_prompt(menu)
                 trace({"event": "tool_menu_expanded", "task": task_id, "reason": "action_error"})
-            feedback.append(f"Tool/action error: {str(error)[:250]}")
+            status = ('UNDERDETERMINED under the submitted plan. Check its fidelity to the task; '
+                      'if faithful, skip. Do not repeat the same plan.' if isinstance(error, NoUniqueAnswer)
+                      else 'INVALID PLAN: correct the named argument; this is not proof the task is impossible.')
+            memory.failure(f'{status}\n{str(error)[:250]}')
             event = {"event": "tool_error", "task": task_id, "step": step + 1,
                      "kind": type(error).__name__, "detail": str(error)[:500]}
             if isinstance(error, json.JSONDecodeError):

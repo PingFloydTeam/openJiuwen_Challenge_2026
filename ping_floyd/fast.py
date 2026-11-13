@@ -6,6 +6,7 @@ from .algorithms import graph_distance, grid_paths
 from .domain import NoUniqueAnswer, local_file, read_text
 from .constraints import solve_congruences, solve_linear
 from .input_form import canonical_question, unwrap_question
+from .facts import project_fact
 from .knowledge import kb_route, kb_select
 from .structured import inventory_balance, ledger_request, search_request
 from .tools import FACT_LINE, calc, db_query, kb_lookup
@@ -406,7 +407,8 @@ def fast_search(root, question):
         for pattern, fields in SEARCH:
             match = re.fullmatch(pattern, question, re.I)
             if match:
-                return kb_lookup(kb, match[1], fields, strict=True)
+                value = kb_lookup(kb, match[1], fields, strict=True)
+                return project_fact(value,'birth_year') if 'year' in question.casefold() and fields[-1] == 'Born' else value
     match = re.fullmatch(r"What is the ([A-Za-z][\w ]*) recorded in ([\w./-]+\.txt)\?", question)
     if not match and (alternate := re.fullmatch(
             r"(?:Find|Open) ([\w./-]+\.txt) and (?:give|return|report) the value next to its ([A-Za-z][\w ]*) label[.?]",

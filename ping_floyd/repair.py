@@ -107,6 +107,9 @@ def proposed_edit(fn, instruction=""):
     if name == "word_count" and simple_call(value, "len", 1) and named(value.args[0], first):
         return value, f"len({first}.split())"
     if name == "average" and ast.unparse(value) == f"sum({first}) // len({first})":
+        if (re.search(r'\bempty\b|average\(\s*\[\s*\]\s*\)',instruction,re.I)
+                and not flags['empty_mean']):
+            return None  # An unsupported empty-input contract requires model review.
         if flags["average"]:
             result = f"sum({first}) / len({first})"
             if flags["empty_mean"]:

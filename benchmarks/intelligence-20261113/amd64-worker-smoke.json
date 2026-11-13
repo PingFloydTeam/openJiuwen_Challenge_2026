@@ -1,0 +1,1 @@
+{"architecture": "x86_64", "openjiuwen": "0.1.19", "worker": {"passed": false, "isolation_error": true, "output": "test isolation unavailable: seccomp load failed"}}

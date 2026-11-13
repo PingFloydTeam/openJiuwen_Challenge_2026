@@ -1,0 +1,444 @@
+{"event":"run_start","tasks":100,"model":"qwen3.8-27b-noreason","budget_tenths":50000,"agent_only":false,"offline":false,"workers":1,"tool_profile":"compact","queue":"value","fixed_estimates":false,"calibrated":false,"repair_limit":3,"retry_share":10}
+{"event":"deferred","task":"hard_data_analysis_074e927a5cff","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_16462fbb7e41","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_3470f4bec4dd","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_605e495d67f5","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_a6d1f7348c5b","kind":"data_analysis"}
+{"event":"deferred","task":"hard_math_21f27cee67f9","kind":"math"}
+{"event":"deferred","task":"hard_math_3bf93a69ac3d","kind":"math"}
+{"event":"deferred","task":"hard_math_5fa6a0de0d4a","kind":"math"}
+{"event":"deferred","task":"hard_math_9e914bafa9bf","kind":"math"}
+{"event":"deferred","task":"hard_math_b6acd972a203","kind":"math"}
+{"event":"deferred","task":"hard_math_bffaa74070ea","kind":"math"}
+{"event":"deferred","task":"hard_math_eeb12472aea8","kind":"math"}
+{"event":"deferred","task":"hard_search_36f8765f8513","kind":"search"}
+{"event":"deferred","task":"hard_search_3d7ae18fa2b4","kind":"search"}
+{"event":"deferred","task":"hard_search_6dabf87efd14","kind":"search"}
+{"event":"deferred","task":"hard_search_d882c7fb1417","kind":"search"}
+{"event":"deferred","task":"hard_search_f1a8ccefb6aa","kind":"search"}
+{"event":"deferred","task":"hard_data_analysis_09198af1c3f3","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_11709211cb23","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_1c48fac35e00","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_2f338ae81281","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_44b5a91439e5","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_4e74405f7463","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_5ce91a24a342","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_9f747073ab22","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_f67c7993a267","kind":"data_analysis"}
+{"event":"deferred","task":"hard_math_2a2a148adb60","kind":"math"}
+{"event":"deferred","task":"hard_math_5a427a16fa2a","kind":"math"}
+{"event":"deferred","task":"hard_math_5eb76a8a30fe","kind":"math"}
+{"event":"deferred","task":"hard_math_72fa20dbd5c8","kind":"math"}
+{"event":"deferred","task":"hard_math_f1d53adc6686","kind":"math"}
+{"event":"deferred","task":"hard_math_f6f8f1cdb1f1","kind":"math"}
+{"event":"deferred","task":"hard_search_0070c8880627","kind":"search"}
+{"event":"deferred","task":"hard_search_1670231d8501","kind":"search"}
+{"event":"deferred","task":"hard_search_4059371294c6","kind":"search"}
+{"event":"deferred","task":"hard_search_904ef8610ce9","kind":"search"}
+{"event":"deferred","task":"hard_data_analysis_52ad27f94ffa","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_54900c7b2f14","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_6dfcebce6b9e","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_6ecb8cdaf9a3","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_ca97e5daa944","kind":"data_analysis"}
+{"event":"deferred","task":"hard_math_1854cc8a383f","kind":"math"}
+{"event":"deferred","task":"hard_math_9aaa1187644a","kind":"math"}
+{"event":"deferred","task":"hard_search_3385832facc8","kind":"search"}
+{"event":"deferred","task":"hard_search_44c19644105d","kind":"search"}
+{"event":"deferred","task":"hard_search_7f1c2713b1a3","kind":"search"}
+{"event":"deferred","task":"hard_search_8e1182159883","kind":"search"}
+{"event":"deferred","task":"hard_search_ed1ab8458cce","kind":"search"}
+{"event":"deferred","task":"hard_data_analysis_4641cbf1c787","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_7d227f37b635","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_e1160800c3c0","kind":"data_analysis"}
+{"event":"deferred","task":"hard_math_19428b419a3f","kind":"math"}
+{"event":"deferred","task":"hard_math_6e2ddbec7533","kind":"math"}
+{"event":"deferred","task":"hard_math_cfb43714d2b7","kind":"math"}
+{"event":"deferred","task":"hard_math_fe33e93ba846","kind":"math"}
+{"event":"deferred","task":"hard_search_36285f82496b","kind":"search"}
+{"event":"deferred","task":"hard_search_640cf52f287b","kind":"search"}
+{"event":"deferred","task":"hard_search_a3ba445512d5","kind":"search"}
+{"event":"deferred","task":"hard_search_b51c8755f6d5","kind":"search"}
+{"event":"deferred","task":"hard_search_c58f0985dfda","kind":"search"}
+{"event":"deferred","task":"hard_data_analysis_7553c2310fbe","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_a7b101fc0fd3","kind":"data_analysis"}
+{"event":"deferred","task":"hard_data_analysis_d956ed9ae02e","kind":"data_analysis"}
+{"event":"deferred","task":"hard_math_4961db90a5fd","kind":"math"}
+{"event":"deferred","task":"hard_math_614884f3b376","kind":"math"}
+{"event":"deferred","task":"hard_math_663c8547eac1","kind":"math"}
+{"event":"deferred","task":"hard_math_745914dfd51a","kind":"math"}
+{"event":"deferred","task":"hard_math_7e192fd8d173","kind":"math"}
+{"event":"deferred","task":"hard_math_928a07bceb67","kind":"math"}
+{"event":"deferred","task":"hard_search_245f92c982b6","kind":"search"}
+{"event":"deferred","task":"hard_search_445e5e568edd","kind":"search"}
+{"event":"deferred","task":"hard_search_63bb97e17965","kind":"search"}
+{"event":"deferred","task":"hard_search_6544b86d74c9","kind":"search"}
+{"event":"deferred","task":"hard_search_7e1b4711ac2e","kind":"search"}
+{"event":"deferred","task":"hard_search_ca8b1761830c","kind":"search"}
+{"event":"deferred","task":"hard_coding_5059b58ed587","kind":"coding"}
+{"event":"deferred","task":"hard_coding_7c83f391aa21","kind":"coding"}
+{"event":"skip","task":"hard_coding_91532d111e91","category":"missing_information","reason":"required input absent_policy.json is unavailable"}
+{"event":"task","task":"hard_coding_91532d111e91","kind":"coding","reward":5,"saved":false,"route":"proven_skip","phase":"local","cost_tenths":0,"elapsed_s":0.004}
+{"event":"skip","task":"hard_coding_94864851aa6c","category":"missing_information","reason":"required input absent_policy.json is unavailable"}
+{"event":"task","task":"hard_coding_94864851aa6c","kind":"coding","reward":5,"saved":false,"route":"proven_skip","phase":"local","cost_tenths":0,"elapsed_s":0.003}
+{"event":"deferred","task":"hard_coding_bc77a78160af","kind":"coding"}
+{"event":"deferred","task":"hard_coding_be021111d401","kind":"coding"}
+{"event":"deferred","task":"hard_coding_ea1c3ae11092","kind":"coding"}
+{"event":"deferred","task":"hard_coding_28ad67b167f2","kind":"coding"}
+{"event":"skip","task":"hard_coding_6477f8cbb7c5","category":"logical_error","reason":"map_40(-2) must equal both 38 and 37; witnesses -2 and -3"}
+{"event":"task","task":"hard_coding_6477f8cbb7c5","kind":"coding","reward":4,"saved":false,"route":"proven_skip","phase":"local","cost_tenths":0,"elapsed_s":0.006}
+{"event":"skip","task":"hard_coding_baf9af58164d","category":"logical_error","reason":"map_48(-2) must equal both 46 and 45; witnesses -2 and -3"}
+{"event":"task","task":"hard_coding_baf9af58164d","kind":"coding","reward":4,"saved":false,"route":"proven_skip","phase":"local","cost_tenths":0,"elapsed_s":0.003}
+{"event":"deferred","task":"hard_coding_41679038656e","kind":"coding"}
+{"event":"deferred","task":"hard_coding_6d427b5d23c6","kind":"coding"}
+{"event":"deferred","task":"hard_coding_702e83c60d80","kind":"coding"}
+{"event":"skip","task":"hard_coding_94884fb9e118","category":"logical_error","reason":"map_37(-2) must equal both 35 and 34; witnesses -2 and -3"}
+{"event":"task","task":"hard_coding_94884fb9e118","kind":"coding","reward":3,"saved":false,"route":"proven_skip","phase":"local","cost_tenths":0,"elapsed_s":0.003}
+{"event":"deferred","task":"hard_coding_99a78bc6b5a3","kind":"coding"}
+{"event":"skip","task":"hard_coding_a87c547ffa7c","category":"missing_information","reason":"required input absent_policy.json is unavailable"}
+{"event":"task","task":"hard_coding_a87c547ffa7c","kind":"coding","reward":3,"saved":false,"route":"proven_skip","phase":"local","cost_tenths":0,"elapsed_s":0.003}
+{"event":"deferred","task":"hard_coding_dcdaa9eae5a9","kind":"coding"}
+{"event":"deferred","task":"hard_coding_4d4729b28deb","kind":"coding"}
+{"event":"deferred","task":"hard_coding_50f235544abd","kind":"coding"}
+{"event":"deferred","task":"hard_coding_efd12960d36e","kind":"coding"}
+{"event":"deferred","task":"hard_coding_4e3aebd2f69d","kind":"coding"}
+{"event":"deferred","task":"hard_coding_9f6f85cc844b","kind":"coding"}
+{"event":"deferred","task":"hard_coding_db7e41624d6d","kind":"coding"}
+{"event":"deferred","task":"hard_coding_ea0b0e7ad729","kind":"coding"}
+{"event":"deferred","task":"hard_coding_feb020e11d79","kind":"coding"}
+{"event":"local_end","submitted":0,"deferred":94}
+{"event":"fallback_start","task":"hard_math_eeb12472aea8","estimated_tenths":3522,"cap_tenths":7749,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_eeb12472aea8","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":6176,"request_sha256":"4878c4d035438ed32444720f43adb9c8248067ecba620540a16c8880060f7444","input_tokens":395,"output_tokens":86,"reasoning_tokens":0,"cost_tenths":1255,"finish_reason":"stop","response_sha256":"e797ad5492a53cef0286bee54098fb5ff0d5c63b1f2df76ada5b40f054b9fff9","elapsed_s":1.693,"remaining_tenths":48745,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_eeb12472aea8","step":1,"kind":"NoUniqueAnswer","detail":"feasible assignments give different target values","action_preview":"{\"tool\":\"finite_search\",\"args\":{\"domains\":{\"u\":[0,57],\"v\":[0,57]},\"constraints\":[\"u+v=57\"],\"target\":\"u\",\"mode\":\"unique\"},\"final\":true}"}
+{"event":"llm","task":"hard_math_eeb12472aea8","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":6386,"request_sha256":"e40453669e64e8104bec9103bc10d45378f9b15f43633127d007cecbe41187cc","input_tokens":441,"output_tokens":9,"reasoning_tokens":0,"cost_tenths":531,"finish_reason":"stop","response_sha256":"a46150223abae76b4d1189100b37914379c03957f371d17e6e46994d81744853","elapsed_s":0.916,"remaining_tenths":48214,"in_flight_tenths":0}
+{"event":"skip","task":"hard_math_eeb12472aea8","reason":"missing fact or contradiction"}
+{"event":"task","task":"hard_math_eeb12472aea8","kind":"math","reward":5,"saved":false,"route":"underdetermined","phase":"model","cost_tenths":1786,"elapsed_s":2.626}
+{"event":"fallback_start","task":"hard_math_b6acd972a203","estimated_tenths":3186,"cap_tenths":7009,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_b6acd972a203","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":6189,"request_sha256":"a0e793dc3ec80bc415dd13165b4b0b0601b56890f26fe410b2a154beda8c32a5","input_tokens":406,"output_tokens":40,"reasoning_tokens":0,"cost_tenths":806,"finish_reason":"stop","response_sha256":"0b86575f2b492467fbbd74e767925b035c2ba412f64fd6ff7f23b7f09899dfc0","elapsed_s":0.97,"remaining_tenths":47408,"in_flight_tenths":0}
+{"event":"skip","task":"hard_math_b6acd972a203","reason":"Contradiction: u+v=68 implies 2u+2v=136, but 2u+2v=137 is given."}
+{"event":"task","task":"hard_math_b6acd972a203","kind":"math","reward":5,"saved":false,"route":"underdetermined","phase":"model","cost_tenths":806,"elapsed_s":0.976}
+{"event":"fallback_start","task":"hard_math_bffaa74070ea","estimated_tenths":2773,"cap_tenths":6100,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_bffaa74070ea","model":"qwen3.8-27b-noreason","max_output":439,"reserved_tenths":6097,"request_sha256":"0fa2a87437758f3d5a3a232a02d9550a9caa97ec4e0aa4b410dac90615660b0a","input_tokens":407,"output_tokens":94,"reasoning_tokens":0,"cost_tenths":1347,"finish_reason":"stop","response_sha256":"7ebc9f5dcf92cf9b3cd3b776d0b5d6bbb8e463010fb6604c52795f56e3e8bcdb","elapsed_s":2.712,"remaining_tenths":46061,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_bffaa74070ea","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"w\":[0,20],\"r\":[0,20]},\"constraints\":[\"w+r=20\",\"w%2==1\"],\"target\":\"w*w+r*r\",\"mode\":\"min\"}"}
+{"event":"task","task":"hard_math_bffaa74070ea","kind":"math","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1347,"elapsed_s":2.725}
+{"event":"fallback_start","task":"hard_math_21f27cee67f9","estimated_tenths":2504,"cap_tenths":5508,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_21f27cee67f9","model":"qwen3.8-27b-noreason","max_output":385,"reserved_tenths":5505,"request_sha256":"bb29ab061812ab175a7fb74e8b92a578f21f38630fa717ba58ac79d733bfd689","input_tokens":406,"output_tokens":112,"reasoning_tokens":0,"cost_tenths":1526,"finish_reason":"stop","response_sha256":"8c01cea9b4daa6ae24814816bf81b88fc46994229b93df15c39aeed67beecc29","elapsed_s":1.821,"remaining_tenths":44535,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_21f27cee67f9","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"r\":[0,34],\"u\":[0,34],\"p\":[0,34]},\"constraints\":[\"2*r+3*u+p=34\",\"(r+p)%4==0\"],\"target\":\"1\",\"mode\":\"count\"}"}
+{"event":"task","task":"hard_math_21f27cee67f9","kind":"math","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1526,"elapsed_s":1.845}
+{"event":"fallback_start","task":"hard_math_5fa6a0de0d4a","estimated_tenths":2317,"cap_tenths":5098,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_5fa6a0de0d4a","model":"qwen3.8-27b-noreason","max_output":344,"reserved_tenths":5095,"request_sha256":"7cc78adcba14393ef49c77dd25e227a1cb7c94fcc99feba1d1b5530ba1cbe7bc","input_tokens":408,"output_tokens":118,"reasoning_tokens":0,"cost_tenths":1588,"finish_reason":"stop","response_sha256":"4a2247c74fc2e495568d541d0f7f1639782cb0a6bbb5ccefadf26f560dbc4c5e","elapsed_s":1.411,"remaining_tenths":42947,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_5fa6a0de0d4a","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"w\":[0,17],\"r\":[0,17],\"q\":[0,17]},\"constraints\":[\"2*w + 3*r + q == 17\",\"(w + q) % 4 == 0\"],\"target\":\"1\",\"mode\":\"count\"}"}
+{"event":"task","task":"hard_math_5fa6a0de0d4a","kind":"math","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1588,"elapsed_s":1.427}
+{"event":"fallback_start","task":"hard_math_9e914bafa9bf","estimated_tenths":2181,"cap_tenths":4797,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_9e914bafa9bf","model":"qwen3.8-27b-noreason","max_output":314,"reserved_tenths":4795,"request_sha256":"5da8c7cf3b0471c8753b06a84634940a929c9096a594db18a9374d94dc936204","input_tokens":406,"output_tokens":65,"reasoning_tokens":0,"cost_tenths":1056,"finish_reason":"stop","response_sha256":"c91f16e4873c710c8ca2a1615b427f56e01a035b171cf45063f8e46199d8705a","elapsed_s":1.487,"remaining_tenths":41891,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_9e914bafa9bf","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"w\":[0,17],\"q\":[0,17],\"v\":[0,17]},\"constraints\":[\"2*w+3*q+v=17\",\"(w+v)%2==0\"],\"target\":\"1\",\"mode\":\"count\"}"}
+{"event":"task","task":"hard_math_9e914bafa9bf","kind":"math","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1056,"elapsed_s":1.509}
+{"event":"fallback_start","task":"hard_math_3bf93a69ac3d","estimated_tenths":1978,"cap_tenths":4351,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_3bf93a69ac3d","model":"qwen3.8-27b-noreason","max_output":249,"reserved_tenths":4346,"request_sha256":"74a4f1918ea481c4342d2f43dc6ec05b4b9560fee262fc4a9b7c61c4030d6c85","input_tokens":462,"output_tokens":95,"reasoning_tokens":0,"cost_tenths":1412,"finish_reason":"stop","response_sha256":"940227e6dc5f85d282388009e9b60054962130056744fe4a4937356bf05b2016","elapsed_s":1.558,"remaining_tenths":40479,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_3bf93a69ac3d","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"u\":[0,93],\"w\":[0,93],\"p\":[0,93]},\"constraints\":[\"u+w=31\",\"p=2*u+w\",\"w%4==1\"],\"target\":\"(u+1)*(w+1)/(p+1)\",\"mode\":\"max\"}"}
+{"event":"llm","task":"hard_math_3bf93a69ac3d","model":"qwen3.8-27b-noreason","max_output":82,"reserved_tenths":2934,"request_sha256":"24124526591420b9963f5d3db8525d8d5b18d727b3cfc65849f8a716d3894ce8","input_tokens":561,"output_tokens":11,"reasoning_tokens":0,"cost_tenths":671,"finish_reason":"stop","response_sha256":"42b18741491b63e7f1d622ac4946ada2acaf00160e8bafbc426f7ddb355536c2","elapsed_s":0.596,"remaining_tenths":39808,"in_flight_tenths":0}
+{"event":"task","task":"hard_math_3bf93a69ac3d","kind":"math","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":2083,"elapsed_s":2.171}
+{"event":"fallback_start","task":"hard_math_5a427a16fa2a","estimated_tenths":1981,"cap_tenths":4357,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_5a427a16fa2a","model":"qwen3.8-27b-noreason","max_output":266,"reserved_tenths":4348,"request_sha256":"93d38ce4ff301cdae35ab72ee9d550773726b31a274ba02a7412b06a46f7a4d2","input_tokens":405,"output_tokens":38,"reasoning_tokens":0,"cost_tenths":785,"finish_reason":"stop","response_sha256":"814153265286f945ac555aacb34edd794cf5cc89e44f261b48c9034d1d02b95d","elapsed_s":1.312,"remaining_tenths":39023,"in_flight_tenths":0}
+{"event":"skip","task":"hard_math_5a427a16fa2a","reason":"Contradiction: u+v=19 implies 2u+2v=38, but 2u+2v=39 is given."}
+{"event":"task","task":"hard_math_5a427a16fa2a","kind":"math","reward":4,"saved":false,"route":"underdetermined","phase":"model","cost_tenths":785,"elapsed_s":1.325}
+{"event":"fallback_start","task":"hard_math_2a2a148adb60","estimated_tenths":1748,"cap_tenths":3844,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_2a2a148adb60","model":"qwen3.8-27b-noreason","max_output":215,"reserved_tenths":3839,"request_sha256":"f3526e3b4dfef5522685098eb187984aa34d59f086d4b3062b1991cc8c788273","input_tokens":406,"output_tokens":40,"reasoning_tokens":0,"cost_tenths":806,"finish_reason":"stop","response_sha256":"03348c452d7741dbd9bd297616a23cf804b1620ecd1023b7bc9065756da03bbe","elapsed_s":1.119,"remaining_tenths":38217,"in_flight_tenths":0}
+{"event":"skip","task":"hard_math_2a2a148adb60","reason":"Contradiction: u+v=84 implies 2u+2v=168, but 2u+2v=169 is given."}
+{"event":"task","task":"hard_math_2a2a148adb60","kind":"math","reward":4,"saved":false,"route":"underdetermined","phase":"model","cost_tenths":806,"elapsed_s":1.125}
+{"event":"fallback_start","task":"hard_math_5eb76a8a30fe","estimated_tenths":1567,"cap_tenths":3447,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_5eb76a8a30fe","model":"qwen3.8-27b-noreason","max_output":174,"reserved_tenths":3439,"request_sha256":"2f47fa00c41aa39e572181a7da6afd1967326eb02fd7572acc20b4c042411d7b","input_tokens":413,"output_tokens":19,"reasoning_tokens":0,"cost_tenths":603,"finish_reason":"stop","response_sha256":"9b133527ae2e071eba86b84acd436e3301cbd61230eced0cc45bed9828a27dd1","elapsed_s":0.917,"remaining_tenths":37614,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_5eb76a8a30fe","step":1,"kind":"ValueError","detail":"goal is unique of 3*v+3*q; use constraints and that target, not an unrelated scalar calculation","action_preview":"{\"tool\":\"calc\",\"args\":{\"expr\":\"3*24\"},\"final\":true}"}
+{"event":"llm","task":"hard_math_5eb76a8a30fe","model":"qwen3.8-27b-noreason","max_output":92,"reserved_tenths":2837,"request_sha256":"31a5d2e33a16ccafd3a7908266c7a319eb919335c5f7512462a0bdf756f97b62","input_tokens":462,"output_tokens":64,"reasoning_tokens":0,"cost_tenths":1102,"finish_reason":"stop","response_sha256":"69fb011ec20be5f51202582d255e13c60e954640fa73018b6a40787575a8dca1","elapsed_s":1.228,"remaining_tenths":36512,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_5eb76a8a30fe","step":2,"tool":"finite_search","args_preview":"{\"domains\":{\"v\":[0,72],\"q\":[0,72],\"w\":[0,72]},\"constraints\":[\"v+q=24\",\"w=v+2*q\"],\"target\":\"3*v+3*q\",\"mode\":\"unique\"}"}
+{"event":"task","task":"hard_math_5eb76a8a30fe","kind":"math","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1705,"elapsed_s":2.162}
+{"event":"fallback_start","task":"hard_math_72fa20dbd5c8","estimated_tenths":1601,"cap_tenths":3521,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_72fa20dbd5c8","model":"qwen3.8-27b-noreason","max_output":182,"reserved_tenths":3519,"request_sha256":"fb26329bb18938818cee862bb3bd23c9f65810425f1f29e761b75939abe90019","input_tokens":413,"output_tokens":19,"reasoning_tokens":0,"cost_tenths":603,"finish_reason":"stop","response_sha256":"0748b0a32fd1f58509a4da7bd7e17af55a478794d2ce93a253c39880482d783e","elapsed_s":0.661,"remaining_tenths":35909,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_72fa20dbd5c8","step":1,"kind":"ValueError","detail":"goal is unique of 3*r+3*q; use constraints and that target, not an unrelated scalar calculation","action_preview":"{\"tool\":\"calc\",\"args\":{\"expr\":\"3*27\"},\"final\":true}"}
+{"event":"llm","task":"hard_math_72fa20dbd5c8","model":"qwen3.8-27b-noreason","max_output":100,"reserved_tenths":2917,"request_sha256":"f820f624bba470a88afa6ff50b7e7e45340e6a2da3243c99e2d0307a430fd65f","input_tokens":462,"output_tokens":64,"reasoning_tokens":0,"cost_tenths":1102,"finish_reason":"stop","response_sha256":"74c21f616f5e759a6ad1957f6eda2c5bb05d746df0cdf1d230555dbf4be4360b","elapsed_s":1.157,"remaining_tenths":34807,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_72fa20dbd5c8","step":2,"tool":"finite_search","args_preview":"{\"domains\":{\"r\":[0,81],\"q\":[0,81],\"p\":[0,81]},\"constraints\":[\"r+q=27\",\"p=r+2*q\"],\"target\":\"3*r+3*q\",\"mode\":\"unique\"}"}
+{"event":"task","task":"hard_math_72fa20dbd5c8","kind":"math","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1705,"elapsed_s":1.829}
+{"event":"fallback_start","task":"hard_math_f1d53adc6686","estimated_tenths":1628,"cap_tenths":3582,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_f1d53adc6686","model":"qwen3.8-27b-noreason","max_output":188,"reserved_tenths":3580,"request_sha256":"4dedb64d8313b1952a29e35cac9757ddcec940fc89eb0ece8942436cf2063ec0","input_tokens":414,"output_tokens":19,"reasoning_tokens":0,"cost_tenths":604,"finish_reason":"stop","response_sha256":"f607cf3813ed6113c92c32c709334150f56a13f71ebd3cf0d1c06656c5b49ecc","elapsed_s":1.82,"remaining_tenths":34203,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_f1d53adc6686","step":1,"kind":"ValueError","detail":"goal is unique of 3*r+3*q; use constraints and that target, not an unrelated scalar calculation","action_preview":"{\"tool\":\"calc\",\"args\":{\"expr\":\"3*34\"},\"final\":true}"}
+{"event":"llm","task":"hard_math_f1d53adc6686","model":"qwen3.8-27b-noreason","max_output":106,"reserved_tenths":2978,"request_sha256":"339ff32230eabee6b6b054d04953542c453ea10574654be51152dd6e99c150b3","input_tokens":463,"output_tokens":67,"reasoning_tokens":0,"cost_tenths":1133,"finish_reason":"stop","response_sha256":"ec0bc2eb780a8b37e36ad102605a16707b3ce513e4f20e362e9607084cf7b64f","elapsed_s":1.506,"remaining_tenths":33070,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_f1d53adc6686","step":2,"tool":"finite_search","args_preview":"{\"domains\":{\"r\":[0,102],\"q\":[0,102],\"u\":[0,102]},\"constraints\":[\"r+q=34\",\"u=r+2*q\"],\"target\":\"3*r+3*q\",\"mode\":\"unique\"}"}
+{"event":"task","task":"hard_math_f1d53adc6686","kind":"math","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1737,"elapsed_s":3.337}
+{"event":"fallback_start","task":"hard_math_f6f8f1cdb1f1","estimated_tenths":1683,"cap_tenths":3703,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_f6f8f1cdb1f1","model":"qwen3.8-27b-noreason","max_output":184,"reserved_tenths":3696,"request_sha256":"dc9eb21ca148cfc9cae2bbcd807c23f4bc27b00eb2b1a4de7e7f17cda69c3aa4","input_tokens":462,"output_tokens":76,"reasoning_tokens":0,"cost_tenths":1222,"finish_reason":"stop","response_sha256":"f3c637b9af51e0012e51919c4a66821747df2916449a5e9180b8644bfd5b74a1","elapsed_s":1.211,"remaining_tenths":31848,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_f6f8f1cdb1f1","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"q\":[0,87],\"v\":[0,87],\"p\":[0,87]},\"constraints\":[\"q+v=29\",\"p=2*q+v\",\"v%4==1\"],\"target\":\"(q+1)*(v+1)/(p+1)\",\"mode\":\"max\"}"}
+{"event":"task","task":"hard_math_f6f8f1cdb1f1","kind":"math","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1222,"elapsed_s":1.226}
+{"event":"fallback_start","task":"hard_math_1854cc8a383f","estimated_tenths":1581,"cap_tenths":3477,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_1854cc8a383f","model":"qwen3.8-27b-noreason","max_output":177,"reserved_tenths":3477,"request_sha256":"504fea21ff48c7fd930ced05f8722c7fd7c208f6b415ad2c824750e39a3878ac","input_tokens":407,"output_tokens":55,"reasoning_tokens":0,"cost_tenths":957,"finish_reason":"stop","response_sha256":"de6239c1059a2b23055f30174c246832662f9c3ea97d9124843df3b768480200","elapsed_s":0.951,"remaining_tenths":30891,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_1854cc8a383f","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"p\":[0,36],\"r\":[0,36]},\"constraints\":[\"p+r=36\",\"p%2==1\"],\"target\":\"p*p+r*r\",\"mode\":\"min\"}"}
+{"event":"task","task":"hard_math_1854cc8a383f","kind":"math","reward":3,"saved":true,"route":"agent","phase":"model","cost_tenths":957,"elapsed_s":0.963}
+{"event":"fallback_start","task":"hard_math_9aaa1187644a","estimated_tenths":1485,"cap_tenths":3267,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_9aaa1187644a","model":"qwen3.8-27b-noreason","max_output":141,"reserved_tenths":3266,"request_sha256":"3b5bc06ce2294c30a5c59198552d407997f7db084bf4beb2ba9f2f0eda433170","input_tokens":464,"output_tokens":122,"reasoning_tokens":0,"cost_tenths":1684,"finish_reason":"stop","response_sha256":"d17c1fe7fc473c7c8f3e6aff77dda96ebfa9327d3397c4c213e5c70ec8d0f230","elapsed_s":1.825,"remaining_tenths":29207,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_9aaa1187644a","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"r\":[0,60],\"q\":[0,60],\"v\":[0,60]},\"constraints\":[\"r+q=20\",\"v=2*r+q\",\"q%2==1\"],\"target\":\"(r+1)*(q+1)/(v+1)\",\"mode\":\"max\"}"}
+{"event":"proxy_stop","task":"hard_math_9aaa1187644a","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_9aaa1187644a","kind":"math","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":1684,"elapsed_s":1.839}
+{"event":"fallback_start","task":"hard_math_19428b419a3f","estimated_tenths":1449,"cap_tenths":3188,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_19428b419a3f","model":"qwen3.8-27b-noreason","max_output":151,"reserved_tenths":3186,"request_sha256":"5404db07eb9bc3a37ebd5454ba279d0659c9030612e551057c323fd56a2704d4","input_tokens":395,"output_tokens":46,"reasoning_tokens":0,"cost_tenths":855,"finish_reason":"stop","response_sha256":"fbb37e24e7be63f2627e38cef2d30912803b0a643a4443b9749525489d6158fc","elapsed_s":0.921,"remaining_tenths":28352,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_19428b419a3f","step":1,"kind":"NoUniqueAnswer","detail":"feasible assignments give different target values","action_preview":"{\"tool\":\"finite_search\",\"args\":{\"domains\":{\"u\":[0,57],\"v\":[0,57]},\"constraints\":[\"u+v=57\"],\"target\":\"u\",\"mode\":\"unique\"},\"final\":true}"}
+{"event":"proxy_stop","task":"hard_math_19428b419a3f","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_19428b419a3f","kind":"math","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":855,"elapsed_s":0.929}
+{"event":"fallback_start","task":"hard_math_cfb43714d2b7","estimated_tenths":1458,"cap_tenths":3208,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_cfb43714d2b7","model":"qwen3.8-27b-noreason","max_output":150,"reserved_tenths":3200,"request_sha256":"53a6ad729bf18f99c30bf790672cac1575be49ec1b1aa4211fede335ba01c4ea","input_tokens":414,"output_tokens":19,"reasoning_tokens":0,"cost_tenths":604,"finish_reason":"stop","response_sha256":"b74eafadf3b6bd0b95d6b3b86098df036ba9ef3366de3a7327d96fcc413148bd","elapsed_s":1.123,"remaining_tenths":27748,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_cfb43714d2b7","step":1,"kind":"ValueError","detail":"goal is unique of 3*p+3*u; use constraints and that target, not an unrelated scalar calculation","action_preview":"{\"tool\":\"calc\",\"args\":{\"expr\":\"3*39\"},\"final\":true}"}
+{"event":"llm","task":"hard_math_cfb43714d2b7","model":"qwen3.8-27b-noreason","max_output":68,"reserved_tenths":2598,"request_sha256":"53c703eaa98b363e944ce0a2789e360333a19583cf83474b7d273420307b8dd5","input_tokens":463,"output_tokens":67,"reasoning_tokens":0,"cost_tenths":1133,"finish_reason":"stop","response_sha256":"3145472f6b316fee783af9cd10e08b80feeaced81fe44d1109134681d8b217e7","elapsed_s":1.737,"remaining_tenths":26615,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_cfb43714d2b7","step":2,"tool":"finite_search","args_preview":"{\"domains\":{\"p\":[0,117],\"u\":[0,117],\"w\":[0,117]},\"constraints\":[\"p+u=39\",\"w=p+2*u\"],\"target\":\"3*p+3*u\",\"mode\":\"unique\"}"}
+{"event":"task","task":"hard_math_cfb43714d2b7","kind":"math","reward":2,"saved":true,"route":"agent","phase":"model","cost_tenths":1737,"elapsed_s":2.878}
+{"event":"fallback_start","task":"hard_math_fe33e93ba846","estimated_tenths":1525,"cap_tenths":3355,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_fe33e93ba846","model":"qwen3.8-27b-noreason","max_output":164,"reserved_tenths":3347,"request_sha256":"4a63e07fdfe5b8b7ffbfa4effb356d2a8dd8d8809acabf4bae795d56af1a4fa6","input_tokens":407,"output_tokens":55,"reasoning_tokens":0,"cost_tenths":957,"finish_reason":"stop","response_sha256":"f588a715bfd1fc7c7a8ff69451e14f7081bdd2638f19283e4c38dc96eab71513","elapsed_s":1.892,"remaining_tenths":25658,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_fe33e93ba846","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"q\":[0,39],\"r\":[0,39]},\"constraints\":[\"q+r=39\",\"q%2==1\"],\"target\":\"q*q+r*r\",\"mode\":\"min\"}"}
+{"event":"task","task":"hard_math_fe33e93ba846","kind":"math","reward":2,"saved":true,"route":"agent","phase":"model","cost_tenths":957,"elapsed_s":1.912}
+{"event":"fallback_start","task":"hard_math_6e2ddbec7533","estimated_tenths":1428,"cap_tenths":3141,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_6e2ddbec7533","model":"qwen3.8-27b-noreason","max_output":148,"reserved_tenths":3135,"request_sha256":"db279d55aa92ff5024f75ac6843ff33dccbe6b1ea59bc383900923fe5dbc4345","input_tokens":408,"output_tokens":67,"reasoning_tokens":0,"cost_tenths":1078,"finish_reason":"stop","response_sha256":"2c6a648b42cc8624e9c831f00c932f63ecbd57ceadd601d0d8cd8fb9c97f5be6","elapsed_s":2.978,"remaining_tenths":24580,"in_flight_tenths":0}
+{"event":"tool","task":"hard_math_6e2ddbec7533","step":1,"tool":"finite_search","args_preview":"{\"domains\":{\"w\":[0,20],\"u\":[0,20],\"q\":[0,20]},\"constraints\":[\"2*w+3*u+q=20\",\"(w+q)%3==0\"],\"target\":\"1\",\"mode\":\"count\"}"}
+{"event":"task","task":"hard_math_6e2ddbec7533","kind":"math","reward":2,"saved":true,"route":"agent","phase":"model","cost_tenths":1078,"elapsed_s":3.003}
+{"event":"fallback_start","task":"hard_data_analysis_16462fbb7e41","estimated_tenths":4586,"cap_tenths":10088,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_16462fbb7e41","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":7213,"request_sha256":"bd56640f62ff5f2708db0f7684de261fb5f400b450cd42ab50f8ceca25a512f0","input_tokens":663,"output_tokens":93,"reasoning_tokens":0,"cost_tenths":1593,"finish_reason":"stop","response_sha256":"1f17043e2cef25dd04a276fc40332e36e857fec8cffdcfa03539f98de1842cb9","elapsed_s":3.087,"remaining_tenths":22987,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_16462fbb7e41","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"total\":{\"op\":\"sum\",\"field\":\"amount\"}}},{\"op\":\"where\",\"filters\":[[\"total\",\">\",0]]}],\"op\":\"sum\",\"field\":\"total\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_16462fbb7e41","kind":"data_analysis","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1593,"elapsed_s":3.106}
+{"event":"fallback_start","task":"hard_data_analysis_605e495d67f5","estimated_tenths":4007,"cap_tenths":8814,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_605e495d67f5","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":7218,"request_sha256":"2398b23536c9e4af6797b9cbaa96ad57e423cd39d3743ac34228170e0d27c8c7","input_tokens":664,"output_tokens":85,"reasoning_tokens":0,"cost_tenths":1514,"finish_reason":"stop","response_sha256":"038bccb3818aed596d2305a3d2617fe098e951e6f0e53a3aa43a6483e39d89c9","elapsed_s":10.417,"remaining_tenths":21473,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_605e495d67f5","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\",\"bucket\":\"identifier\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"max_amount\":{\"op\":\"max\",\"field\":\"amount\"}}}],\"op\":\"sum\",\"field\":\"max_amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_605e495d67f5","kind":"data_analysis","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1514,"elapsed_s":10.458}
+{"event":"fallback_start","task":"hard_data_analysis_a6d1f7348c5b","estimated_tenths":3547,"cap_tenths":7802,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_a6d1f7348c5b","model":"qwen3.8-27b-noreason","max_output":450,"reserved_tenths":7260,"request_sha256":"0571597bece0b18f9af49885922793c92f88b1c6541458fb317edc6f5edce7e6","input_tokens":673,"output_tokens":93,"reasoning_tokens":0,"cost_tenths":1603,"finish_reason":"stop","response_sha256":"9b7aa4770db87fc6952a718cbf28eecb972a1fe95ab782aec478de25b4fe8ccc","elapsed_s":1.987,"remaining_tenths":19870,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_a6d1f7348c5b","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"total_amount\":{\"op\":\"sum\",\"field\":\"amount\"},\"count\":{\"op\":\"count\"}}}],\"op\":\"ratio_sums\",\"field\":\"total_amount\",\"factor\":\"count\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_a6d1f7348c5b","kind":"data_analysis","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1603,"elapsed_s":2.012}
+{"event":"fallback_start","task":"hard_data_analysis_074e927a5cff","estimated_tenths":3184,"cap_tenths":7004,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_074e927a5cff","model":"qwen3.8-27b-noreason","max_output":416,"reserved_tenths":7003,"request_sha256":"686e8230aac225b882b4b80ceb63f7f697e230b7d865ad63ef8de907e55d8ba1","input_tokens":691,"output_tokens":105,"reasoning_tokens":0,"cost_tenths":1741,"finish_reason":"stop","response_sha256":"f34dcfe1afc54f32e7b7ac102fe9bdce417bc41b397bec63c3a1f93e0738eafc","elapsed_s":5.191,"remaining_tenths":18129,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_074e927a5cff","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\",\"bucket\":\"identifier\",\"state\":\"identifier\"}},\"steps\":[{\"op\":\"join\",\"source\":{\"file\":\"active.csv\",\"types\":{\"bucket\":\"identifier\"}},\"left\":\"bucket\",\"right\":\"bucket\",\"how\":\"inner\"},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"max_amount\":{\"op\":\"max\",\"field\":\"amount\"}}}],\"op\":\"sum\",\"field\":\"max_amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_074e927a5cff","kind":"data_analysis","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1741,"elapsed_s":5.221}
+{"event":"fallback_start","task":"hard_data_analysis_3470f4bec4dd","estimated_tenths":2918,"cap_tenths":6419,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_3470f4bec4dd","model":"qwen3.8-27b-noreason","max_output":357,"reserved_tenths":6413,"request_sha256":"2b71fbebe29d4f75e84c91d175e5668a45b9d206bf8c6ac99188c654a89dbff3","input_tokens":691,"output_tokens":105,"reasoning_tokens":0,"cost_tenths":1741,"finish_reason":"stop","response_sha256":"f34dcfe1afc54f32e7b7ac102fe9bdce417bc41b397bec63c3a1f93e0738eafc","elapsed_s":2.384,"remaining_tenths":16388,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_3470f4bec4dd","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\",\"bucket\":\"identifier\",\"state\":\"identifier\"}},\"steps\":[{\"op\":\"join\",\"source\":{\"file\":\"active.csv\",\"types\":{\"bucket\":\"identifier\"}},\"left\":\"bucket\",\"right\":\"bucket\",\"how\":\"inner\"},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"max_amount\":{\"op\":\"max\",\"field\":\"amount\"}}}],\"op\":\"sum\",\"field\":\"max_amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_3470f4bec4dd","kind":"data_analysis","reward":5,"saved":true,"route":"agent","phase":"model","cost_tenths":1741,"elapsed_s":2.41}
+{"event":"fallback_start","task":"hard_data_analysis_1c48fac35e00","estimated_tenths":2643,"cap_tenths":5814,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_1c48fac35e00","model":"qwen3.8-27b-noreason","max_output":327,"reserved_tenths":5807,"request_sha256":"42b78fe04dcbf7748d13d20c422a9d968cdad5cbfed65ea7d7bc056996dfd11e","input_tokens":621,"output_tokens":55,"reasoning_tokens":0,"cost_tenths":1171,"finish_reason":"stop","response_sha256":"a031b8b39f3b2cf88f2f906b56a070c594e17d3f2b07e2aa917fd34f73d73106","elapsed_s":2.037,"remaining_tenths":15217,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_1c48fac35e00","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"data.csv\",\"numbers\":[\"amount\"]},\"steps\":[{\"op\":\"where\",\"filters\":[[\"currency\",\"=\",\"USD\"]]}],\"op\":\"sum\",\"field\":\"amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_1c48fac35e00","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1171,"elapsed_s":2.06}
+{"event":"fallback_start","task":"hard_data_analysis_44b5a91439e5","estimated_tenths":2359,"cap_tenths":5189,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_44b5a91439e5","model":"qwen3.8-27b-noreason","max_output":265,"reserved_tenths":5187,"request_sha256":"2c9403d59112a328148df5ad69ee058881bd65c53517c916094a477d591ed732","input_tokens":621,"output_tokens":55,"reasoning_tokens":0,"cost_tenths":1171,"finish_reason":"stop","response_sha256":"a031b8b39f3b2cf88f2f906b56a070c594e17d3f2b07e2aa917fd34f73d73106","elapsed_s":2.95,"remaining_tenths":14046,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_44b5a91439e5","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"data.csv\",\"numbers\":[\"amount\"]},\"steps\":[{\"op\":\"where\",\"filters\":[[\"currency\",\"=\",\"USD\"]]}],\"op\":\"sum\",\"field\":\"amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_44b5a91439e5","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1171,"elapsed_s":2.974}
+{"event":"fallback_start","task":"hard_data_analysis_5ce91a24a342","estimated_tenths":2155,"cap_tenths":4742,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_5ce91a24a342","model":"qwen3.8-27b-noreason","max_output":216,"reserved_tenths":4741,"request_sha256":"935b606475ae648285a339b42e9864a83018d2f0d6af01b39df12735eed81104","input_tokens":635,"output_tokens":59,"reasoning_tokens":0,"cost_tenths":1225,"finish_reason":"stop","response_sha256":"6b89e0020b22968ab1e8001a07de199add0f884295ff7a22f69c6d3f6fec3bb2","elapsed_s":2.007,"remaining_tenths":12821,"in_flight_tenths":0}
+{"event":"tool_menu_expanded","task":"hard_data_analysis_5ce91a24a342","reason":"action_error"}
+{"event":"tool_error","task":"hard_data_analysis_5ce91a24a342","step":1,"kind":"NoUniqueAnswer","detail":"a potentially relevant record lacks a known value","action_preview":"{\"tool\":\"record_plan\",\"args\":{\"source\":{\"file\":\"data.csv\",\"numbers\":[\"value\"]},\"steps\":[{\"op\":\"group\",\"by\":[\"group\"],\"aggregates\":{\"total\":{\"op\":\"sum\",\"field\":\"value\"}}}],\"op\":\"sum\",\"field\":\"total\"},\"final\":true}"}
+{"event":"proxy_stop","task":"hard_data_analysis_5ce91a24a342","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_5ce91a24a342","kind":"data_analysis","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":1225,"elapsed_s":2.025}
+{"event":"fallback_start","task":"hard_data_analysis_9f747073ab22","estimated_tenths":2155,"cap_tenths":4742,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_9f747073ab22","model":"qwen3.8-27b-noreason","max_output":216,"reserved_tenths":4741,"request_sha256":"935b606475ae648285a339b42e9864a83018d2f0d6af01b39df12735eed81104","input_tokens":635,"output_tokens":59,"reasoning_tokens":0,"cost_tenths":1225,"finish_reason":"stop","response_sha256":"6b89e0020b22968ab1e8001a07de199add0f884295ff7a22f69c6d3f6fec3bb2","elapsed_s":2.677,"remaining_tenths":11596,"in_flight_tenths":0}
+{"event":"tool_menu_expanded","task":"hard_data_analysis_9f747073ab22","reason":"action_error"}
+{"event":"tool_error","task":"hard_data_analysis_9f747073ab22","step":1,"kind":"NoUniqueAnswer","detail":"a potentially relevant record lacks a known value","action_preview":"{\"tool\":\"record_plan\",\"args\":{\"source\":{\"file\":\"data.csv\",\"numbers\":[\"value\"]},\"steps\":[{\"op\":\"group\",\"by\":[\"group\"],\"aggregates\":{\"total\":{\"op\":\"sum\",\"field\":\"value\"}}}],\"op\":\"sum\",\"field\":\"total\"},\"final\":true}"}
+{"event":"proxy_stop","task":"hard_data_analysis_9f747073ab22","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_9f747073ab22","kind":"data_analysis","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":1225,"elapsed_s":2.691}
+{"event":"fallback_start","task":"hard_data_analysis_09198af1c3f3","estimated_tenths":2166,"cap_tenths":4765,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_09198af1c3f3","model":"qwen3.8-27b-noreason","max_output":205,"reserved_tenths":4763,"request_sha256":"1019a0a115779e6d5ea64cc14a3f4b5fb09f5d361cb7466e2b985df7d90e97dc","input_tokens":663,"output_tokens":93,"reasoning_tokens":0,"cost_tenths":1593,"finish_reason":"stop","response_sha256":"1f17043e2cef25dd04a276fc40332e36e857fec8cffdcfa03539f98de1842cb9","elapsed_s":2.202,"remaining_tenths":10003,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_09198af1c3f3","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"total\":{\"op\":\"sum\",\"field\":\"amount\"}}},{\"op\":\"where\",\"filters\":[[\"total\",\">\",0]]}],\"op\":\"sum\",\"field\":\"total\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_09198af1c3f3","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1593,"elapsed_s":2.216}
+{"event":"fallback_start","task":"hard_data_analysis_4e74405f7463","estimated_tenths":2068,"cap_tenths":4550,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_4e74405f7463","model":"qwen3.8-27b-noreason","max_output":183,"reserved_tenths":4543,"request_sha256":"d82f3844a5ace4304d58521a127fe11969fba31a01d9482ff7b8a1cc36d22a91","input_tokens":663,"output_tokens":93,"reasoning_tokens":0,"cost_tenths":1593,"finish_reason":"stop","response_sha256":"1f17043e2cef25dd04a276fc40332e36e857fec8cffdcfa03539f98de1842cb9","elapsed_s":2.899,"remaining_tenths":8410,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_4e74405f7463","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"total\":{\"op\":\"sum\",\"field\":\"amount\"}}},{\"op\":\"where\",\"filters\":[[\"total\",\">\",0]]}],\"op\":\"sum\",\"field\":\"total\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_4e74405f7463","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1593,"elapsed_s":2.92}
+{"event":"fallback_start","task":"hard_data_analysis_f67c7993a267","estimated_tenths":1990,"cap_tenths":4379,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_f67c7993a267","model":"qwen3.8-27b-noreason","max_output":166,"reserved_tenths":4373,"request_sha256":"1c4bd23a33138393e9818a2cee8c8d596114c0d98e6bf273fb9dcba1e7ad57df","input_tokens":663,"output_tokens":93,"reasoning_tokens":0,"cost_tenths":1593,"finish_reason":"stop","response_sha256":"1f17043e2cef25dd04a276fc40332e36e857fec8cffdcfa03539f98de1842cb9","elapsed_s":2.209,"remaining_tenths":6817,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_f67c7993a267","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"total\":{\"op\":\"sum\",\"field\":\"amount\"}}},{\"op\":\"where\",\"filters\":[[\"total\",\">\",0]]}],\"op\":\"sum\",\"field\":\"total\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_f67c7993a267","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1593,"elapsed_s":2.238}
+{"event":"fallback_start","task":"hard_data_analysis_11709211cb23","estimated_tenths":1931,"cap_tenths":4247,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_11709211cb23","model":"qwen3.8-27b-noreason","max_output":152,"reserved_tenths":4238,"request_sha256":"c64ad4b8a045ed6b12a345319420b49e30827806c873db92bf72d7d39c218653","input_tokens":664,"output_tokens":85,"reasoning_tokens":0,"cost_tenths":1514,"finish_reason":"stop","response_sha256":"038bccb3818aed596d2305a3d2617fe098e951e6f0e53a3aa43a6483e39d89c9","elapsed_s":3.041,"remaining_tenths":5303,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_11709211cb23","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\",\"bucket\":\"identifier\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"max_amount\":{\"op\":\"max\",\"field\":\"amount\"}}}],\"op\":\"sum\",\"field\":\"max_amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_11709211cb23","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1514,"elapsed_s":3.055}
+{"event":"fallback_start","task":"hard_data_analysis_2f338ae81281","estimated_tenths":1865,"cap_tenths":4102,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_2f338ae81281","model":"qwen3.8-27b-noreason","max_output":138,"reserved_tenths":4098,"request_sha256":"7e71a9d08732a9114e7d9fb187829b9f2ece845cd7c3b39b509e1a3c5eecfe1a","input_tokens":664,"output_tokens":85,"reasoning_tokens":0,"cost_tenths":1514,"finish_reason":"stop","response_sha256":"038bccb3818aed596d2305a3d2617fe098e951e6f0e53a3aa43a6483e39d89c9","elapsed_s":2.0,"remaining_tenths":3789,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_2f338ae81281","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\",\"bucket\":\"identifier\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"max_amount\":{\"op\":\"max\",\"field\":\"amount\"}}}],\"op\":\"sum\",\"field\":\"max_amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_2f338ae81281","kind":"data_analysis","reward":4,"saved":true,"route":"agent","phase":"model","cost_tenths":1514,"elapsed_s":2.022}
+{"event":"fallback_start","task":"hard_data_analysis_ca97e5daa944","estimated_tenths":1812,"cap_tenths":3789,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_data_analysis_ca97e5daa944","model":"qwen3.8-27b-noreason","max_output":107,"reserved_tenths":3788,"request_sha256":"4cfa0651b62bc518fd6615ae606741ad5f30e520b3fadced545e4f526eeea84a","input_tokens":664,"output_tokens":85,"reasoning_tokens":0,"cost_tenths":1514,"finish_reason":"stop","response_sha256":"038bccb3818aed596d2305a3d2617fe098e951e6f0e53a3aa43a6483e39d89c9","elapsed_s":2.142,"remaining_tenths":2275,"in_flight_tenths":0}
+{"event":"tool","task":"hard_data_analysis_ca97e5daa944","step":1,"tool":"record_plan","args_preview":"{\"source\":{\"file\":\"records.json\",\"path\":\"/items\",\"types\":{\"amount\":\"decimal\",\"bucket\":\"identifier\"}},\"steps\":[{\"op\":\"where\",\"filters\":[[\"state\",\"=\",\"use\"]]},{\"op\":\"group\",\"by\":[\"bucket\"],\"aggregates\":{\"max_amount\":{\"op\":\"max\",\"field\":\"amount\"}}}],\"op\":\"sum\",\"field\":\"max_amount\",\"factor\":\"\",\"group\":\"\",\"order_by\":\"\"}"}
+{"event":"task","task":"hard_data_analysis_ca97e5daa944","kind":"data_analysis","reward":3,"saved":true,"route":"agent","phase":"model","cost_tenths":1514,"elapsed_s":2.161}
+{"event":"fallback_start","task":"hard_data_analysis_52ad27f94ffa","estimated_tenths":1791,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_52ad27f94ffa","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_52ad27f94ffa","kind":"data_analysis","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_data_analysis_6dfcebce6b9e","estimated_tenths":1791,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_6dfcebce6b9e","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_6dfcebce6b9e","kind":"data_analysis","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_data_analysis_54900c7b2f14","estimated_tenths":1795,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_54900c7b2f14","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_54900c7b2f14","kind":"data_analysis","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_data_analysis_6ecb8cdaf9a3","estimated_tenths":1795,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_6ecb8cdaf9a3","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_6ecb8cdaf9a3","kind":"data_analysis","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_data_analysis_4641cbf1c787","estimated_tenths":1740,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_4641cbf1c787","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_4641cbf1c787","kind":"data_analysis","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_data_analysis_7d227f37b635","estimated_tenths":1768,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_7d227f37b635","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_7d227f37b635","kind":"data_analysis","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_data_analysis_e1160800c3c0","estimated_tenths":1770,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_e1160800c3c0","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_e1160800c3c0","kind":"data_analysis","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_search_36f8765f8513","estimated_tenths":5106,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_36f8765f8513","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_36f8765f8513","kind":"search","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.01}
+{"event":"fallback_start","task":"hard_search_3d7ae18fa2b4","estimated_tenths":5106,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_3d7ae18fa2b4","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_3d7ae18fa2b4","kind":"search","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_search_d882c7fb1417","estimated_tenths":5106,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_d882c7fb1417","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_d882c7fb1417","kind":"search","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.012}
+{"event":"fallback_start","task":"hard_search_6dabf87efd14","estimated_tenths":5128,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_6dabf87efd14","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_6dabf87efd14","kind":"search","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_search_f1a8ccefb6aa","estimated_tenths":5128,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_f1a8ccefb6aa","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_f1a8ccefb6aa","kind":"search","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_search_904ef8610ce9","estimated_tenths":5064,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_904ef8610ce9","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_904ef8610ce9","kind":"search","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_search_4059371294c6","estimated_tenths":5092,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_4059371294c6","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_4059371294c6","kind":"search","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_search_1670231d8501","estimated_tenths":5106,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_1670231d8501","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_1670231d8501","kind":"search","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.009}
+{"event":"fallback_start","task":"hard_search_0070c8880627","estimated_tenths":5128,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_0070c8880627","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_0070c8880627","kind":"search","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_math_663c8547eac1","estimated_tenths":1344,"cap_tenths":2275,"model":"qwen3.8-27b-noreason"}
+{"event":"llm","task":"hard_math_663c8547eac1","model":"qwen3.8-27b-noreason","max_output":59,"reserved_tenths":2266,"request_sha256":"1e2fe3f27f94fdaa8a467108717b608c4940d8016bb30fbdc156fcd13b509771","input_tokens":395,"output_tokens":46,"reasoning_tokens":0,"cost_tenths":855,"finish_reason":"stop","response_sha256":"8187cc1ab8062ed3746f8b847bc9a7bcfb9e06093040516acfcbc705e07dff01","elapsed_s":0.937,"remaining_tenths":1420,"in_flight_tenths":0}
+{"event":"tool_error","task":"hard_math_663c8547eac1","step":1,"kind":"NoUniqueAnswer","detail":"feasible assignments give different target values","action_preview":"{\"tool\":\"finite_search\",\"args\":{\"domains\":{\"u\":[0,85],\"v\":[0,85]},\"constraints\":[\"u+v=85\"],\"target\":\"u\",\"mode\":\"unique\"},\"final\":true}"}
+{"event":"proxy_stop","task":"hard_math_663c8547eac1","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_663c8547eac1","kind":"math","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":855,"elapsed_s":0.947}
+{"event":"fallback_start","task":"hard_math_614884f3b376","estimated_tenths":1353,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_math_614884f3b376","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_614884f3b376","kind":"math","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.009}
+{"event":"fallback_start","task":"hard_math_745914dfd51a","estimated_tenths":1358,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_math_745914dfd51a","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_745914dfd51a","kind":"math","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.013}
+{"event":"fallback_start","task":"hard_math_7e192fd8d173","estimated_tenths":1367,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_math_7e192fd8d173","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_7e192fd8d173","kind":"math","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_math_4961db90a5fd","estimated_tenths":1380,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_math_4961db90a5fd","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_4961db90a5fd","kind":"math","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_math_928a07bceb67","estimated_tenths":1380,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_math_928a07bceb67","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_math_928a07bceb67","kind":"math","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_search_3385832facc8","estimated_tenths":5064,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_3385832facc8","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_3385832facc8","kind":"search","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_search_ed1ab8458cce","estimated_tenths":5092,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_ed1ab8458cce","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_ed1ab8458cce","kind":"search","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_search_7f1c2713b1a3","estimated_tenths":5106,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_7f1c2713b1a3","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_7f1c2713b1a3","kind":"search","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_search_44c19644105d","estimated_tenths":5128,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_44c19644105d","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_44c19644105d","kind":"search","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_search_8e1182159883","estimated_tenths":5128,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_8e1182159883","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_8e1182159883","kind":"search","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_data_analysis_d956ed9ae02e","estimated_tenths":1740,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_d956ed9ae02e","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_d956ed9ae02e","kind":"data_analysis","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_data_analysis_a7b101fc0fd3","estimated_tenths":1791,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_a7b101fc0fd3","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_a7b101fc0fd3","kind":"data_analysis","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_data_analysis_7553c2310fbe","estimated_tenths":1795,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_data_analysis_7553c2310fbe","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_data_analysis_7553c2310fbe","kind":"data_analysis","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.009}
+{"event":"fallback_start","task":"hard_coding_be021111d401","estimated_tenths":9582,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_be021111d401","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_be021111d401","kind":"coding","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.694}
+{"event":"fallback_start","task":"hard_coding_5059b58ed587","estimated_tenths":9617,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_5059b58ed587","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_5059b58ed587","kind":"coding","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.506}
+{"event":"fallback_start","task":"hard_coding_ea1c3ae11092","estimated_tenths":9617,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_ea1c3ae11092","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_ea1c3ae11092","kind":"coding","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.342}
+{"event":"fallback_start","task":"hard_coding_bc77a78160af","estimated_tenths":9624,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_bc77a78160af","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_bc77a78160af","kind":"coding","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.334}
+{"event":"fallback_start","task":"hard_coding_7c83f391aa21","estimated_tenths":9657,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_7c83f391aa21","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_7c83f391aa21","kind":"coding","reward":5,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.332}
+{"event":"fallback_start","task":"hard_coding_28ad67b167f2","estimated_tenths":9622,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_28ad67b167f2","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_28ad67b167f2","kind":"coding","reward":4,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.664}
+{"event":"fallback_start","task":"hard_search_c58f0985dfda","estimated_tenths":5074,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_c58f0985dfda","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_c58f0985dfda","kind":"search","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.01}
+{"event":"fallback_start","task":"hard_search_36285f82496b","estimated_tenths":5092,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_36285f82496b","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_36285f82496b","kind":"search","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.01}
+{"event":"fallback_start","task":"hard_search_b51c8755f6d5","estimated_tenths":5092,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_b51c8755f6d5","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_b51c8755f6d5","kind":"search","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_search_640cf52f287b","estimated_tenths":5128,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_640cf52f287b","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_640cf52f287b","kind":"search","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.009}
+{"event":"fallback_start","task":"hard_search_a3ba445512d5","estimated_tenths":5128,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_a3ba445512d5","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_a3ba445512d5","kind":"search","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.008}
+{"event":"fallback_start","task":"hard_coding_41679038656e","estimated_tenths":9582,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_41679038656e","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_41679038656e","kind":"coding","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.69}
+{"event":"fallback_start","task":"hard_coding_99a78bc6b5a3","estimated_tenths":9623,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_99a78bc6b5a3","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_99a78bc6b5a3","kind":"coding","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.641}
+{"event":"fallback_start","task":"hard_coding_702e83c60d80","estimated_tenths":9624,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_702e83c60d80","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_702e83c60d80","kind":"coding","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.301}
+{"event":"fallback_start","task":"hard_coding_dcdaa9eae5a9","estimated_tenths":9624,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_dcdaa9eae5a9","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_dcdaa9eae5a9","kind":"coding","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.21}
+{"event":"fallback_start","task":"hard_coding_6d427b5d23c6","estimated_tenths":9644,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_6d427b5d23c6","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_6d427b5d23c6","kind":"coding","reward":3,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.21}
+{"event":"fallback_start","task":"hard_coding_50f235544abd","estimated_tenths":9644,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_50f235544abd","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_50f235544abd","kind":"coding","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.277}
+{"event":"fallback_start","task":"hard_coding_4d4729b28deb","estimated_tenths":9657,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_4d4729b28deb","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_4d4729b28deb","kind":"coding","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.305}
+{"event":"fallback_start","task":"hard_coding_efd12960d36e","estimated_tenths":9657,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_efd12960d36e","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_efd12960d36e","kind":"coding","reward":2,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.244}
+{"event":"fallback_start","task":"hard_search_445e5e568edd","estimated_tenths":5074,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_445e5e568edd","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_445e5e568edd","kind":"search","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_search_63bb97e17965","estimated_tenths":5075,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_63bb97e17965","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_63bb97e17965","kind":"search","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_search_ca8b1761830c","estimated_tenths":5075,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_ca8b1761830c","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_ca8b1761830c","kind":"search","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.005}
+{"event":"fallback_start","task":"hard_search_7e1b4711ac2e","estimated_tenths":5092,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_7e1b4711ac2e","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_7e1b4711ac2e","kind":"search","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.006}
+{"event":"fallback_start","task":"hard_search_245f92c982b6","estimated_tenths":5128,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_245f92c982b6","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_245f92c982b6","kind":"search","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_search_6544b86d74c9","estimated_tenths":5128,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_search_6544b86d74c9","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_search_6544b86d74c9","kind":"search","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.007}
+{"event":"fallback_start","task":"hard_coding_4e3aebd2f69d","estimated_tenths":9585,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_4e3aebd2f69d","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_4e3aebd2f69d","kind":"coding","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.632}
+{"event":"fallback_start","task":"hard_coding_9f6f85cc844b","estimated_tenths":9585,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_9f6f85cc844b","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_9f6f85cc844b","kind":"coding","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":0.618}
+{"event":"fallback_start","task":"hard_coding_db7e41624d6d","estimated_tenths":9624,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_db7e41624d6d","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_db7e41624d6d","kind":"coding","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.257}
+{"event":"fallback_start","task":"hard_coding_feb020e11d79","estimated_tenths":9624,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_feb020e11d79","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_feb020e11d79","kind":"coding","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.225}
+{"event":"fallback_start","task":"hard_coding_ea0b0e7ad729","estimated_tenths":9644,"cap_tenths":1420,"model":"qwen3.8-27b-noreason"}
+{"event":"proxy_stop","task":"hard_coding_ea0b0e7ad729","reason":"insufficient budget for another bounded call"}
+{"event":"task","task":"hard_coding_ea0b0e7ad729","kind":"coding","reward":1,"saved":false,"route":"budget_or_proxy","phase":"model","cost_tenths":0,"elapsed_s":1.211}
+{"event":"run_end","submitted":26,"submitted_reward":106,"spent_tenths":48580,"unknown_reserved_tenths":0,"remaining_tenths":1420,"model_attempted":94,"deferred_unattempted":0,"model_retried":0,"unvisited":0,"cancelled":0,"stop_reason":null,"out_complete":true}

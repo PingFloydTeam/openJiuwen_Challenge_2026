@@ -242,6 +242,8 @@ def db_query(root: Path, file: str, op: str, column: str = "", filters: list | N
         if op == "sum_product":
             total = Fraction(0)
             for row in selected:
+                if row[column] in (None,'') and number(row,factor) == 0 or row[factor] in (None,'') and number(row,column) == 0:
+                    continue
                 left, right = number(row, column), number(row, factor)
                 if left is not None and right is not None:
                     total += left * right
@@ -357,6 +359,8 @@ def kb_lookup(root: Path, entity: str, fields: list[str], strict=False):
                 raise NoUniqueAnswer("logical_error", f"conflicting {label} for {current}")
             values = {record[field] for record in records if record.get(field)}
             if not values:
+                if strict:
+                    raise ValueError(f'unsupported field mapping: no exact {label} for {current}; inspect other fields')
                 raise NoUniqueAnswer("missing_information", f"no {label} for {current}")
             next_entities.update(values)
         if len(next_entities) > 128:

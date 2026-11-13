@@ -33,6 +33,8 @@ def options():
                         default=os.getenv("LLM_MODEL", "qwen3.8-27b-noreason"))
     parser.add_argument("--retry-model", choices=sorted(MODELS),
                         help="optional second model for stalled tasks, after first attempts")
+    parser.add_argument("--no-auto-retry", action="store_true",
+                        help="disable the bounded reasoning-model recovery pass when ample budget remains")
     parser.add_argument("--tool-profile", choices=TOOL_PROFILES,
                         default=os.getenv("LLM_TOOL_PROFILE", "compact"))
     mode = parser.add_mutually_exclusive_group()
@@ -63,6 +65,11 @@ async def main(args):
     configure_log_config({"level": "WARNING", "output": ["console"], "log_path": "/tmp/jiuwen-logs"})
     from openjiuwen.core.runner.runner import Runner
     from ping_floyd.agent import run_task
+
+    retry_model = args.retry_model
+    automatic_retry = not retry_model and not args.no_auto_retry and not args.offline and args.budget >= 25000
+    if automatic_retry:
+        retry_model = 'qwen3.8-27b' if args.model != 'qwen3.8-27b' else 'qwen3.6-35b-a3b'
 
     def trace(event):
         line = json.dumps(event, ensure_ascii=False, separators=(",", ":"))
@@ -214,10 +221,11 @@ async def main(args):
                 if not budget.unknown_by_task.get(task.root.name):
                     planner.observe(task, result[2], result[1])
                 report(task, result, "model")
-                if args.retry_model and result[2] and result[1] in {"no_progress", "step_limit", "repair_limit"}:
+                if retry_model and result[2] and result[1] in {"no_progress", "step_limit", "repair_limit"}:
                     retry.append(task)
-        if args.retry_model and not pending and key and not budget.blocked:
-            proxy.model = args.retry_model
+        if (retry_model and not pending and key and not budget.blocked
+                and (not automatic_retry or budget.remaining >= budget.limit // 2)):
+            proxy.model = retry_model
             retry.sort(key=planner.priority)
             retry_start = budget.spent + budget.reserved_unknown
             for task in retry:

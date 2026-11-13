@@ -5,6 +5,11 @@ import re
 
 from .domain import NoUniqueAnswer, files, local_file, read_text
 from .tools import calc
+from .properties import quantified_checks
+
+
+def stateful_contract(instruction):
+    return bool(re.search(r'\bstateful\b|\bsuccessive calls\b|\bconsecutive calls\b|\b(?:persistent|mutable|global) (?:state|counter)\b',instruction,re.I))
 
 
 def literal_assertions(instruction):
@@ -32,6 +37,8 @@ def literal_assertions(instruction):
 
 def universal_contract_conflicts(instruction):
     """Find concrete contradictory obligations in explicit integer equations."""
+    if stateful_contract(instruction):
+        return  # Equal arguments in different states need not have equal results.
     examples = {}
     for name, args, kwargs, expected in literal_assertions(instruction):
         key = name, repr(args), repr(sorted(kwargs.items()))
@@ -81,6 +88,9 @@ def required_inputs(workspace, instruction):
                r"(?:the\s+)?(?:(?:table|policy|rules|data|file|specification|mapping)\s+(?:in|at)\s+)?"
                r"[`\"']?([\w./-]+\.(?:csv|tsv|json|txt))\b")
     for match in re.finditer(pattern, instruction, re.I):
+        filename=match[1]
+        if re.search(r'\b(?:caller|test|tests|calling code)\b[^.]{0,120}\b(?:creates?|writes?|provides?)\b[^.]{0,80}(?:'+re.escape(filename)+r'|this file|the file)',instruction,re.I):
+            continue
         try:
             local_file(workspace, match[1])
         except ValueError:
@@ -191,11 +201,13 @@ def contract_tests(root, editable, instruction):
         for node in ast.parse(read_text(root / file)).body:
             if isinstance(node, ast.FunctionDef):
                 symbols.setdefault(node.name, []).append(module)
-    for name, args, kwargs, expected in literal_assertions(instruction):
+    for name, args, kwargs, expected in ([] if stateful_contract(instruction) else literal_assertions(instruction)):
         if len(symbols.get(name, [])) == 1:
             body = [f'from {symbols[name][0]} import {name} as fn',
                     f'self.assertEqual(fn(*{args!r}, **{kwargs!r}), {expected!r})']
             tests.append(f"    def test_contract_{len(tests)}(self):\n" + ''.join('        '+line+'\n' for line in body))
+    for body in ([] if stateful_contract(instruction) else quantified_checks(instruction, symbols)):
+        tests.append(f"    def test_property_{len(tests)}(self):\n" + ''.join('        '+line+'\n' for line in body))
     for body in input_invariants(root, editable, instruction):
         tests.append(f"    def test_contract_{len(tests)}(self):\n" + "".join("        " + line + "\n" for line in body))
     for file in sorted(editable):

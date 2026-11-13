@@ -1,0 +1,11 @@
+{"event":"run_start","tasks":8,"model":"qwen3.8-27b-noreason","budget_tenths":1000000,"agent_only":false,"offline":true,"workers":1,"tool_profile":"compact","queue":"value","fixed_estimates":false,"calibrated":false,"repair_limit":3,"retry_share":10}
+{"event":"task","task":"math_0000","kind":"math","reward":5,"saved":true,"route":"deterministic","phase":"local","cost_tenths":0,"elapsed_s":0.013}
+{"event":"task","task":"data_analysis_0002","kind":"data_analysis","reward":3,"saved":true,"route":"deterministic","phase":"local","cost_tenths":0,"elapsed_s":0.013}
+{"event":"task","task":"data_analysis_0006","kind":"data_analysis","reward":3,"saved":true,"route":"deterministic","phase":"local","cost_tenths":0,"elapsed_s":0.006}
+{"event":"task","task":"math_0004","kind":"math","reward":2,"saved":true,"route":"deterministic","phase":"local","cost_tenths":0,"elapsed_s":0.006}
+{"event":"task","task":"search_0005","kind":"search","reward":2,"saved":true,"route":"deterministic","phase":"local","cost_tenths":0,"elapsed_s":0.018}
+{"event":"task","task":"search_0001","kind":"search","reward":1,"saved":true,"route":"deterministic","phase":"local","cost_tenths":0,"elapsed_s":0.015}
+{"event":"task","task":"coding_0003","kind":"coding","reward":2,"saved":true,"route":"deterministic_repair","phase":"local","cost_tenths":0,"elapsed_s":1.241}
+{"event":"task","task":"coding_0007","kind":"coding","reward":2,"saved":true,"route":"deterministic_repair","phase":"local","cost_tenths":0,"elapsed_s":1.233}
+{"event":"local_end","submitted":8,"deferred":0}
+{"event":"run_end","submitted":8,"submitted_reward":20,"spent_tenths":0,"unknown_reserved_tenths":0,"remaining_tenths":1000000,"model_attempted":0,"deferred_unattempted":0,"model_retried":0,"unvisited":0,"cancelled":0,"stop_reason":null,"out_complete":true}

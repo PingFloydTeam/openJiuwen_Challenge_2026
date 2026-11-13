@@ -2,6 +2,11 @@
 import asyncio
 from dataclasses import dataclass, field
 import time
+from email.utils import parsedate_to_datetime
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
 
 import httpx
 
@@ -13,6 +18,14 @@ class ProxyError(Exception):
 
 
 class BudgetStop(ProxyError):
+    pass
+
+
+class TruncatedReply(ProxyError):
+    pass
+
+
+class RateLimited(ProxyError):
     pass
 
 
@@ -54,6 +67,8 @@ def token_usage(usage: dict, separate_reasoning=False):
             (reasoning is not None and (type(reasoning) is not int or reasoning < 0))):
         raise ValueError("invalid usage")
     total = usage.get("total_tokens")
+    if total is not None and (type(total) is not int or total not in {prompt+completion, prompt+completion+(reasoning or 0)}):
+        raise ValueError('unexplained total_tokens; usage cannot be trusted')
     if separate_reasoning or (reasoning and total == prompt + completion + reasoning):
         if reasoning is None:
             raise ValueError("provider omitted separately billed reasoning")
@@ -76,6 +91,7 @@ class Proxy:
         self.budget_changed = asyncio.Event()
         self.stopping = None
         self.consecutive_no_reply = 0
+        self.retry_not_before = 0.0
 
     def no_reply(self, event):
         self.consecutive_no_reply += 1
@@ -104,6 +120,31 @@ class Proxy:
                 raise BudgetStop("deadline while waiting for reserved tokens") from error
 
     async def invoke(self, task_id, messages, task_remaining, max_output=900):
+        start_cost = self.budget.task_total(task_id)
+        for attempt in range(3):
+            delay = max(0,self.retry_not_before-time.monotonic())
+            if delay:
+                if time.monotonic()+delay+2 >= self.deadline:
+                    raise BudgetStop('rate limit exceeds remaining time')
+                if self.stopping is not None:
+                    try:
+                        await asyncio.wait_for(self.stopping.wait(),delay)
+                        raise BudgetStop('stopped during rate limit')
+                    except asyncio.TimeoutError:
+                        pass
+                else:
+                    await asyncio.sleep(delay)
+            remaining = task_remaining-(self.budget.task_total(task_id)-start_cost)
+            try:
+                return await self._once(task_id,messages,remaining,max_output)
+            except (TruncatedReply,RateLimited) as error:
+                if attempt==2:
+                    raise
+                self.trace({'event':'proxy_retry','task':task_id,'reason':type(error).__name__,'attempt':attempt+1})
+                if isinstance(error,TruncatedReply):
+                    max_output=min(4000,max_output*2)
+
+    async def _once(self, task_id, messages, task_remaining, max_output=900):
         if not self.key:
             raise BudgetStop("LLM_API_KEY is required for model calls")
         # Conservative bound for byte-based Qwen tokenizers plus chat-template overhead.
@@ -114,6 +155,9 @@ class Proxy:
                    "temperature": 0, "max_tokens": max_output, "stream": False}
         event = {"event": "llm", "task": task_id, "model": self.model,
                  "max_output": max_output, "reserved_tenths": reservation}
+        event['request_sha256']=hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()
+        if os.getenv('PF_TRACE_CONTENT') == '1':
+            event['messages']=messages
         try:
             timeout = min(35, max(1, self.deadline - started))
             async with asyncio.timeout(timeout):
@@ -126,6 +170,18 @@ class Proxy:
             if response.status_code != 200:
                 self.consecutive_no_reply = 0
                 event["status"] = response.status_code
+                if response.status_code == 429 and response.headers.get('Retry-After') is not None:
+                    raw=response.headers['Retry-After']
+                    try:
+                        delay=float(raw)
+                    except ValueError:
+                        try:
+                            delay=(parsedate_to_datetime(raw)-datetime.now(timezone.utc)).total_seconds()
+                        except (ValueError,TypeError,OverflowError):
+                            delay=-1
+                    if 0<=delay<=60 and time.monotonic()+delay+2<self.deadline:
+                        self.retry_not_before=max(self.retry_not_before,time.monotonic()+delay)
+                        raise RateLimited('temporary HTTP 429')
                 if response.status_code in {401, 402, 403, 404, 429}:
                     self.budget.blocked = True
                 raise ProxyError(f"proxy HTTP {response.status_code}")
@@ -135,6 +191,10 @@ class Proxy:
         except asyncio.CancelledError:
             self.budget.record(task_id, reservation, known=False)
             event.update(error="CancelledError", unknown_reserved_tenths=reservation)
+            raise
+        except RateLimited:
+            self.budget.record(task_id,reservation,known=False)
+            event.update(error='RateLimited',unknown_reserved_tenths=reservation)
             raise
         except (httpx.HTTPError, TimeoutError, KeyError, TypeError, ValueError, ProxyError) as error:
             self.budget.record(task_id, reservation, known=False)
@@ -160,13 +220,17 @@ class Proxy:
                 event["finish_reason"] = choice.get("finish_reason")
                 if choice.get("finish_reason") == "length":
                     self.consecutive_no_reply = 0
-                    raise ProxyError("response truncated")
+                    raise TruncatedReply("response truncated")
                 content = choice["message"]["content"]
                 if not isinstance(content, str) or not content.strip():
                     self.no_reply(event)
                     event["error"] = "EmptyContent"
                     raise ProxyError("model returned no JSON text")
                 self.consecutive_no_reply = 0
+                event['response_sha256']=hashlib.sha256(content.encode()).hexdigest()
+                if os.getenv('PF_TRACE_CONTENT') == '1':
+                    event['response_content']=content
+                    event['usage']=data.get('usage')
                 return content
             except (AttributeError, KeyError, TypeError, IndexError):
                 self.no_reply(event)

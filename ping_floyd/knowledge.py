@@ -56,9 +56,14 @@ def kb_route(root, start, end, fields, mode="distance", strict=False):
     distance = {start: 0}
     first = {start: set()}
     queue = deque([start])
+    uncertainty = []
     while queue:
         node = queue.popleft()
         if node == end:
+            if uncertainty:
+                lower=min(uncertainty)
+                if distance[node]>lower or mode=='first' and distance[node]>=lower:
+                    raise NoUniqueAnswer('missing_information','unknown links may change the requested shortest route')
             if mode == "distance":
                 return distance[node]
             if len(first[node]) != 1:
@@ -68,12 +73,16 @@ def kb_route(root, start, end, fields, mode="distance", strict=False):
         for label in labels:
             choices = records[node][1].get(label, set())
             if len(choices) > 1 or None in choices:
-                raise NoUniqueAnswer("logical_error", "a relevant link is contradictory")
+                uncertainty.append(next_distance)
+                continue
             if not choices:
                 continue
             neighbor = next(iter(choices)).casefold()
             if neighbor not in records:
-                raise NoUniqueAnswer("missing_information", "a reachable link has no record")
+                # Reaching the known destination through this absent vertex
+                # would require at least one additional edge.
+                uncertainty.append(next_distance+1)
+                continue
             hops = {neighbor} if node == start else first[node]
             if neighbor not in distance:
                 distance[neighbor] = next_distance
@@ -81,4 +90,6 @@ def kb_route(root, start, end, fields, mode="distance", strict=False):
                 queue.append(neighbor)
             elif distance[neighbor] == next_distance:
                 first[neighbor].update(hops)
+    if uncertainty:
+        raise NoUniqueAnswer('missing_information','unknown reachable links prevent proving no route')
     raise NoUniqueAnswer("logical_error", "there is no directed route between the endpoints")

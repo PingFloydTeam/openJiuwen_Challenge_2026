@@ -93,7 +93,8 @@ class ContractChecks(unittest.IsolatedAsyncioTestCase):
 
                 def handler(request):
                     calls.append(request)
-                    action = ({"answer": "DONE", "review": "The contract requires zero and value returns zero."}
+                    action = ({"answer": "DONE", "review": "The contract requires zero and value returns zero.",
+                               "checks":[{"file":"app.py","function":"value","args":[],"expected":0}]}
                               if valid else {"skip": "policy.txt is missing and the expected value is unknown"})
                     return httpx.Response(200, json={
                         "choices": [{"message": {"content": json.dumps(action)}, "finish_reason": "stop"}],
@@ -169,7 +170,7 @@ class ContractChecks(unittest.IsolatedAsyncioTestCase):
             with self.assertRaises(NoUniqueAnswer):
                 kb_lookup(root, "Ada", ["Employer", "City"], True)
             (root / "d.md").write_text("# B\nOther: unknown\n")
-            with self.assertRaises(NoUniqueAnswer):
+            with self.assertRaisesRegex(ValueError,'unsupported field mapping'):
                 kb_lookup(root, "Ada", ["Employer", "City"], True)
 
     def test_sql_null_and_unknown_csv_distinct(self):

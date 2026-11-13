@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import textwrap
+import hashlib
 
 from .domain import atomic_write, files, local_file, read_text
 from .contracts import contract_tests
@@ -23,6 +24,7 @@ def is_test(path):
 def test_run(root: Path, script=""):
     if script:
         local_file(root, script, {".py"})
+    protected={p:hashlib.sha256(p.read_bytes()).digest() for p in root.rglob('*.py') if p.is_file()}
     with tempfile.TemporaryFile() as output:
         try:
             result = subprocess.run(
@@ -36,6 +38,8 @@ def test_run(root: Path, script=""):
         output.seek(max(0, size - 2500))
         tail = output.read().decode("utf-8", errors="replace")
     ran = any(int(count) > 0 for count in re.findall(r"Ran (\d+) tests?", tail))
+    if any(not p.is_file() or hashlib.sha256(p.read_bytes()).digest()!=digest for p,digest in protected.items()):
+        return {'passed':False,'isolation_error':False,'output':'test execution modified protected Python files'}
     return {"passed": result.returncode == 0 and ran,
             "isolation_error": result.returncode == 125, "output": tail.strip()}
 

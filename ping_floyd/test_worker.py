@@ -1,4 +1,4 @@
-"""Run source-only unittest tasks in a Linux subprocess with a syscall allowlist."""
+"""Run unittest tasks with bounded resources, Landlock paths and seccomp calls."""
 import ctypes as C
 import errno
 import importlib
@@ -11,6 +11,7 @@ import resource
 import sys
 from types import ModuleType
 import unittest
+import platform
 
 
 class WorkspaceModules(MetaPathFinder, Loader):
@@ -66,6 +67,50 @@ def load_workspace():
     return WorkspaceModules(paths)
 
 
+def restrict_paths(libc):
+    """Use Landlock when available; older kernels keep the strict no-open mode."""
+    if platform.machine() not in {'x86_64','aarch64'}:
+        return False
+    abi=libc.syscall(444,0,0,1)
+    # ABI 1/2 do not mediate truncate(2). Enabling filesystem syscalls on
+    # those kernels could truncate paths outside the allowed staging tree.
+    if abi<3:
+        return False
+    class Ruleset(C.Structure):
+        _fields_=[('handled_access_fs',C.c_uint64)]
+    class PathRule(C.Structure):
+        _pack_=1
+        _fields_=[('allowed_access',C.c_uint64),('parent_fd',C.c_int32)]
+    mask=(1<<13)-1
+    if abi>=2:mask|=1<<13
+    if abi>=3:mask|=1<<14
+    ruleset=Ruleset(mask)
+    fd=libc.syscall(444,C.byref(ruleset),C.sizeof(ruleset),0)
+    if fd<0:
+        raise OSError(C.get_errno(),'Landlock create ruleset failed')
+    read=(1<<2)|(1<<3)
+    write=(1<<1)|(1<<4)|(1<<5)|(1<<7)|(1<<8)
+    if abi>=2:write|=1<<13
+    if abi>=3:write|=1<<14
+    paths=[(Path.cwd(),read|write),(Path(os.__file__).parent,read)]
+    paths.extend((Path(p),read) for p in ['/usr/lib','/lib'] if Path(p).is_dir())
+    if Path('/etc/ld.so.cache').is_file():paths.append((Path('/etc/ld.so.cache'),1<<2))
+    try:
+        for path,access in paths:
+            parent=os.open(path,os.O_PATH|os.O_CLOEXEC)
+            try:
+                rule=PathRule(access,parent)
+                if libc.syscall(445,fd,1,C.byref(rule),0):
+                    raise OSError(C.get_errno(),'Landlock add path failed')
+            finally:
+                os.close(parent)
+        if libc.syscall(446,fd,0):
+            raise OSError(C.get_errno(),'Landlock restrict self failed')
+    finally:
+        os.close(fd)
+    return True
+
+
 def isolate():
     if sys.platform != "linux":
         raise RuntimeError("Python tests require the Linux Docker image")
@@ -83,6 +128,7 @@ def isolate():
     if not context:
         raise RuntimeError("seccomp initialization failed")
     try:
+        filesystem = restrict_paths(libc)
         allowed = (
             "read write readv writev close fstat lseek "
             "mmap mprotect munmap mremap madvise brk "
@@ -91,6 +137,10 @@ def isolate():
             "clock_gettime clock_nanosleep nanosleep sched_yield futex "
             "getrusage times exit exit_group getcwd"
         )
+        if filesystem:
+            allowed += (' openat open newfstatat stat lstat statx getdents64 readlink readlinkat '
+                        'access faccessat faccessat2 fcntl mkdir mkdirat unlink unlinkat '
+                        'rename renameat renameat2 ftruncate truncate fsync fdatasync')
         for name in allowed.split():
             syscall = seccomp.seccomp_syscall_resolve_name(name.encode())
             if syscall >= 0 and seccomp.seccomp_rule_add(context, 0x7FFF0000, syscall, 0):
