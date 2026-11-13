@@ -1,0 +1,9 @@
+Executing <Task finished name='Task-486' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff901f1970>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 1.823 seconds
+Executing <Task finished name='Task-521' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff9037e570>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.601 seconds
+Executing <Task finished name='Task-583' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff9027ab10>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.624 seconds
+Executing <Task finished name='Task-548' coro=<HardChecks.test_openjiuwen_sql_and_two_file_patch() done, defined at /app/bench/hard_checks.py:208> result=None created at /usr/local/lib/python3.13/asyncio/runners.py:100> took 0.618 seconds
+Executing <Task pending name='Task-2062' coro=<main.<locals>.evaluate() running at /app/run_agent.py:164> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.13/asyncio/base_events.py:459> cb=[_wait.<locals>._on_completion() at /usr/local/lib/python3.13/asyncio/tasks.py:521] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.130 seconds
+----------------------------------------------------------------------
+Ran 121 tests in 28.259s
+
+OK

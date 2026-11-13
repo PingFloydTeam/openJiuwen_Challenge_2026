@@ -1,0 +1,30 @@
+[
+  {
+    "budget": 0,
+    "entrypoint": "image default",
+    "budget_source": "BUDGET",
+    "passed": true,
+    "api_calls": 0
+  },
+  {
+    "budget": 137,
+    "entrypoint": "organizer override",
+    "budget_source": "min(BUDGET,--budget)",
+    "passed": true,
+    "api_calls": 0
+  },
+  {
+    "budget": 17500,
+    "entrypoint": "image default",
+    "budget_source": "BUDGET",
+    "passed": true,
+    "api_calls": 0
+  },
+  {
+    "budget": 250000,
+    "entrypoint": "organizer override",
+    "budget_source": "BUDGET",
+    "passed": true,
+    "api_calls": 0
+  }
+]

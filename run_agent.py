@@ -18,7 +18,8 @@ def options():
     parser.add_argument("--tasks-dir", type=Path, default=os.getenv("TASKS") or None)
     parser.add_argument("--out", type=Path, default=os.getenv("OUT") or None,
                         help="optional plain text snapshot path or writable directory")
-    parser.add_argument("--budget", type=int, default=os.getenv("BUDGET", "100000"))
+    parser.add_argument("--budget", type=int, default=None,
+                        help="local token cap; cannot raise the BUDGET environment limit")
     parser.add_argument("--task-cap", type=int, default=3200)
     parser.add_argument("--steps", type=int, default=5)
     parser.add_argument("--repair-limit", type=int, default=3, help="maximum code edits per model pass")
@@ -44,7 +45,24 @@ def options():
                         help="use only if proxy explicitly excludes reasoning from completion_tokens")
     parser.add_argument("--trace", type=Path, help="optional JSONL event log; use a writable directory")
     args = parser.parse_args()
-    if args.model not in MODELS or min(args.budget, args.task_cap, args.steps, args.seconds, args.repair_limit) <= 0:
+    environment_budget = os.getenv("BUDGET")
+    if environment_budget is not None:
+        try:
+            environment_budget = int(environment_budget)
+        except ValueError:
+            parser.error("BUDGET must be a nonnegative integer")
+        if environment_budget < 0:
+            parser.error("BUDGET must be a nonnegative integer")
+        args.budget_source = "BUDGET" if args.budget is None else "min(BUDGET,--budget)"
+        args.budget = environment_budget if args.budget is None else min(environment_budget, args.budget)
+    else:
+        if args.budget is None and not args.offline:
+            parser.error("provide the organizer's BUDGET environment variable or an explicit --budget")
+        args.budget_source = "--budget" if args.budget is not None else "offline_default"
+        args.budget = 0 if args.budget is None else args.budget
+    if args.budget < 0:
+        parser.error("budget must be nonnegative")
+    if args.model not in MODELS or min(args.task_cap, args.steps, args.seconds, args.repair_limit) <= 0:
         parser.error("use positive limits and an allowed model")
     if not 0 <= args.retry_share <= 25:
         parser.error("retry share must be between 0 and 25 percent")
@@ -177,6 +195,7 @@ async def main(args):
 
     trace({"event": "run_start", "tasks": len(tasks), "model": args.model,
            "budget_tenths": budget.limit, "agent_only": args.agent_only, "offline": args.offline,
+           "budget_source": args.budget_source,
            "workers": args.workers, "tool_profile": args.tool_profile, "queue": args.queue,
            "fixed_estimates": args.fixed_estimates, "calibrated": bool(args.calibration),
            "repair_limit": args.repair_limit, "retry_share": args.retry_share})

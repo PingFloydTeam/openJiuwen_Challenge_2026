@@ -1,0 +1,83 @@
+{
+  "grade": {
+    "score": 20,
+    "max_score": 20,
+    "checks_passed": 8,
+    "checks_total": 8,
+    "correct_answers": 8,
+    "solvable_skipped": 0,
+    "wrong_answers": 0,
+    "correct_abstentions": 0,
+    "false_accepts": 0,
+    "by_type": {
+      "coding": {
+        "correct_answers": 2,
+        "solvable_skipped": 0,
+        "wrong_answers": 0,
+        "correct_abstentions": 0,
+        "false_accepts": 0
+      },
+      "data_analysis": {
+        "correct_answers": 2,
+        "solvable_skipped": 0,
+        "wrong_answers": 0,
+        "correct_abstentions": 0,
+        "false_accepts": 0
+      },
+      "math": {
+        "correct_answers": 2,
+        "solvable_skipped": 0,
+        "wrong_answers": 0,
+        "correct_abstentions": 0,
+        "false_accepts": 0
+      },
+      "search": {
+        "correct_answers": 2,
+        "solvable_skipped": 0,
+        "wrong_answers": 0,
+        "correct_abstentions": 0,
+        "false_accepts": 0
+      }
+    },
+    "by_split": {}
+  },
+  "run_end": {
+    "event": "run_end",
+    "submitted": 8,
+    "submitted_reward": 20,
+    "spent_tenths": 0,
+    "unknown_reserved_tenths": 0,
+    "remaining_tenths": 1370,
+    "model_attempted": 0,
+    "deferred_unattempted": 0,
+    "model_retried": 0,
+    "unvisited": 0,
+    "cancelled": 0,
+    "stop_reason": null,
+    "out_complete": true
+  },
+  "calls": 0,
+  "weighted_tokens": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "unknown_reserved_tokens": 0.0,
+  "memory_peak_bytes": 227221504,
+  "out_records": 8,
+  "out_matches_answers": true,
+  "protected_inputs_unchanged": true,
+  "oracle_sha256": "9bf68f02d5c5c738ee6a3b71a2f65331381f836a9c3bcc5ec5a3c2888fd0e32a",
+  "agent_exit": 0,
+  "judge_exit": 0,
+  "elapsed_s": 8.06,
+  "image": "ping-floyd:submission",
+  "model": null,
+  "budget": 137,
+  "live": false,
+  "image_id": "sha256:10b9ea8a6f911bbc508b84162c534b9e8014ed31042ffac077dd566b05bc97ab",
+  "image_bytes": 1387608501,
+  "bench_image_id": "sha256:18f5dfeae0f54bed2d1df5451608dbaeead3395a1666dc231ea43ce69b083a2c",
+  "pinned_images": {
+    "agent": "ping-floyd-validation:27ff60a89c7a01d1-agent",
+    "judge": "ping-floyd-validation:27ff60a89c7a01d1-judge"
+  }
+}

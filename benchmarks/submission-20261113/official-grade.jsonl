@@ -1,0 +1,9 @@
+{"grade": "coding_0003", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"grade": "coding_0007", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"grade": "data_analysis_0002", "ok": true, "solvable": true, "reward": 3, "outcome": "correct_answers"}
+{"grade": "data_analysis_0006", "ok": true, "solvable": true, "reward": 3, "outcome": "correct_answers"}
+{"grade": "math_0000", "ok": true, "solvable": true, "reward": 5, "outcome": "correct_answers"}
+{"grade": "math_0004", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"grade": "search_0001", "ok": true, "solvable": true, "reward": 1, "outcome": "correct_answers"}
+{"grade": "search_0005", "ok": true, "solvable": true, "reward": 2, "outcome": "correct_answers"}
+{"score": 20, "max_score": 20, "checks_passed": 8, "checks_total": 8, "correct_answers": 8, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0, "by_type": {"coding": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}, "data_analysis": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}, "math": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}, "search": {"correct_answers": 2, "solvable_skipped": 0, "wrong_answers": 0, "correct_abstentions": 0, "false_accepts": 0}}, "by_split": {}}
