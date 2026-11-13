@@ -7,6 +7,7 @@ on:
       - run_agent.py
       - ping_floyd/**
       - bench/**
+      - tests/**
       - Dockerfile
       - requirements.txt
       - .dockerignore
@@ -36,11 +37,18 @@ jobs:
             --cpus 2 --memory 4g --pids-limit 512 \
             --entrypoint python ping-floyd:checks \
             -m unittest discover -s bench -t /app -p '*checks.py' -q
+      - name: Run unchanged independent PR regressions
+        run: |
+          docker run --rm --network none --read-only --tmpfs /tmp:rw,size=2g \
+            --cap-drop ALL --security-opt no-new-privileges \
+            --cpus 2 --memory 4g --pids-limit 512 \
+            --entrypoint python ping-floyd:checks \
+            -m unittest discover -s tests -p 'test_review_*.py' -v
       - name: Verify BUDGET, entrypoints and saved outputs
         run: python3 -m bench.submission_smoke /tmp/ping-floyd-submission-smoke --image ping-floyd:submission --cpus 2
       - name: Check image contents and size
         run: |
           docker run --rm --network none --read-only --entrypoint python ping-floyd:submission -c \
-            'from pathlib import Path; import os; assert not Path("/app/bench").exists(); assert not Path("/app/.env").exists(); assert "LLM_API_KEY" not in os.environ; assert "BUDGET" not in os.environ'
+            'from pathlib import Path; import os; assert not Path("/app/bench").exists(); assert not Path("/app/tests").exists(); assert not Path("/app/.env").exists(); assert "LLM_API_KEY" not in os.environ; assert "BUDGET" not in os.environ'
           docker images --format '{{.Repository}}:{{.Tag}} -> {{.Size}}' ping-floyd:submission
           python3 -c 'import json,subprocess; image=json.loads(subprocess.check_output(["docker","image","inspect","ping-floyd:submission"]))[0]; assert image["Size"] < 4_000_000_000'

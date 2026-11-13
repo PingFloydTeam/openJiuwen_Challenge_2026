@@ -13,5 +13,6 @@ ENTRYPOINT ["python", "/app/run_agent.py"]
 
 FROM runtime AS bench
 COPY bench/ bench/
+COPY tests/ tests/
 
 FROM runtime AS contest

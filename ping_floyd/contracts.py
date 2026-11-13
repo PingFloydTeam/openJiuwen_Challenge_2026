@@ -9,7 +9,16 @@ from .properties import quantified_checks
 
 
 def stateful_contract(instruction):
-    return bool(re.search(r'\bstateful\b|\bsuccessive calls\b|\bconsecutive calls\b|\b(?:persistent|mutable|global) (?:state|counter)\b',instruction,re.I))
+    # Repeated arguments prove a contradiction only when calls share a state.
+    # Storage lifetime and ordered transitions matter, not the function's name.
+    if re.search(r'\b(?:pure|stateless) function\b', instruction, re.I):
+        return False
+    return bool(re.search(
+        r'\bstateful\b|\b(?:successive|consecutive) calls\b|'
+        r'\b(?:persistent|mutable|global|shared|internal|module[- ]level) (?:state|counter)\b|'
+        r'\b(?:each|every) (?:call|invocation) (?:increments|advances|updates|mutates)\b|'
+        r'\b(?:assertions|calls|examples) (?:execute|run|are evaluated) in (?:sequence|order)\b',
+        instruction, re.I))
 
 
 def literal_assertions(instruction):
@@ -37,6 +46,12 @@ def literal_assertions(instruction):
 
 def universal_contract_conflicts(instruction):
     """Find concrete contradictory obligations in explicit integer equations."""
+    types = re.search(r"must return a built-in (\w+) and must return a built-in (\w+) for the same call", instruction, re.I)
+    if types and "exact type" in instruction.casefold():
+        supported = {"list", "tuple", "dict", "set", "str", "int", "float", "bool", "bytes"}
+        first, second = (name.casefold() for name in types.groups())
+        if first in supported and second in supported and first != second:
+            raise NoUniqueAnswer("logical_error", "one result cannot have two different exact built-in types")
     if stateful_contract(instruction):
         return  # Equal arguments in different states need not have equal results.
     examples = {}
@@ -45,12 +60,6 @@ def universal_contract_conflicts(instruction):
         if key in examples and examples[key] != expected:
             raise NoUniqueAnswer("logical_error", "explicit assertions require different results for the same call")
         examples[key] = expected
-    types = re.search(r"must return a built-in (\w+) and must return a built-in (\w+) for the same call", instruction, re.I)
-    if types and "exact type" in instruction.casefold():
-        supported = {"list", "tuple", "dict", "set", "str", "int", "float", "bool", "bytes"}
-        first, second = (name.casefold() for name in types.groups())
-        if first in supported and second in supported and first != second:
-            raise NoUniqueAnswer("logical_error", "one result cannot have two different exact built-in types")
     pattern = (r"For (?:every|each) integer ([A-Za-z]\w{0,15}),\s*([A-Za-z_]\w{0,39})"
                r"\(([^;,.\n]{1,80})\) must equal ([^;.\n]{1,80}?)(?: exactly)?\.")
     obligations = {}

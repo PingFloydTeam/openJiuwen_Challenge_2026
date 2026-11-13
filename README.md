@@ -80,12 +80,18 @@ docker run --rm --network none --read-only --tmpfs /tmp:rw,size=2g \
   --entrypoint python ping-floyd:bench \
   -m unittest discover -s bench -t /app -p '*checks.py' -q
 
+docker run --rm --network none --read-only --tmpfs /tmp:rw,size=2g \
+  --cap-drop ALL --security-opt no-new-privileges \
+  --cpus 2 --memory 4g --pids-limit 512 \
+  --entrypoint python ping-floyd:bench \
+  -m unittest discover -s tests -p 'test_review_*.py' -v
+
 python3 -m bench.submission_smoke /tmp/pf-submission-check --image ping-floyd:contest
 ```
 
-Проверки не требуют настоящего API-ключа. Они покрывают разные BUDGET, нулевой бюджет, приоритет окружения над CLI, конкурентные резервы, оба способа запуска контейнера, OUT, сохранность входов и защиту coding-worker. Скрипт smoke использует только стандартную библиотеку Python на хосте. Каталог результатов должен быть новым.
+Проверки не требуют настоящего API-ключа. Два набора запускаются отдельно: основные регрессии и 19 неизменённых авторских тестов из [PR №1](https://github.com/PingFloydTeam/openJiuwen_Challenge_2026/pull/1). Они покрывают разные BUDGET, нулевой бюджет, приоритет окружения над CLI, конкурентные резервы, оба способа запуска контейнера, OUT, сохранность входов и защиту coding-worker. Smoke включает официальный coding-пример без `expected` и проверяет полученный код обычным unittest в отдельном контейнере. Скрипт smoke использует только стандартную библиотеку Python на хосте. Каталог результатов должен быть новым.
 
-Полный набор **121 тест** прошёл на Linux arm64 локально и на нативном Linux amd64 в [GitHub Actions](https://github.com/PingFloydTeam/openJiuwen_Challenge_2026/actions/runs/43463298827). CI также проверил оба способа запуска и разные BUDGET без секретов модели. На GitHub проверки ограничены 2 CPU; локально — 4 CPU. Измерения и границы проверки — в [отчёте подготовки к сдаче](docs/submission-20261113.md).
+Результаты текущей проверки Linux arm64 и нативного Linux amd64 фиксируются в [отчёте интеграции PR](docs/pr1-integration-20261113.md). CI запускает оба набора тестов, проверяет способы запуска и разные BUDGET без секретов модели. На GitHub проверки ограничены 2 CPU; локально основные регрессии — 4 CPU. [Предыдущая подготовка к сдаче](docs/submission-20261113.md) сохранена как исторический отчёт.
 
 Сдаётся один образ `contest`. Ограничения: репозиторий без `.git` <100 МБ, образ <4 ГБ по `docker images`, сборка ≤1000 секунд, запуск ≤1 часа, не более 4 CPU, 16 ГБ RAM и пяти сессий. Последняя сборка на свежем Linux amd64 runner заняла 74 с, образ — 911 МБ по `docker images`; локальный arm64-образ — 1,39 ГБ. Скорость сборки на сети жюри этим не гарантируется. Репозиторий без `.git` занимает около 2,7 МБ.
 

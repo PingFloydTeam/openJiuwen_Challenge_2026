@@ -1,0 +1,70 @@
+test_accepted_fast_repair_respects_explicit_empty_input_contract (test_review_tools.IndependentToolContracts.test_accepted_fast_repair_respects_explicit_empty_input_contract) ... ok
+test_birth_date_must_not_be_submitted_as_birth_year (test_review_tools.IndependentToolContracts.test_birth_date_must_not_be_submitted_as_birth_year) ... ok
+test_birth_field_alias_is_not_proof_of_missing_information (test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information) ... ERROR
+test_coding_can_read_its_own_read_only_fixture (test_review_tools.IndependentToolContracts.test_coding_can_read_its_own_read_only_fixture) ... ok
+test_control_exact_arithmetic_and_decimal_aggregation (test_review_tools.IndependentToolContracts.test_control_exact_arithmetic_and_decimal_aggregation) ... ok
+test_direct_shortest_route_does_not_need_an_unrelated_missing_record (test_review_tools.IndependentToolContracts.test_direct_shortest_route_does_not_need_an_unrelated_missing_record) ... ok
+test_regular_stdlib_import_is_usable_in_coding_tests (test_review_tools.IndependentToolContracts.test_regular_stdlib_import_is_usable_in_coding_tests) ... ok
+test_runtime_fixture_is_not_a_missing_task_input (test_review_tools.IndependentToolContracts.test_runtime_fixture_is_not_a_missing_task_input) ... ok
+test_stateful_counter_examples_are_not_a_logical_contradiction (test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction) ... FAIL
+test_zero_quantity_makes_unknown_finite_price_irrelevant (test_review_tools.IndependentToolContracts.test_zero_quantity_makes_unknown_finite_price_irrelevant) ... ok
+test_control_reasoning_accounted_once_in_both_usage_shapes (test_review_workflow.IndependentTransportContracts.test_control_reasoning_accounted_once_in_both_usage_shapes) ... ok
+test_unexplained_total_tokens_are_not_silently_underbilled (test_review_workflow.IndependentTransportContracts.test_unexplained_total_tokens_are_not_silently_underbilled) ... ok
+test_complete_bounded_proof_is_not_rejected_by_parity_gate (test_review_workflow.IndependentWorkflowContracts.test_complete_bounded_proof_is_not_rejected_by_parity_gate) ... /usr/local/lib/python3.13/site-packages/openjiuwen/core/common/clients/connector_pool.py:17: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+  class ConnectorPoolConfig(BaseModel):
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/common/clients/http_client.py:21: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+  class SessionConfig(BaseModel):
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:13: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:24: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+/usr/local/lib/python3.13/site-packages/openjiuwen/core/memory/manage/mem_model/db_model.py:30: SADeprecationWarning: The declarative_mixin decorator was used only by the now removed mypy plugin so it has no longer any use and can be safely removed. (deprecated since: 2.1)
+  @declarative_mixin
+Executing <Task pending name='Task-10' coro=<IndependentWorkflowContracts.test_complete_bounded_proof_is_not_rejected_by_parity_gate() running at /review-tests/test_review_workflow.py:130> wait_for=<Future pending cb=[Task.task_wakeup()] created at /usr/local/lib/python3.13/asyncio/base_events.py:459> cb=[_run_until_complete_cb() at /usr/local/lib/python3.13/asyncio/base_events.py:181] created at /usr/local/lib/python3.13/asyncio/runners.py:100> took 3.315 seconds
+ok
+test_control_real_workflow_writes_answer_and_reconciles_usage (test_review_workflow.IndependentWorkflowContracts.test_control_real_workflow_writes_answer_and_reconciles_usage) ... ok
+test_field_alias_reaches_model_fallback (test_review_workflow.IndependentWorkflowContracts.test_field_alias_reaches_model_fallback) ... ok
+test_narrative_birth_year_is_valid_read_evidence (test_review_workflow.IndependentWorkflowContracts.test_narrative_birth_year_is_valid_read_evidence) ... ok
+test_retry_after_rate_limit_does_not_disable_the_entire_run (test_review_workflow.IndependentWorkflowContracts.test_retry_after_rate_limit_does_not_disable_the_entire_run) ... ok
+test_search_target_can_follow_more_than_two_links (test_review_workflow.IndependentWorkflowContracts.test_search_target_can_follow_more_than_two_links) ... ok
+test_truncation_gets_a_bounded_retry_when_budget_is_available (test_review_workflow.IndependentWorkflowContracts.test_truncation_gets_a_bounded_retry_when_budget_is_available) ... ok
+
+======================================================================
+ERROR: test_birth_field_alias_is_not_proof_of_missing_information (test_review_tools.IndependentToolContracts.test_birth_field_alias_is_not_proof_of_missing_information)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 71, in test_birth_field_alias_is_not_proof_of_missing_information
+    result = solve_fast(task)
+  File "/app/ping_floyd/fast.py", line 454, in solve_fast
+    value = solve_question(task, question)
+  File "/app/ping_floyd/fast.py", line 445, in solve_question
+    return fast_search(task.workspace, question)
+  File "/app/ping_floyd/fast.py", line 410, in fast_search
+    value = kb_lookup(kb, match[1], fields, strict=True)
+  File "/app/ping_floyd/tools.py", line 363, in kb_lookup
+    raise ValueError(f'unsupported field mapping: no exact {label} for {current}; inspect other fields')
+ValueError: unsupported field mapping: no exact Born for Ada Reed; inspect other fields
+
+======================================================================
+FAIL: test_stateful_counter_examples_are_not_a_logical_contradiction (test_review_tools.IndependentToolContracts.test_stateful_counter_examples_are_not_a_logical_contradiction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 98, in test_stateful_counter_examples_are_not_a_logical_contradiction
+    universal_contract_conflicts(instruction)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/app/ping_floyd/contracts.py", line 46, in universal_contract_conflicts
+    raise NoUniqueAnswer("logical_error", "explicit assertions require different results for the same call")
+ping_floyd.domain.NoUniqueAnswer: explicit assertions require different results for the same call
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/review-tests/test_review_tools.py", line 100, in test_stateful_counter_examples_are_not_a_logical_contradiction
+    self.fail(f"Sequential calls to an explicitly stateful counter may differ: {error}")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Sequential calls to an explicitly stateful counter may differ: explicit assertions require different results for the same call
+
+----------------------------------------------------------------------
+Ran 19 tests in 5.877s
+
+FAILED (failures=1, errors=1)

@@ -116,13 +116,9 @@ class HardChecks(unittest.IsolatedAsyncioTestCase):
                     # Unsupported field mappings must remain eligible for LLM
                     # fallback; they do not prove that the whole task is impossible.
                     try:
-                        solve_fast(task)
+                        self.assertIsNone(solve_fast(task), 'ambiguous task must not produce a fast answer')
                     except NoUniqueAnswer:
                         pass
-                    except ValueError as error:
-                        self.assertIn('unsupported field mapping',str(error))
-                    else:
-                        self.fail('ambiguous task must not produce a fast answer')
                 else:
                     self.assertEqual(str(solve_fast(task)), str(answer))
 

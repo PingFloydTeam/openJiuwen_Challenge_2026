@@ -51,6 +51,33 @@ class ReviewTransport(unittest.IsolatedAsyncioTestCase):
 
 
 class ReviewTools(unittest.TestCase):
+    def test_fast_solver_defers_unsupported_but_preserves_typed_verdicts(self):
+        from unittest.mock import patch
+        from ping_floyd.domain import InvalidInput, Task
+        from ping_floyd.fast import solve_fast
+        task=Task(Path('/unused'),'search','An unfamiliar field question.',1,'exact_str')
+        with patch('ping_floyd.fast.solve_question',side_effect=ValueError('unsupported mapping')):
+            self.assertIsNone(solve_fast(task))
+        for error in (NoUniqueAnswer('logical_error','conflicting values'),InvalidInput('bad input')):
+            with self.subTest(error=type(error).__name__),patch('ping_floyd.fast.solve_question',side_effect=error):
+                with self.assertRaises(type(error)):solve_fast(task)
+
+    def test_sequential_state_contracts_do_not_require_a_specific_function_name(self):
+        for declaration in ('Maintain shared state.', 'Use an internal counter.',
+                            'Each invocation advances the stored value.',
+                            'These assertions execute in sequence.'):
+            with self.subTest(declaration=declaration):
+                universal_contract_conflicts(declaration+' `assert issue_ticket() == 10` then `assert issue_ticket() == 11`.')
+
+    def test_explicit_purity_still_rejects_different_results(self):
+        for declaration in ('A pure function.', 'A stateless function.'):
+            with self.assertRaises(NoUniqueAnswer):
+                universal_contract_conflicts(declaration+' These assertions execute in sequence: `assert f() == 1` then `assert f() == 2`.')
+
+    def test_stateful_result_still_cannot_have_incompatible_exact_types(self):
+        with self.assertRaises(NoUniqueAnswer):
+            universal_contract_conflicts('Implement a stateful counter. f() must return a built-in dict and must return a built-in tuple for the same call. Both exact type requirements are mandatory.')
+
     def test_old_landlock_abi_keeps_strict_filesystem_mode(self):
         from types import SimpleNamespace
         from ping_floyd.test_worker import restrict_paths

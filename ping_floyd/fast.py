@@ -3,7 +3,7 @@ from decimal import Decimal
 import re
 
 from .algorithms import graph_distance, grid_paths
-from .domain import NoUniqueAnswer, local_file, read_text
+from .domain import InvalidInput, NoUniqueAnswer, local_file, read_text
 from .constraints import solve_congruences, solve_linear
 from .input_form import canonical_question, unwrap_question
 from .facts import project_fact
@@ -446,16 +446,26 @@ def solve_question(task, question):
 
 
 def solve_fast(task):
+    """Return a supported answer or None; preserve proven and malformed inputs."""
+    def attempt(question):
+        try:
+            return solve_question(task, question)
+        except (NoUniqueAnswer, InvalidInput):
+            raise
+        except ValueError:
+            # A tool/field mapping outside the local solver is not a task verdict.
+            return None
+
     tail = TAILS.get(task.kind)
     if tail is None:
         return None
     suffix = " " + tail + CONTEST_TAIL
     question = normalize_question(task.instruction).removesuffix(suffix)
-    value = solve_question(task, question)
+    value = attempt(question)
     if value is not None:
         return value
     unwrapped = unwrap_question(task.instruction).removesuffix(suffix)
     candidate = canonical_question(unwrapped, task.kind) or unwrapped
     if candidate != question:
-        return solve_question(task, candidate)
+        return attempt(candidate)
     return None

@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import shutil
 import subprocess
 
 from .experiments import docker_prefix
@@ -21,7 +22,12 @@ def smoke(image, output, cpus=4):
             (tasks/name).chmod(0o777)
             (tasks/name/'task.json').write_text(json.dumps({'task_id':name,'task_type':'math',
                 'instruction':instruction,'reward':reward,'check':'exact_int'}))
-        protected={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in tasks.glob('*/task.json')}
+        # Qualification coding example, with expected removed before agent access.
+        shutil.copytree(Path(__file__).resolve().parents[1]/'tests/fixtures/coding',tasks/'c')
+        for directory in [tasks/'c',*(p for p in (tasks/'c').rglob('*') if p.is_dir())]:
+            directory.chmod(0o777)
+        protected={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in tasks.rglob('*')
+                   if p.is_file() and (p.name=='task.json' or p.name.startswith('test'))}
         prefix=docker_prefix('none')
         prefix[prefix.index('--cpus')+1]=str(cpus)
         cmd=[*prefix,'-v',f'{tasks}:/data/tasks:rw','-v',f'{out}:/out:rw',
@@ -39,13 +45,21 @@ def smoke(image, output, cpus=4):
         end=next(e for e in events if e.get('event')=='run_end')
         assert start['budget_tenths']==budget*10,(budget,start)
         assert end['spent_tenths']==end['unknown_reserved_tenths']==0
-        assert end['remaining_tenths']==budget*10 and end['submitted']==2 and end['out_complete']
-        assert (out/'answers.txt').read_text()=='a\t5\nb\t42\n'
+        assert end['remaining_tenths']==budget*10 and end['submitted']==3 and end['out_complete']
+        assert (out/'answers.txt').read_text()=='a\t5\nb\t42\nc\tDONE\n'
         assert (tasks/'a/answer.txt').read_text()=='5\n' and (tasks/'b/answer.txt').read_text()=='42\n'
+        assert (tasks/'c/answer.txt').read_text()=='DONE\n'
         assert all(hashlib.sha256(p.read_bytes()).hexdigest()==digest for p,digest in protected.items())
         assert not any(e.get('event')=='llm' for e in events)
+        # Ordinary unittest is independent of the harness's validation worker.
+        judge=subprocess.run([*prefix,'-v',f'{tasks}/c/workspace:/case:ro','--workdir','/case',
+                              '--entrypoint','python',image,'-B','test_mylib.py'],
+                             stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=25)
+        (root/'judge.log').write_text(judge.stdout)
+        assert judge.returncode==0,(budget,judge.stdout)
         results.append({'budget':budget,'entrypoint':'organizer override' if override else 'image default',
-                        'budget_source':start['budget_source'],'passed':True,'api_calls':0})
+                        'budget_source':start['budget_source'],'passed':True,'api_calls':0,
+                        'coding_independent_passed':True,'tasks':3})
     (output/'results.json').write_text(json.dumps(results,indent=2)+'\n')
     print(json.dumps(results),flush=True)
 

@@ -6,3 +6,5 @@
 !ping_floyd/*.py
 !bench/
 !bench/*.py
+!tests/
+!tests/*.py
