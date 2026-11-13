@@ -33,11 +33,11 @@ jobs:
         run: |
           docker run --rm --network none --read-only --tmpfs /tmp:rw,size=2g \
             --cap-drop ALL --security-opt no-new-privileges \
-            --cpus 4 --memory 4g --pids-limit 512 \
+            --cpus 2 --memory 4g --pids-limit 512 \
             --entrypoint python ping-floyd:checks \
             -m unittest discover -s bench -t /app -p '*checks.py' -q
       - name: Verify BUDGET, entrypoints and saved outputs
-        run: python3 -m bench.submission_smoke /tmp/ping-floyd-submission-smoke --image ping-floyd:submission
+        run: python3 -m bench.submission_smoke /tmp/ping-floyd-submission-smoke --image ping-floyd:submission --cpus 2
       - name: Check image contents and size
         run: |
           docker run --rm --network none --read-only --entrypoint python ping-floyd:submission -c \

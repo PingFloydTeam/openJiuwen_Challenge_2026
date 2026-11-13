@@ -8,7 +8,7 @@ import subprocess
 from .experiments import docker_prefix
 
 
-def smoke(image, output):
+def smoke(image, output, cpus=4):
     output=output.resolve();output.mkdir(parents=True,exist_ok=False)
     results=[]
     for budget,override in [(0,False),(137,True),(17500,False),(250000,True)]:
@@ -19,7 +19,9 @@ def smoke(image, output):
             (tasks/name/'task.json').write_text(json.dumps({'task_id':name,'task_type':'math',
                 'instruction':instruction,'reward':reward,'check':'exact_int'}))
         protected={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in tasks.glob('*/task.json')}
-        cmd=[*docker_prefix('none'),'-v',f'{tasks}:/data/tasks:rw','-v',f'{out}:/out:rw',
+        prefix=docker_prefix('none')
+        prefix[prefix.index('--cpus')+1]=str(cpus)
+        cmd=[*prefix,'-v',f'{tasks}:/data/tasks:rw','-v',f'{out}:/out:rw',
              '-e',f'BUDGET={budget}','-e','OUT=/out/answers.txt']
         if override:
             cmd+=['--workdir','/app','--entrypoint','python',image,'/app/run_agent.py','--tasks-dir','/data/tasks']
@@ -47,4 +49,5 @@ def smoke(image, output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('output',type=Path);parser.add_argument('--image',required=True)
-    args=parser.parse_args();smoke(args.image,args.output)
+    parser.add_argument('--cpus',type=int,choices=range(1,5),default=4)
+    args=parser.parse_args();smoke(args.image,args.output,args.cpus)
