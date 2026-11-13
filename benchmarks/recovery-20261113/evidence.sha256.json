@@ -1,0 +1,17 @@
+{
+  "baseline-grade.jsonl": "1c580472636e65fe59dbab2b01ce235dfe0206a7ac8a9e005690c79f2dd78384",
+  "baseline-run.jsonl": "0c230f4c95ce5cb67dd5e7174156a00bdac25086c7e152ddb463600433aaae13",
+  "baseline.sha256.json": "171d938e65624563701c6daec48624d7eac222c4c7846c46ea646f4f8bdad120",
+  "candidate-grade.jsonl": "93b62e7ce825b48f125768a2e5ad6a056a0157f344aa020c8b69477cb427386c",
+  "candidate-run.jsonl": "dc524ac5d3945a3fbdc78d96c177579c089e229cd246454536144a840e228dca",
+  "candidate.sha256.json": "3e009bdb5d4dc4ece5f072e9695aecb74c038fa2aaf8e0b8014c06efdf0cdd3d",
+  "control.zip": "20d7bfed001def8f2c06a2d1db8c74cf9248c0d040aae6083cc08dd44275ef89",
+  "independent-baseline.log": "d838ae9eaf68ecfbd2c850daf4e08e3cb9e714cd997392db5e2c9384f34ae568",
+  "independent-candidate.log": "d838ae9eaf68ecfbd2c850daf4e08e3cb9e714cd997392db5e2c9384f34ae568",
+  "limits.json": "57e6332a06d02de5d38ab4974663e0980fd54253aced8e3930310aa26c610bd3",
+  "official-grade.jsonl": "5e2674a2a13193e79de9fdf78a500becd0b6fcd8dad5860501a73e27c8ff270c",
+  "official-run.jsonl": "a398dce652282306f47c702468bd14e8e0a1ca852870e7a04da2b3aabebe33a7",
+  "reference.log": "d5af27aea7d91e5f5f1b9879656237e3ec5ab54f1c716cf30e86919fb9f359dd",
+  "results.json": "c698269d0f7f1035c6a93f871a8b355f84a351cea7a176dccd1ec9993a014bc6",
+  "tests-release.log": "b7b40949d23f5c0101f6dc8b7648573e52a252793d47ee1de209750b487d847e"
+}

@@ -51,6 +51,12 @@ def value(row, field):
     if not isinstance(field, str) or not field or len(field) > 500:
         raise ValueError('field must be a short name or JSON Pointer')
     selected = pointer(row, field) if field.startswith('/') else row.get(field, MISSING)
+    # Accept an unambiguous nested shorthand. Literal CSV/JSON keys containing
+    # slashes retain precedence, including explicit unknown values.
+    if not field.startswith('/') and '/' in field and field not in row:
+        nested = pointer(row, '/' + field)
+        if nested is not MISSING:
+            selected = nested
     return selected if isinstance(selected, Fraction) else scalar(selected)
 
 
@@ -101,7 +107,10 @@ def load(root, source):
 
 def column(row, field, numeric):
     v = value(row, field)
-    return typed(v, numeric[field], field) if field in numeric else v
+    kind = numeric.get(field)
+    if kind is None and '/' in field and not field.startswith('/') and field not in row:
+        kind = numeric.get('/' + field)
+    return typed(v, kind, field) if kind else v
 
 
 def select(rows, filters, numeric):

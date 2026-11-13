@@ -1,0 +1,12 @@
+{
+  "per_run_weighted_tokens": 10000,
+  "total_experiment_weighted_tokens": 20000,
+  "per_run_seconds": 600,
+  "cpus": 4,
+  "memory_gb": 16,
+  "pids": 512,
+  "tmpfs_gb": 2,
+  "workers": 1,
+  "image_size_docker_images": "1.39GB",
+  "baseline_commit": "1fd43f6964143f308aa3da2d5512ff4ae21c82af"
+}

@@ -9,9 +9,11 @@ from pathlib import Path
 import re
 import sqlite3
 import tempfile
+import time
 
 from openjiuwen.core.foundation.tool import LocalFunction, ToolCard
 from openjiuwen.core.runner.runner import Runner
+from openjiuwen.core.session import WORKFLOW_EXECUTE_TIMEOUT
 from openjiuwen.core.workflow import End, Start, Workflow, WorkflowCard
 from openjiuwen.core.workflow.components.component import WorkflowComponent
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -296,6 +298,10 @@ class Records(ToolInput):
         if not isinstance(data,dict):
             return data
         data=dict(data)
+        if 'filter' in data:
+            if 'filters' in data and data['filters'] != data['filter']:
+                raise ValueError('conflicting filter and filters arguments')
+            data['filters'] = data.pop('filter')
         # Bare identifiers have exactly one meaning: a literal top-level key.
         # Keep nested/escaped JSON Pointers untouched; never infer nesting.
         literal=lambda s: '/'+s if isinstance(s,str) and re.fullmatch(r'[A-Za-z_]\w*',s) else s
@@ -509,11 +515,18 @@ def requested_fact(question):
         return "city"
     if re.search(r"\b(?:which|what) year\b[^.?!]{0,60}\bborn\b|\b(?:birth year|year of birth)\b", question, re.I):
         return "birth_year"
+    # An explicitly named projection is different from a count of its values.
+    # Restrict the grammar to a terminal field request; leave general prose alone.
+    projection = re.search(r'\breturn\s+(?:the\s+)?(?:unique\s+)?([A-Za-z_]\w*)\s*(?=[.,;]|if\b|requiring\b|$)', question, re.I)
+    if projection and projection[1].casefold() not in {'done','answer','result','value','total','count','number','sum','maximum','minimum','mean'}:
+        return 'field:' + projection[1].casefold()
     return None
 
 
 def matches_fact(field, requested):
     field = re.sub(r"[\s_]+", " ", field.strip().casefold())
+    if requested.startswith('field:'):
+        return field == re.sub(r'[\s_]+',' ',requested.removeprefix('field:'))
     if requested == "code":
         return field == "code" or field.endswith(" code")
     if requested == "city":
@@ -689,7 +702,7 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
         if effective_selection:
             prompt += "\nFor this effective-date selection only dated_fact confirms the answer; read/grep may miss tied or later records. Use the actual column names and exact project value."
         if linked_selection:
-            prompt += "\nFor this indexed document selection only linked_fact confirms the answer, because one matching row can miss conflicting alternatives."
+            prompt += "\nVerify ALL linked alternatives: linked_fact for indexed documents, or record_plan joins for structured tables/JSON ending in unique/argmin/argmax. A read preview cannot confirm uniqueness."
         if json_selection:
             prompt += "\nUse records to check all matching JSON records; read/grep excerpts do not confirm uniqueness. describe gives metadata, not a final answer."
         if hidden:
@@ -892,11 +905,14 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
             if not parity_evidence:
                 observed = ()
             exact_ratio = name in {"query", "record_plan"} and args.get("op") == "ratio_sums"
+            linked_evidence = name == 'linked_fact' or (name == 'record_plan'
+                and args.get('op') in {'unique','argmin','argmax'}
+                and any(s.get('op')=='join' for s in args.get('steps',[])))
             if ratio_request and not exact_ratio:
                 observed = ()
             if effective_selection and name != "dated_fact":
                 observed = ()
-            if linked_selection and name != "linked_fact":
+            if linked_selection and not linked_evidence:
                 observed = ()
             if json_selection and (name not in {"records", "record_plan"} or args["op"] == "describe"):
                 observed = ()
@@ -904,7 +920,7 @@ async def run_loop(task, proxy, trace, task_cap, steps, coding, initial=None, pr
                           and parity_evidence
                           and (not ratio_request or exact_ratio)
                           and (not effective_selection or name == "dated_fact")
-                          and (not linked_selection or name == "linked_fact")
+                          and (not linked_selection or linked_evidence)
                           and (not json_selection or name in {"records", "record_plan"} and args["op"] != "describe"))
             if not coding and name in SCALAR_TOOLS and action.get("final") is True and can_finish:
                 if requested:
@@ -1058,5 +1074,8 @@ async def run_task(task, proxy, trace, task_cap, steps, agent_only, offline=Fals
     workflow.add_connection("start", "solve")
     workflow.add_connection("solve", "save")
     workflow.add_connection("save", "end")
-    result = await Runner.run_workflow(workflow, inputs={})
+    # SDK defaults to 60 seconds for the whole workflow, even though a bounded
+    # multi-step repair may legitimately need longer. Preserve the global deadline.
+    timeout = max(0.05, min(180.0, proxy.deadline - time.monotonic()))
+    result = await Runner.run_workflow(workflow, inputs={}, envs={WORKFLOW_EXECUTE_TIMEOUT: timeout})
     return result.result["output"]

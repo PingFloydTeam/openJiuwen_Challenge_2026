@@ -1,0 +1,267 @@
+{
+  "baseline": {
+    "grade": {
+      "score": 64,
+      "max_score": 70,
+      "checks_passed": 28,
+      "checks_total": 32,
+      "correct_answers": 21,
+      "solvable_skipped": 2,
+      "wrong_answers": 1,
+      "correct_abstentions": 7,
+      "false_accepts": 1,
+      "by_type": {
+        "coding": {
+          "correct_answers": 5,
+          "solvable_skipped": 1,
+          "wrong_answers": 0,
+          "correct_abstentions": 2,
+          "false_accepts": 0
+        },
+        "data_analysis": {
+          "correct_answers": 6,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 1,
+          "false_accepts": 1
+        },
+        "math": {
+          "correct_answers": 6,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 2,
+          "false_accepts": 0
+        },
+        "search": {
+          "correct_answers": 4,
+          "solvable_skipped": 1,
+          "wrong_answers": 1,
+          "correct_abstentions": 2,
+          "false_accepts": 0
+        }
+      },
+      "by_split": {
+        "hard": {
+          "correct_answers": 21,
+          "solvable_skipped": 2,
+          "wrong_answers": 1,
+          "correct_abstentions": 7,
+          "false_accepts": 1
+        }
+      }
+    },
+    "run_end": {
+      "event": "run_end",
+      "submitted": 23,
+      "submitted_reward": 66,
+      "spent_tenths": 86276,
+      "unknown_reserved_tenths": 0,
+      "remaining_tenths": 13724,
+      "model_attempted": 30,
+      "deferred_unattempted": 0,
+      "model_retried": 0,
+      "unvisited": 0,
+      "cancelled": 0,
+      "stop_reason": null,
+      "out_complete": true
+    },
+    "calls": 49,
+    "weighted_tokens": 8627.6,
+    "input_tokens": 36016,
+    "output_tokens": 5026,
+    "unknown_reserved_tokens": 0.0,
+    "memory_peak_bytes": 233250816,
+    "out_records": 23,
+    "out_matches_answers": true,
+    "protected_inputs_unchanged": true,
+    "oracle_sha256": "4eb5346df8da3e1610a487740f1321bdc8a33e8ecb260459f36f984b639ea675",
+    "agent_exit": 0,
+    "judge_exit": 0,
+    "elapsed_s": 150.45,
+    "image": "ping-floyd:release-20261113-arm",
+    "model": "qwen3.8-27b-noreason",
+    "budget": 10000,
+    "live": true,
+    "image_id": "sha256:8a09e01944cea5d6627b2a7e7547ecc3723f074802ba03155e24730f2b4a2473",
+    "image_bytes": 1387612336,
+    "bench_image_id": "sha256:17676793caf69d832404c109ee730afd93115392b1e5b2ab21fa9e9ed23f39e6",
+    "pinned_images": {
+      "agent": "ping-floyd-validation:1439c6da216f6096-agent",
+      "judge": "ping-floyd-validation:1439c6da216f6096-judge"
+    }
+  },
+  "candidate": {
+    "grade": {
+      "score": 65,
+      "max_score": 70,
+      "checks_passed": 29,
+      "checks_total": 32,
+      "correct_answers": 22,
+      "solvable_skipped": 1,
+      "wrong_answers": 1,
+      "correct_abstentions": 7,
+      "false_accepts": 1,
+      "by_type": {
+        "coding": {
+          "correct_answers": 5,
+          "solvable_skipped": 0,
+          "wrong_answers": 1,
+          "correct_abstentions": 2,
+          "false_accepts": 0
+        },
+        "data_analysis": {
+          "correct_answers": 6,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 1,
+          "false_accepts": 1
+        },
+        "math": {
+          "correct_answers": 6,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 2,
+          "false_accepts": 0
+        },
+        "search": {
+          "correct_answers": 5,
+          "solvable_skipped": 1,
+          "wrong_answers": 0,
+          "correct_abstentions": 2,
+          "false_accepts": 0
+        }
+      },
+      "by_split": {
+        "hard": {
+          "correct_answers": 22,
+          "solvable_skipped": 1,
+          "wrong_answers": 1,
+          "correct_abstentions": 7,
+          "false_accepts": 1
+        }
+      }
+    },
+    "run_end": {
+      "event": "run_end",
+      "submitted": 24,
+      "submitted_reward": 69,
+      "spent_tenths": 83172,
+      "unknown_reserved_tenths": 0,
+      "remaining_tenths": 16828,
+      "model_attempted": 30,
+      "deferred_unattempted": 0,
+      "model_retried": 0,
+      "unvisited": 0,
+      "cancelled": 0,
+      "stop_reason": null,
+      "out_complete": true
+    },
+    "calls": 46,
+    "weighted_tokens": 8317.2,
+    "input_tokens": 33322,
+    "output_tokens": 4985,
+    "unknown_reserved_tokens": 0.0,
+    "memory_peak_bytes": 231567360,
+    "out_records": 24,
+    "out_matches_answers": true,
+    "protected_inputs_unchanged": true,
+    "oracle_sha256": "4eb5346df8da3e1610a487740f1321bdc8a33e8ecb260459f36f984b639ea675",
+    "agent_exit": 0,
+    "judge_exit": 0,
+    "elapsed_s": 178.42,
+    "image": "ping-floyd:recovery-contest",
+    "model": "qwen3.8-27b-noreason",
+    "budget": 10000,
+    "live": true,
+    "image_id": "sha256:cbaddd67080b4fd965e512ad9557f33c0df1fad3c234e04dac07c0b6e6b9103c",
+    "image_bytes": 1387618427,
+    "bench_image_id": "sha256:4f51bdd3e3514297513f160065e533d83283d5400ef9e5830792a56044809f19",
+    "pinned_images": {
+      "agent": "ping-floyd-validation:53b351628f0b40c8-agent",
+      "judge": "ping-floyd-validation:53b351628f0b40c8-judge"
+    }
+  },
+  "official": {
+    "grade": {
+      "score": 20,
+      "max_score": 20,
+      "checks_passed": 8,
+      "checks_total": 8,
+      "correct_answers": 8,
+      "solvable_skipped": 0,
+      "wrong_answers": 0,
+      "correct_abstentions": 0,
+      "false_accepts": 0,
+      "by_type": {
+        "coding": {
+          "correct_answers": 2,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 0,
+          "false_accepts": 0
+        },
+        "data_analysis": {
+          "correct_answers": 2,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 0,
+          "false_accepts": 0
+        },
+        "math": {
+          "correct_answers": 2,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 0,
+          "false_accepts": 0
+        },
+        "search": {
+          "correct_answers": 2,
+          "solvable_skipped": 0,
+          "wrong_answers": 0,
+          "correct_abstentions": 0,
+          "false_accepts": 0
+        }
+      },
+      "by_split": {}
+    },
+    "run_end": {
+      "event": "run_end",
+      "submitted": 8,
+      "submitted_reward": 20,
+      "spent_tenths": 0,
+      "unknown_reserved_tenths": 0,
+      "remaining_tenths": 100000,
+      "model_attempted": 0,
+      "deferred_unattempted": 0,
+      "model_retried": 0,
+      "unvisited": 0,
+      "cancelled": 0,
+      "stop_reason": null,
+      "out_complete": true
+    },
+    "calls": 0,
+    "weighted_tokens": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "unknown_reserved_tokens": 0.0,
+    "memory_peak_bytes": 227778560,
+    "out_records": 8,
+    "out_matches_answers": true,
+    "protected_inputs_unchanged": true,
+    "oracle_sha256": "9bf68f02d5c5c738ee6a3b71a2f65331381f836a9c3bcc5ec5a3c2888fd0e32a",
+    "agent_exit": 0,
+    "judge_exit": 0,
+    "elapsed_s": 6.92,
+    "image": "ping-floyd:recovery-contest",
+    "model": null,
+    "budget": 10000,
+    "live": false,
+    "image_id": "sha256:cbaddd67080b4fd965e512ad9557f33c0df1fad3c234e04dac07c0b6e6b9103c",
+    "image_bytes": 1387618427,
+    "bench_image_id": "sha256:4f51bdd3e3514297513f160065e533d83283d5400ef9e5830792a56044809f19",
+    "pinned_images": {
+      "agent": "ping-floyd-validation:cc5a1c2968f02caa-agent",
+      "judge": "ping-floyd-validation:cc5a1c2968f02caa-judge"
+    }
+  }
+}

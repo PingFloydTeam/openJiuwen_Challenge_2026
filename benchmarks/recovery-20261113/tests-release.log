@@ -1,0 +1,8 @@
+Executing <Task finished name='Task-486' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff70933dd0>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 1.855 seconds
+Executing <Task finished name='Task-521' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff70b0ba10>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.609 seconds
+Executing <Task finished name='Task-583' coro=<NodeTask.run() done, defined at /usr/local/lib/python3.13/site-packages/openjiuwen/core/graph/pregel/task.py:125> result=[<openjiuwen.c...xffff709bb410>] created at /usr/local/lib/python3.13/asyncio/tasks.py:410> took 0.618 seconds
+Executing <Task finished name='Task-548' coro=<HardChecks.test_openjiuwen_sql_and_two_file_patch() done, defined at /app/bench/hard_checks.py:208> result=None created at /usr/local/lib/python3.13/asyncio/runners.py:100> took 0.618 seconds
+----------------------------------------------------------------------
+Ran 116 tests in 27.609s
+
+OK
